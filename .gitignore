@@ -25,3 +25,14 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+config/secrets.yml
+
+# 開発環境下での投稿画像
+public/uploads/*
+
+# nodeやyarn関連
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
