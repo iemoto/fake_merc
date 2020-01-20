@@ -11,7 +11,7 @@ end
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-      username == '61_mercari_wc' && password == '61wc'
+      username == '61_mercari_wd' && password == '61wd'
     end
   end
 end
