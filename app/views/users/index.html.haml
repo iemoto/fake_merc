@@ -1,0 +1,87 @@
+-# = render 'shared/header'
+-# = render 'shared/side_bar'
+.mypage-wrapper
+  .side-bar--main
+    .side-bar
+      %ul
+        = link_to 'マイページ'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'お知らせ'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'やることリスト'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'いいね！一覧'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '出品する'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '出品した商品 - 出品中'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '出品した商品 - 取引中'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '出品した商品 - 売却済み'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '購入した商品 - 取引中'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '購入した商品 - 過去の取引'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'ニュース一覧'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to '評価一覧'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'ガイド'
+        = fa_icon 'fa-angle-right'
+      %ul
+        = link_to 'お問い合わせ'
+        = fa_icon 'fa-angle-right'
+    %h3
+      メルペイ
+    .side-bar
+      %ul
+        = link_to '売上・振込申請'
+      %ul
+        = link_to 'ポイント'
+    %h3
+      設定
+    .side-bar
+      %ul
+        = link_to 'プロフィール'
+      %ul
+        = link_to '発送元・お届け先住所変更'
+      %ul
+        = link_to '支払い方法'
+      %ul
+        = link_to 'メール/パスワード'
+      %ul
+        = link_to '本人情報'
+      %ul
+        = link_to '電話番号の確認'
+      %ul
+        = link_to 'ログアウト'
+
+  .contents
+    .mypage-user
+      .mypage-user--icon
+      .mypage-user--name
+      .mypage-user--evaluation
+    .mypage-news
+      .mypage-news--tabs
+      .mypage-news--content
+    .mypage-purchase
+      %h2
+        購入した商品
+      .mypage-purchase--tabs
+      .mypage-purchase--content
+
+-# = render 'shared/footer'
