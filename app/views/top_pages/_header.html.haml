@@ -1,18 +1,78 @@
-.header
-  .header_nav
-    .header_nav_upper
-      .header_nav_upper_logo
-        メルカリ
-      .header_nav_upper_input
-        何かお探しですか?
-    .header_nav_under
-      .header_nav_under_right
-        .header_nav_under_right_categories_find_btn
-          カテゴリーから探す
-        .header_nav_under_right_brand_find_btn
-          ブランドから探す
-      .header_nav_under_left
-        .header_nav_under_left_new_register_btn
-          新規登録
-        .header_nav_under_left_login_btn
-          ログイン
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+  %body
+    %header.header-wrapper
+      .header-wrapper__menu
+        .menu__upper-nav
+          //メルカリロゴ
+          .upper-nav__logo
+            -# =link_to image_tag("#"), xxx_path
+          //検索機能(検索窓、検索ボタン、プレイスホルダーつける、)
+          .upper-nav__search
+            -# = form_with model: @xxx, local:true do |form|
+            -# =faicon 'musimegane'
+        .menu__lower-nav
+          .lower-nav__contents-search
+            //以下カテゴリーjQuery実装予定
+            %ul.contents-search__category-list
+              =link_to 'カテゴリーから探す'
+              %li
+                =link_to 'レディース'
+              %li
+                =link_to 'メンズ'
+              %li
+                =link_to 'ベビー・キッズ'
+              %li
+                =link_to 'インテリア・住まい・小物'
+              %li
+                =link_to '本・音楽・ゲーム'
+              %li
+                =link_to 'おもちゃ・ホビー・グッズ'
+              %li
+                =link_to 'コスメ・香水・美容'
+              %li
+                =link_to '家電・スマホ・カメラ'
+              %li
+                =link_to 'スポーツ・レジャー'
+              %li
+                =link_to 'ハンドメイド'
+              %li
+                =link_to 'チケット'
+              %li
+                =link_to '自転車・オートバイ'
+              %li
+                =link_to 'その他'
+              %li
+                =link_to 'カテゴリー一覧'
+            //以下カテゴリーjQuery実装予定
+            %ul.contents-search__brand-list
+              =link_to 'ブランドから探す'
+              %li
+                =link_to 'シャネル'
+              %li
+                =link_to 'ナイキ'
+              %li
+                =link_to 'ルイヴィトン'
+              %li
+                =link_to 'シュプリーム'
+              %li
+                =link_to 'アディダス'
+              %li
+                =link_to 'カテゴリー一覧'
+          //いいね！一覧、お知らせ、やることリスト、マイページ
+          //命名が分からなかったのでcontensで仮置き
+          %ul.lower-nav__contents 
+            %li
+              =link_to 'いいね一覧'
+              -# =faicon 'fa-heart'
+            %li
+              =link_to 'お知らせ'
+              -# =faicon 'fa-bell'
+            %li
+              =link_to 'やることリスト'
+              -# =faicon '	fa-check'
+            %li
+              =link_to 'マイページ'
+              -# =img "xxxjpg", "マイページアイコン", '32×32'
