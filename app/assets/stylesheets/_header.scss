@@ -1,27 +1,27 @@
-.header{
+.header-wrapper{
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     position: relative;
     z-index: 3;
 
-  .header_nav{
+  .header-wrapper__menu{
     width: 700px;
     margin: 0px auto;
     padding: 8px 0px 0px;
     
-    .header_nav_upper{
+    .menu__upper-nav{
       display: flex;
       -webkit-box-pack: justify;
       justify-content: space-between;
 
-        .header_nav_upper_logo{
+      .upper-nav__logo{
           -webkit-box-align: center;
           align-items: center;
           display: flex;
           height: 40px;
           margin-right: 45px;
         }
-        .header_nav_upper_input{
+        .upper-nav__search{
             background-color: rgb(245, 245, 245);
             font-size: 16px;
             height: 40px;
@@ -40,17 +40,17 @@
         }
     }
 
-    .header_nav_under{
+    .menu__lower-nav{
       display: flex;
       -webkit-box-pack: justify;
       justify-content: space-between;
       margin-top: 8px;
 
-      .header_nav_under_right{
+      .lower-nav__contents-search{
         display: flex;
         margin-left: -3px;
 
-        .header_nav_under_right_categories_find_btn{
+        .contents-search__category-list{
         padding-left: 0px;
         cursor: pointer;
         height: 44px;
@@ -58,7 +58,7 @@
         z-index: 3;
         padding: 0px 10px
         }
-        .header_nav_under_right_brand_find_btn{
+        .contents-search__brand-list{
         padding-left: 0px;
         cursor: pointer;
         height: 44px;
@@ -67,18 +67,11 @@
         padding: 0px 10px
         }
       }
-      .header_nav_under_left{
+      .lower-nav__contents {
         display: flex;
-        .header_nav_under_left_new_register_btn{
-          text-align: center;
+        text-align: center;
+        margin-left: 11px;
 
-        }
-
-        .header_nav_under_left_login_btn{
-          text-align: center;
-          margin-left: 11px;
-
-        }
       }
     }
   }
