@@ -1,75 +1,6 @@
 -# = render 'shared/header'
--# = render 'shared/side_bar'
-.mypage-wrapper
-  .sideBar-wrapper
-    .sideBar
-      %ul.c-clickChange.is-active
-        = link_to 'マイページ'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'お知らせ'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'やることリスト'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'いいね！一覧'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '出品する'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '出品した商品 - 出品中'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '出品した商品 - 取引中'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '出品した商品 - 売却済み'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '購入した商品 - 取引中'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '購入した商品 - 過去の取引'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'ニュース一覧'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to '評価一覧'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'ガイド'
-        = fa_icon 'fa-angle-right'
-      %ul.c-clickChange
-        = link_to 'お問い合わせ'
-        = fa_icon 'fa-angle-right'
-    %h3
-      メルペイ
-    .sideBar
-      %ul.c-clickChange
-        = link_to '売上・振込申請'
-      %ul.c-clickChange
-        = link_to 'ポイント'
-    %h3
-      設定
-    .sideBar
-      %ul.c-clickChange
-        = link_to 'プロフィール'
-      %ul.c-clickChange
-        = link_to '発送元・お届け先住所変更'
-      %ul.c-clickChange
-        = link_to '支払い方法'
-      %ul.c-clickChange
-        = link_to 'メール/パスワード'
-      %ul.c-clickChange
-        = link_to '本人情報'
-      %ul.c-clickChange
-        = link_to '電話番号の確認'
-      %ul.c-clickChange
-        = link_to 'ログアウト'
 
+.mypage-wrapper
   .contents
     .mypageUser
       .mypageUser__icon
@@ -78,25 +9,19 @@
       .mypageUser__evaluation
         評価 0  出品数 0
     .mypageNews
-      .mypageNews__notification.c-clickChange
+      .mypageNews__notification
         お知らせ
         .mypageNews__content
-      .mypageNews__todo.c-clickChange
+      .mypageNews__todo
         やることリスト
         .mypageNews__content
     .mypagePurchase-title
       購入した商品
     .mypagePurchase
-      .mypagePurchase__nowTrade.c-clickChange
+      .mypagePurchase__nowTrade
         取引中
-      .mypagePurchase__pastTrade.c-clickChange
+      .mypagePurchase__pastTrade
         過去の取引
+  = render './sideBar'
 
 -# = render 'shared/footer'
-
--# :javascript
-  $(function() {
-    $(".c-clickChange").on('click', function(){
-        $(this).css("background", "#FFE6EE");
-    });
-  });
