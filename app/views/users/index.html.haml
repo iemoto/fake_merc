@@ -9,19 +9,34 @@
       .mypageUser__evaluation
         評価 0  出品数 0
     .mypageNews
-      .mypageNews__notification
+      .mypageNews__tab.isMypageButton
         お知らせ
         .mypageNews__content
-      .mypageNews__todo
+      .mypageNews__tab
         やることリスト
         .mypageNews__content
     .mypagePurchase-title
       購入した商品
     .mypagePurchase
-      .mypagePurchase__nowTrade
+      .mypagePurchase__tab.isMypageButton
         取引中
-      .mypagePurchase__pastTrade
+      .mypagePurchase__tab
         過去の取引
   = render './sideBar'
 
 -# = render 'shared/footer'
+
+:javascript
+  $(function(){
+    $(".mypageNews__tab").on('click', function(e){
+      e.preventDefault();
+      $('.mypageNews__tab').removeClass('isMypageButton');
+      $(this).toggleClass('isMypageButton');
+    });
+      $(".mypagePurchase__tab").on('click', function(e){
+      e.preventDefault();
+      $('.mypagePurchase__tab').removeClass('isMypageButton');
+      $(this).toggleClass('isMypageButton');
+    });
+
+  });

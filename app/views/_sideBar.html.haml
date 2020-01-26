@@ -75,3 +75,12 @@
     %ul.sideBar__item
       = link_to 'ログアウト', '#'
       = fa_icon 'angle-right'
+
+:javascript
+  $(function(){
+    $(".sideBar__item").on('click', function(e){
+      e.preventDefault();
+      $('.sideBar__item').removeClass('isSideButton');
+      $(this).toggleClass('isSideButton');
+    });
+  });
