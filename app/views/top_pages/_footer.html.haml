@@ -21,10 +21,10 @@
     //フッター
     %footer.footer__wrapper
       %nav.footer__nav
-        .nav__first
+        .nav__all
           %h2
             メルカリについて
-          %ul.first__list
+          %ul.all__list
             %li
               =link_to '会社概要(運営会社)'
             %li
@@ -41,10 +41,10 @@
             %li
               =link_to 'フェイスブック'
               -# =icon 'フェイスブック'
-        .nav__second
+        .nav__all
           %h2
             ヘルプ＆ガイド
-          %ul.second__list
+          %ul.all__list
             %li
               =link_to 'メルカリガイド'
             %li
@@ -61,11 +61,11 @@
               =link_to '偽ブランド品撲滅への取組み'
             %li
               =link_to 'メルカリボックス'
-        .nav__third
+        .nav__big
           %h2
             プライバシーと利用規約
-          .third__right
-            %ul.right__list
+          .big__block
+            %ul.block__right-list
               %li
                 =link_to 'プライバシーポリシー'
               %li
@@ -74,8 +74,7 @@
                 =link_to 'あんしんスマホサポート制度に関\する利用特約'
               %li
                 =link_to 'コンプライアンスポリシー'
-          .third__left
-            %ul.left__list
+            %ul.block__left-list
               %li
                 =link_to '個人データの安全管理に係る基本方針'
               %li
@@ -84,10 +83,10 @@
                 =link_to '資金決済方に基づく表示'
               %li
                 =link_to '法令遵守と犯罪抑止のために'
-          .nav__fourth
+        .nav__all
           %h2
             国
-          %ul.fourth__list
+          %ul.all__list
             %li
               =link_to '日本'
             %li
