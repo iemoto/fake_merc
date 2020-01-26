@@ -1,34 +1,37 @@
-<<<<<<< HEAD
 .main-wrapper
   .main-wrapper__contents
     .contents__Notice
-      =link_to 'お知らせ'
-      -# //.slider
-        -# //.slider
-          %ul.slider-list
-            %li.slider-slide
-              =link_to 'スライド'
-            %li.slider-slide__wrapper
-              .warapper__content
-                =img_tag 'スマホイメージ画像'
-                .contents
-                .content__text 'スマホでかんたん' %br 'フリマアプリ'
-                %p.text 'メルカリはスマホカメラからすぐ出品できる' %br '購入時も安心な独自システムです'
-                .app__img
-                  =link_to '#'
-                  =img_tag 'APP Store'
-                .android__img
-                  =link_to '#'
-                  =img_tag 'Android'
-          .slider-corsol-left
-            =faicon '#'
-          .slider-corsol-right
-            =faicon '#'        
-          .slider-position
-            =faicon '#'
+      .warapper__content
+        =image_tag("https://i0.wp.com/jp-news.mercari.com/wp-content/uploads/2020/01/blog_SNS.png?w=1200&ssl=1",size:"1073x390")
+       
+      -# =link_to 'お知らせ'
+      -# -# //.slider
+      -#   -# //.slider
+      -#     %ul.slider-list
+      -#       %li.slider-slide
+      -#         =link_to 'スライド'
+      -#       %li.slider-slide__wrapper
+      -#         .warapper__content
+      -#           =img_tag 'スマホイメージ画像'
+      -#           .contents
+      -#           .content__text 'スマホでかんたん' %br 'フリマアプリ'
+      -#           %p.text 'メルカリはスマホカメラからすぐ出品できる' %br '購入時も安心な独自システムです'
+      -#           .app__img
+      -#             =link_to '#'
+      -#             =img_tag 'APP Store'
+      -#           .android__img
+      -#             =link_to '#'
+      -#             =img_tag 'Android'
+      -#     .slider-corsol-left
+      -#       =faicon '#'
+      -#     .slider-corsol-right
+      -#       =faicon '#'        
+      -#     .slider-position
+      -#       =faicon '#'
     //人気のカテゴリー
     .category-wrapper
       %h2
+      .name
         人気のカテゴリー
       .category-wrapper__nav
         %ul.nav__list
@@ -46,7 +49,8 @@
         .contents-first__name
           %h3
             'レディース新着アイテム'
-          =link_to 'もっと見る'
+          .more
+            =link_to 'もっと見る'
           -# =faicon 'fa-chevron-right'
         .contents-first__goods
           %ul.goods__list
@@ -75,6 +79,7 @@
     //人気のブランド
     .bland-wrapper
       %h2
+      .name
         人気のブランド
       .bland-wrapper__nav
         %ul.nav__list

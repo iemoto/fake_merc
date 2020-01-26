@@ -49,30 +49,45 @@
             //以下カテゴリーjQuery実装予定
             %ul.contents-search__brand-list
               =link_to 'ブランドから探す'
-              %li
-                =link_to 'シャネル'
-              %li
-                =link_to 'ナイキ'
-              %li
-                =link_to 'ルイヴィトン'
-              %li
-                =link_to 'シュプリーム'
-              %li
-                =link_to 'アディダス'
-              %li
-                =link_to 'カテゴリー一覧'
+              -# %li
+              -#   =link_to 'シャネル'
+              -# %li
+              -#   =link_to 'ナイキ'
+              -# %li
+              -#   =link_to 'ルイヴィトン'
+              -# %li
+              -#   =link_to 'シュプリーム'
+              -# %li
+              -#   =link_to 'アディダス'
+              -# %li
+              -#   =link_to 'カテゴリー一覧'
           //いいね！一覧、お知らせ、やることリスト、マイページ
           //命名が分からなかったのでcontensで仮置き
-          %ul.lower-nav__contents 
-            %li
-              =link_to 'いいね一覧'
-              -# =faicon 'fa-heart'
-            %li
-              =link_to 'お知らせ'
-              -# =faicon 'fa-bell'
-            %li
-              =link_to 'やることリスト'
-              -# =faicon '	fa-check'
-            %li
-              =link_to 'マイページ'
-              -# =img "xxxjpg", "マイページアイコン", '32×32'
+          .lower-nav__contents-resgister
+            .contents-register--new
+              =link_to "新規会員登録"
+            .contents-register--login
+              =link_to "ログイン"
+
+
+
+
+
+
+
+
+
+          
+          -# %ul.lower-nav__contents 
+          -#   %li
+          -#     =link_to 'いいね一覧'
+          -#     -# =faicon 'fa-heart'
+          -#   %li
+          -#     =link_to 'お知らせ'
+          -#     -# =faicon 'fa-bell'
+          -#   %li
+          -#     =link_to 'やることリスト'
+          -#     -# =faicon '	fa-check'
+          -#   %li
+          -#     =link_to 'マイページ'
+          -#     -# =img "xxxjpg", "マイページアイコン", '32×32'
