@@ -1,3 +1,4 @@
+ @import "./mixin";
  @import "./reset";
  @import "./font-awesome";
  @import "font-awesome-sprockets";
@@ -5,7 +6,7 @@
  @import "./header";
  @import "./item_zone";
  @import "./footer";
-
+ 
  
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
