@@ -25,17 +25,3 @@
   = render './sideBar'
 
 -# = render 'shared/footer'
-
-:javascript
-  $(function(){
-    $(".mypageNews__tab").on('click', function(e){
-      e.preventDefault();
-      $('.mypageNews__tab').removeClass('isMypageButton');
-      $(this).toggleClass('isMypageButton');
-    });
-      $(".mypagePurchase__tab").on('click', function(e){
-      e.preventDefault();
-      $('.mypagePurchase__tab').removeClass('isMypageButton');
-      $(this).toggleClass('isMypageButton');
-    });
-  });
