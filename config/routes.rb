@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # root 'tests#index'
-  ## リンク作成後、以下みたいに修正
-  # get '/mypage', to: 'users#index'
+  devise_for :users
   root 'users#index'
+  resources :users, only: [:index]
 end
