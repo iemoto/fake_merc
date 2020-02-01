@@ -1,40 +1,14 @@
 .main-wrapper
-  .main-wrapper__contents
-    .contents__Notice
-      .warapper__content
-        =image_tag("https://i0.wp.com/jp-news.mercari.com/wp-content/uploads/2020/01/blog_SNS.png?w=1200&ssl=1",size:"1073x390")
-       
-      -# =link_to 'お知らせ'
-      -# -# //.slider
-      -#   -# //.slider
-      -#     %ul.slider-list
-      -#       %li.slider-slide
-      -#         =link_to 'スライド'
-      -#       %li.slider-slide__wrapper
-      -#         .warapper__content
-      -#           =img_tag 'スマホイメージ画像'
-      -#           .contents
-      -#           .content__text 'スマホでかんたん' %br 'フリマアプリ'
-      -#           %p.text 'メルカリはスマホカメラからすぐ出品できる' %br '購入時も安心な独自システムです'
-      -#           .app__img
-      -#             =link_to '#'
-      -#             =img_tag 'APP Store'
-      -#           .android__img
-      -#             =link_to '#'
-      -#             =img_tag 'Android'
-      -#     .slider-corsol-left
-      -#       =faicon '#'
-      -#     .slider-corsol-right
-      -#       =faicon '#'        
-      -#     .slider-position
-      -#       =faicon '#'
+  .main-contents
+    .main-contents__notice
+      =image_tag("https://i0.wp.com/jp-news.mercari.com/wp-content/uploads/2020/01/blog_SNS.png?w=1200&ssl=1",size:"1073x390")
     //人気のカテゴリー
-    .category-wrapper
+    .category
       %h2
-      .name
+      .category__title
         人気のカテゴリー
-      .category-wrapper__nav
-        %ul.nav__list
+      .category__nav
+        %ul.category__nav--list
           %li
             =link_to 'レディース'
           %li
@@ -43,46 +17,43 @@
             =link_to '家電・スマホ・カメラ・'
           %li
             =link_to 'おもちゃ・ホビー・グッズ'
-            
-    .new-items__wrapper
-      .wrapper__contents-first
-        .contents-first__name
+    .new-items
+      .category__new-items
+        .category__new-items--title
           %h3
-            'レディース新着アイテム'
-          .more
-            =link_to 'もっと見る'
-          -# =faicon 'fa-chevron-right'
-        .contents-first__goods
-          %ul.goods__list
-            %li
-              =link_to '商品1'
-            %li
-              =link_to '商品2'
-            %li
-              =link_to '商品3'
-            %li
-              =link_to '商品4'
-            %li
-              =link_to '商品5'
-            %li
-              =link_to '商品6'
-            %li
-              =link_to '商品7'
-            %li
-              =link_to '商品8'
-            %li
-              =link_to '商品9'
-            %li
-              =link_to '商品10'
-
-
+            レディース新着アイテム
+        .category__new-items--more
+          =link_to 'もっと見る'
+          =fa_icon 'chevron-right'
+      .category__new-goods
+        %ul.category__new-goods--list
+          %li
+            =link_to '商品1'
+          %li
+            =link_to '商品2'
+          %li
+            =link_to '商品3'
+          %li
+            =link_to '商品4'
+          %li
+            =link_to '商品5'
+          %li
+            =link_to '商品6'
+          %li
+            =link_to '商品7'
+          %li
+            =link_to '商品8'
+          %li
+            =link_to '商品9'
+          %li
+            =link_to '商品10'
     //人気のブランド
-    .bland-wrapper
+    .bland
       %h2
-      .name
+      .bland__title
         人気のブランド
-      .bland-wrapper__nav
-        %ul.nav__list
+      .bland__nav
+        %ul.bland__nav--list
           %li
             =link_to 'シャネル'
           %li
@@ -91,32 +62,33 @@
             =link_to 'シュプリーム'
           %li
             =link_to 'ナイキ'
-    .new-items__wrapper
-      .wrapper__contents-first
-        .contents-first__name
+    .new-items
+      .bland__new-items
+        .bland__new-items--title
           %h3
-            'シャネル新着アイテム'
+            シャネル新着アイテム
+        .bland__new-items--more
           =link_to 'もっと見る'
-          -# =faicon 'fa-chevron-right'
-        .contents-first__goods
-          %ul.goods__list
-            %li
-              =link_to '商品1'
-            %li
-              =link_to '商品2'
-            %li
-              =link_to '商品3'
-            %li
-              =link_to '商品4'
-            %li
-              =link_to '商品5'
-            %li
-              =link_to '商品6'
-            %li
-              =link_to '商品7'
-            %li
-              =link_to '商品8'
-            %li
-              =link_to '商品9'
-            %li
-              =link_to '商品10'
+          =fa_icon 'chevron-right'
+      .bland__new-goods
+        %ul.bland__new-goods--list
+          %li
+            =link_to '商品1'
+          %li
+            =link_to '商品2'
+          %li
+            =link_to '商品3'
+          %li
+            =link_to '商品4'
+          %li
+            =link_to '商品5'
+          %li
+            =link_to '商品6'
+          %li
+            =link_to '商品7'
+          %li
+            =link_to '商品8'
+          %li
+            =link_to '商品9'
+          %li
+            =link_to '商品10'

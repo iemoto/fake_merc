@@ -1,26 +1,28 @@
 .main-wrapper
   background-color: whitesmoke
-  .main-wrapper__contents
+  .main-contents
     position: relative
-    margin: 0px 170px 0px
-    .contents__Notice
+    &__notice
       object-fit: cover
       .img
-      height: 290px
-      width: 800px
-      margin: 0px
-    .category-wrapper
+        height: 290px
+        width: 100%
+        margin: 0px
+    .category
       padding: 56px 0px 30px
       background-color: rgb(255, 255, 255)
       left: 50%
       margin-left: -50vw
       position: relative
       width: 100vw
-      .name
+      &__title
         margin-bottom: 16px
         text-align: center
-    .category-wrapper__nav
-        .nav__list
+        font-weight: bold
+        font-size: 20px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+      &__nav
+        &--list
           display: flex
           justify-content: center
           li
@@ -29,9 +31,28 @@
             display: inline-block
             font-size: 14px
             font-weight: 600
-            border-radius: 15px
+            border-radius: 10px
             padding: 8px 16px
-    .bland-wrapper
+            margin-right: 15px
+            a
+              text-decoration: none
+              color: black
+    .new-items
+      background-color: whitesmoke
+      .category__new-items
+        display: flex
+        justify-content: space-around
+        margin-top: 30px
+        &--title
+          font-size: 20px
+          font-weight: bold
+          font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+        &--more
+          a,i
+            text-decoration: none
+            color: #0095ee
+            
+    .bland
       text-align: center
       padding: 56px 0px 30px
       background-color: rgb(255, 255, 255)
@@ -39,12 +60,14 @@
       margin-left: -50vw
       position: relative
       width: 100vw
-      // margin: auto
-    .name
-      margin-bottom: 16px
-      text-align: center
-    .bland-wrapper__nav
-        .nav__list
+      &__title
+        margin-bottom: 16px
+        text-align: center
+        font-weight: bold
+        font-size: 20px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+      &__nav
+        &--list
           display: flex
           justify-content: center
           li
@@ -55,42 +78,25 @@
             font-weight: 600
             border-radius: 15px
             padding: 8px 16px
-            color: black
-    .new-items__wrapper
+            margin-right: 15px
+            a
+              text-decoration: none
+              color: black
+    .new-items
       background-color: whitesmoke
-      .wrapper__contents-first
-       
-        .contents-first__name
-          display: flex
-          justify-content: space-between
-          .more
-            align-items: center
-            color: #0095ee
-            cursor: pointer
-            display: inline-flex
-            line-height: 1.4em
+      .bland__new-items
+        display: flex
+        justify-content: space-around
+        margin-top: 30px
+        &--title
+          font-size: 20px
+          font-weight: bold
+          font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+        &--more
+          a,i
             text-decoration: none
-            word-break: normal
-        .contents-first__goods
-          .goods__list
-      .nav__list
-        display: block
-        text-align: center
-        width: 100%
-  .new-items__wrapper
-    .wrapper__contents-first
-    // .main-wrapper__contents
-      .contents-first__name
-        display: flex
-        // align-items: center
-        justify-content: space-between
-      .contents-first__goods
-        -webkit-box-align: center
-        align-items: center
-        display: flex
-        -webkit-box-pack: justify
-        justify-content: space-between
-        .goods__list
+            color: #0095ee
+
 
 
 
