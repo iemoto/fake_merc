@@ -8,34 +8,40 @@ Things you may want to cover:
 # DB設計
 
 ## Usersテーブル
+|Column|Type|Options|
+|------|----|-------|
 |nick_name|String|null: false,index: true|
 |email|String|null: false,index: true,unique: true|
 |password|String|null: false|
 
 ### Association
-- has_many: delivery_users
-- has_many: parsonal_users
-- has_many: credit_cards
-- has_many: point_moneys
-- has_many: user_profiles
-- has_many: user_ratings
-- has_many: to_dos
-- has_many: likes
-- has_many: sell_comments
-- has_many: sell_items
-- has_many: buy_items
-- has_many: sell_moneys
-- has_many: buy_comments
+- has_many :delivery_users
+- has_many :parsonal_users
+- has_many :credit_cards
+- has_many :point_moneys
+- has_many :user_profiles
+- has_many :user_ratings
+- has_many :to_dos
+- has_many :likes
+- has_many :sell_comments
+- has_many :sell_items
+- has_many :buy_items
+- has_many :sell_moneys
+- has_many :buy_comments
 
 ## Prefecture_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |prefecture_name|String|null: false|
 
 ### Association
-- belongs_to: delivery_user
-- belongs_to: parsonal_user
-- belongs_to: item
+- belongs_to :delivery_user
+- belongs_to :parsonal_user
+- belongs_to :item
 
 ## Delivery_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|
 |first_name|String|null: false|
 |last_name|String|null: false|
@@ -49,10 +55,12 @@ Things you may want to cover:
 |phone_number|Integer|
 
 ### Association
-- has_many: prefecture_address
-- belongs_to: user
+- has_many :prefecture_address
+- belongs_to :user
 
 ## Parsonal_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |birth_year|Integer|null: false|
 |birth_month|Integer|null: false|
@@ -64,11 +72,13 @@ Things you may want to cover:
 |building_name_adress|String|
 
 ### Association
-- has_many: prefecture_address
-- belongs_to: user
+- has_many :prefecture_address
+- belongs_to :user
 
 
 ## Credit_cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |card_number|Integer|null: false|
 |card_month|Integer|null: false|
@@ -76,27 +86,33 @@ Things you may want to cover:
 |security_code|Integer|null: false|
 
 ### Association
-- belongs_to: user
+- belongs_to :user
 
 ## Point_moneysテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |point_moneys|Integer|null: false|
 |sell_money|References|
 |buy_item|References|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_money
-- belongs_to: buy_item
+- belongs_to :user
+- belongs_to :sell_money
+- belongs_to :buy_item
 
 ## User_profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |profile|String|
 
 ### Association
-- belongs_to: user
+- belongs_to :user
 
 ## User_ratingsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |good|Integer|
 |nomal|Integer|
@@ -105,22 +121,26 @@ Things you may want to cover:
 |buy_item|References|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_item
-- belongs_to: buy_item
+- belongs_to :user
+- belongs_to :sell_item
+- belongs_to :buy_item
 
 
 ## To_dosテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |sell_item|References|
 |buy_item|References|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_item
-- belongs_to: buy_item
+- belongs_to :user
+- belongs_to :sell_item
+- belongs_to :buy_item
 
 ## Itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |item_name|String|null: false|
 |item_despriction|String|null: false|
 |money|Integer|null: false|
@@ -136,68 +156,82 @@ Things you may want to cover:
 |size|References|null: false|
 
 ### Association
-- has_many: prefecture_address
-- has_many: categorie
-- has_many: item_condition
-- has_many: shipping_fee
-- has_many: shipping_method
-- has_many: ship_date
-- has_many: shipping_method
-- has_many: brand
-- has_many: size
+- has_many :prefecture_address
+- has_many :categorie
+- has_many :item_condition
+- has_many :shipping_fee
+- has_many :shipping_method
+- has_many :ship_date
+- has_many :shipping_method
+- has_many :brand
+- has_many :size
 
 ## Brandsテーブル
 |brand_name|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 ## Likesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |Item|References|null: false,foreign_key: ture|
 |user|References|null: false,foreign_key: ture|
 
 ### Association
-- belongs_to: item
-- belongs_to: user
+- belongs_to :item
+- belongs_to :user
 
 ## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |item|References|null: false|
 |image_url|String|
 |img_count|integer|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 
 ## Sell_Commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |sell_item|References|null: false|
 |sell_message|String|null: false|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_item
+- belongs_to :user
+- belongs_to :sell_item
 
 
 ## Categorie1テーブル
+|Column|Type|Options|
+|------|----|-------|
 |categorie1_name|String|null: false|
 
 ### Association
-- belongs_to: categorie
+- belongs_to :categorie
 
 ## Categorie2テーブル
+|Column|Type|Options|
+|------|----|-------|
 |categorie2_name|String|null: false|
 
 ### Association
-- belongs_to: categorie
+- belongs_to :categorie
 
 ## Categorie3テーブル
+|Column|Type|Options|
+|------|----|-------|
 |categorie3_name|String|null: false|
 
 ### Association
-- belongs_to: categorie
+- belongs_to :categorie
 
 ## Categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |categorie1|References|null: false|
 |categorie2|References|null: false|
 |categorie3|References|null: false|
@@ -205,17 +239,21 @@ Things you may want to cover:
 |size|boolean|null: false|
 
 ### Association
-- has_many: categorie1
-- has_many: categorie2
-- has_many: categorie3
+- has_many :categorie1
+- has_many :categorie2
+- has_many :categorie3
 
 ## Sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |size_categorie|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 ## Sell_Itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |item|References|null: false|
 |delibery_for|boolean|null: false|
@@ -223,68 +261,82 @@ Things you may want to cover:
 |commition|integer|null: false|
 
 ### Association
-- belongs_to: user
-- has_many: items
-- has_many: user_ratings
-- has_many: to_dos
-- has_many: sell_comments
-- has_many: buy_items
-- has_many: sell_moneys
+- belongs_to :user
+- has_many :items
+- has_many :user_ratings
+- has_many :to_dos
+- has_many :sell_comments
+- has_many :buy_items
+- has_many :sell_moneys
 
 ## Buy_Itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |Arrival_confirmation|boolean|null: false|
 |sell_item|References|null: false|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_item
-- has_many: point_moneys
-- has_many: user_ratings
-- has_many: to_dos
-- has_many: buy_comments
+- belongs_to :user
+- belongs_to :sell_item
+- has_many :point_moneys
+- has_many :user_ratings
+- has_many :to_dos
+- has_many :buy_comments
 
 ## Item_conditionsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |item_condition|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 ## Shipping_feesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |shipping_fee|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 
 ## Ship_datesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |ship_date|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 
 ## Shipping_methodsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |shipping_method|String|null: false|
 
 ### Association
-- belongs_to: item
+- belongs_to :item
 
 ## Sell_moneysテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |sell_item|References|null: false|
 |sell_money|Integer|null: false|
 
 ### Association
-- belongs_to: user
-- belongs_to: sell_item
-- has_many: point_moneys
+- belongs_to :user
+- belongs_to :sell_item
+- has_many :point_moneys
 
 ## Buy_Commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user|References|null: false|
 |buy_item|References|null: false|
 |buy_message|String|null: false|
 
 ### Association
-- belongs_to: user
-- belongs_to: buy_item
+- belongs_to :user
+- belongs_to :buy_item
