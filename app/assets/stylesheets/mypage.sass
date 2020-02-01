@@ -1,0 +1,79 @@
+@mixin mypageTab__fonts
+  width: 50%
+  text-align: center
+  font-size: 16px
+  line-height: 72px
+  font-weight: bold
+  color: rgb(51, 51, 51)
+  background-color: #eee
+  height: 72px
+
+@mixin mypageUser__fonts
+  text-align: center
+  margin-top: 8px
+
+// 仮置き
+body
+  background-color: rgb(245, 245, 245)
+
+.mypage-wrapper
+  width: 1020px
+  display: flex
+  // hamlで表示順を逆にしているため追記
+  flex-direction: row-reverse
+  margin: auto
+  margin-top: 40px
+  // スマホ対応するなら以下も対応
+    // @media (max-width: 1060px)
+    // display: flex
+    // flex-direction: column
+
+.contents
+  margin-right: auto
+  margin-left: auto
+
+.mypageUser
+  width: 660px
+  height: 160px
+  padding: 20px
+  background-color: white
+  &__icon
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background-color: rgb(245, 245, 245)
+    margin: auto
+    margin-top: 10px
+  &__name
+    @include mypageUser__fonts
+  &__evaluation
+    @include mypageUser__fonts
+
+.mypageNews
+  height: 310px
+  background-color: white
+  display: flex
+  &__tab
+    @include mypageTab__fonts
+  &__content
+    background-color: rgb(250, 250, 250)
+
+.mypagePurchase-title
+  font-size: 16px
+  background-color: #fafafa
+  height: 72px
+  line-height: 72px
+  margin-top: 40px
+  margin-bottom: 0
+  padding: 0 16px
+
+.mypagePurchase
+  background-color: white
+  height: 310px
+  display: flex
+  &__tab
+    @include mypageTab__fonts
+
+.isMypageButton
+  border-top: 2px solid red
+  background-color: white

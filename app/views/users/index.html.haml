@@ -1,8 +1,27 @@
-%h1 トップページ
-- if user_signed_in?
-  %h2 ログインしています
-  = link_to "ログアウト" , destroy_user_session_path, method: :delete
-- else
-  %h2 ログインしていません
-  = link_to "新規登録" ,new_user_session_path
-  = link_to "ログイン" ,user_session_path
+-# = render 'shared/header'
+
+.mypage-wrapper
+  .contents
+    .mypageUser
+      .mypageUser__icon
+      .mypageUser__name
+        user name
+      .mypageUser__evaluation
+        評価 0  出品数 0
+    .mypageNews
+      .mypageNews__tab.isMypageButton
+        お知らせ
+        .mypageNews__content
+      .mypageNews__tab
+        やることリスト
+        .mypageNews__content
+    .mypagePurchase-title
+      購入した商品
+    .mypagePurchase
+      .mypagePurchase__tab.isMypageButton
+        取引中
+      .mypagePurchase__tab
+        過去の取引
+  = render './sideBar'
+
+-# = render 'shared/footer'
