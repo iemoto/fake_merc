@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: fake_merc_production
-  username: fake_merc
+  username: root
   password: <%= ENV['FAKE_MERC_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

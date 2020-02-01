@@ -1,0 +1,33 @@
+.sideBar-wrapper
+  display: block
+  // スマホ対応するなら必要
+  @media (max-width: 1060px)
+    display: none
+
+.sideBar
+  width: 280px
+  background-color: white
+  margin-right: 40px
+  a
+    width: 280px
+    height: 32px
+    font-size: 14px
+    text-decoration: none
+    color: black
+  ul
+    margin: 0
+    padding: 16px
+    height: 16px
+  ul:hover
+    background-color: #eee
+  &__icon
+    text-align: end
+  &__item
+    display: flex
+    justify-content: space-between
+  &__title
+    height: 16px
+    font-size: 17px
+
+.isSideButton
+  background-color: #eee
