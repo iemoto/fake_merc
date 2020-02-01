@@ -29,16 +29,6 @@ Things you may want to cover:
 - has_many :sell_moneys
 - has_many :buy_comments
 
-## Prefecture_addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|prefecture_name|String|null: false|
-
-### Association
-- belongs_to :delivery_user
-- belongs_to :parsonal_user
-- belongs_to :item
-
 ## Delivery_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -55,7 +45,6 @@ Things you may want to cover:
 |phone_number|Integer|
 
 ### Association
-- has_many :prefecture_address
 - belongs_to :user
 
 ## Parsonal_usersテーブル
@@ -72,9 +61,7 @@ Things you may want to cover:
 |building_name_adress|String|
 
 ### Association
-- has_many :prefecture_address
 - belongs_to :user
-
 
 ## Credit_cardsテーブル
 |Column|Type|Options|
@@ -125,7 +112,6 @@ Things you may want to cover:
 - belongs_to :sell_item
 - belongs_to :buy_item
 
-
 ## To_dosテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -141,14 +127,15 @@ Things you may want to cover:
 ## Itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|String|null: false|
-|item_despriction|String|null: false|
+|name|String|null: false|
+|despriction|String|null: false|
 |money|Integer|null: false|
 |sold_out|boolean|null: false|
 |prefecture_address|References|null: false|
 |categorie|References|null: false|
 |item_condition|References|null: false|
 |shipping_fee|References|null: false|
+|shipping_fee_side|boolean|null: false|
 |shipping_method|References|null: false|
 |ship_date|References|null: false|
 |shipping_method|References|null: false|
@@ -156,21 +143,7 @@ Things you may want to cover:
 |size|References|null: false|
 
 ### Association
-- has_many :prefecture_address
 - has_many :categorie
-- has_many :item_condition
-- has_many :shipping_fee
-- has_many :shipping_method
-- has_many :ship_date
-- has_many :shipping_method
-- has_many :brand
-- has_many :size
-
-## Brandsテーブル
-|brand_name|String|null: false|
-
-### Association
-- belongs_to :item
 
 ## Likesテーブル
 |Column|Type|Options|
@@ -187,11 +160,9 @@ Things you may want to cover:
 |------|----|-------|
 |item|References|null: false|
 |image_url|String|
-|img_count|integer|
 
 ### Association
 - belongs_to :item
-
 
 ## Sell_Commentsテーブル
 |Column|Type|Options|
@@ -204,46 +175,15 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :sell_item
 
-
-## Categorie1テーブル
-|Column|Type|Options|
-|------|----|-------|
-|categorie1_name|String|null: false|
-
-### Association
-- belongs_to :categorie
-
-## Categorie2テーブル
-|Column|Type|Options|
-|------|----|-------|
-|categorie2_name|String|null: false|
-
-### Association
-- belongs_to :categorie
-
-## Categorie3テーブル
-|Column|Type|Options|
-|------|----|-------|
-|categorie3_name|String|null: false|
-
-### Association
-- belongs_to :categorie
-
 ## Categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|categorie1|References|null: false|
-|categorie2|References|null: false|
-|categorie3|References|null: false|
+|name|String|null: false|
+|ancestry|String|null: false|
 |brand|boolean|null: false|
 |size|boolean|null: false|
 
-### Association
-- has_many :categorie1
-- has_many :categorie2
-- has_many :categorie3
-
-## Sizesテーブル
+## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |size_categorie|String|null: false|
@@ -283,40 +223,6 @@ Things you may want to cover:
 - has_many :user_ratings
 - has_many :to_dos
 - has_many :buy_comments
-
-## Item_conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_condition|String|null: false|
-
-### Association
-- belongs_to :item
-
-## Shipping_feesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|shipping_fee|String|null: false|
-
-### Association
-- belongs_to :item
-
-
-## Ship_datesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|ship_date|String|null: false|
-
-### Association
-- belongs_to :item
-
-
-## Shipping_methodsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|shipping_method|String|null: false|
-
-### Association
-- belongs_to :item
 
 ## Sell_moneysテーブル
 |Column|Type|Options|
