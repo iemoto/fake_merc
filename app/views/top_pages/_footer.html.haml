@@ -1,20 +1,20 @@
 //フッター上コンテンツ
 %aside.Publicity-wrapper
-  .Publicity__contents
+  .Publicity-wrapper__contents
     .contents__left
       .left__upper-text
         スマホでかんたんフリマアプリ
       .right__lower-text
-        今すぐ無料ダウンロード
+        今すぐ無料ダウンロード!
       .left__app-images
         .app-images__left
-          -# =img_tag 'メルカリロゴ'
+          =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png', size:'68x68',)
         .app-images__center
-          -# =img_tag 'ios'
+          =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
         .app-images__left
-          -# =img_tag 'Android'
+          =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
     .contents__right
-      -# =img_tag 'スマホ画面画像'
+      =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', size:'300x260')
 //フッター
 %footer.footer__wrapper
   %nav.footer__nav
@@ -90,6 +90,6 @@
   //一番下の部分
   .wrapper__lower-content
     .lower-content__log-white
-      =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg')
+      =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg')
     %span.copyright-sign
       © Mercari, Inc.
