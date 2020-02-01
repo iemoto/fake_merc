@@ -159,7 +159,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item|References|null: false|
-|image_url|String|
+|image_url|String|null: false|
 
 ### Association
 - belongs_to :item
