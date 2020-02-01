@@ -15,18 +15,18 @@ Things you may want to cover:
 |password|String|null: false|
 
 ### Association
-- has_many :delivery_users
-- has_many :parsonal_users
-- has_many :credit_cards
-- has_many :point_moneys
-- has_many :user_profiles
+- has_one :delivery_users,dependent: :delete_all
+- has_one :parsonal_users,dependent: :delete_all
+- has_one :credit_cards,dependent: :delete_all
+- has_many :point_moneys,dependent: :delete_all
+- has_one :user_profiles,dependent: :delete_all
 - has_many :user_ratings
-- has_many :to_dos
+- has_many :to_dos,dependent: :delete_all
 - has_many :likes
 - has_many :sell_comments
-- has_many :sell_items
-- has_many :buy_items
-- has_many :sell_moneys
+- has_many :sell_items,dependent: :delete_all
+- has_many :buy_items,dependent: :delete_all
+- has_many :sell_moneys,dependent: :delete_all
 - has_many :buy_comments
 
 ## Delivery_usersテーブル
@@ -202,11 +202,11 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :items
+- has_many :items,dependent: :delete_all
 - has_many :user_ratings
-- has_many :to_dos
-- has_many :sell_comments
-- has_many :buy_items
+- has_many :to_dos,dependent: :delete_all
+- has_many :sell_comments,dependent: :delete_all
+- has_many :buy_items,dependent: :delete_all
 - has_many :sell_moneys
 
 ## Buy_Itemsテーブル
@@ -221,8 +221,8 @@ Things you may want to cover:
 - belongs_to :sell_item
 - has_many :point_moneys
 - has_many :user_ratings
-- has_many :to_dos
-- has_many :buy_comments
+- has_many :to_dos,dependent: :delete_all
+- has_many :buy_comments,dependent: :delete_all
 
 ## Sell_moneysテーブル
 |Column|Type|Options|
@@ -246,3 +246,24 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :buy_item
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
