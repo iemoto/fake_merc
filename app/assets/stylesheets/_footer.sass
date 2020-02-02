@@ -1,0 +1,138 @@
+.Publicity-wrapper
+  background-image: url(footer.lower.jpg)
+  height: 260px
+  background-size: cover
+  .Publicity
+    display: flex
+    justify-content: space-between
+    margin-left: 100px
+    margin-right: 100px
+    &__left-text
+      justify-content: center
+      &--upper
+        color: rgb(255, 255, 255)
+        font-size: 24px
+        font-weight: 600
+        margin-bottom: 15px
+        margin-top: 40px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+      &--lower
+        color: rgb(255, 255, 255)
+        font-size: 34px
+        font-weight: 600
+        margin-bottom: 15px
+        font-weight: normal
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+      .left__app-images
+        display: flex
+        justify-content: space-between
+        line-height: 100px
+.footer__wrapper 
+  background-color: rgb(34, 34, 34)
+  .footer-nav
+    display: flex
+    justify-content: center
+    //以下footerメルカリについて
+    &__block
+      &--title
+        @include font
+      &--list
+        margin-right: 30px
+        li
+          margin-top: 10px
+          font-size: 10px
+          a
+            color: rgb(255, 255, 255)
+            text-decoration: none 
+            cursor: pointer
+          a:hover
+            text-decoration: underline
+        .icon
+          color: rgb(255, 255, 255)
+          margin-top: 20px
+          margin-right: 15px
+          font-size: 20px
+          i
+            margin-right: 10px
+          a
+            color: rgb(255, 255, 255)
+            text-decoration: none 
+            cursor: pointer
+          a:hover
+            text-decoration: underline
+    //以下footerヘルプ&ガイド
+    &__block
+      &--title
+        @include font
+      &--list
+        margin-right: 30px
+        li
+          margin-top: 10px
+          font-size: 10px
+          a
+            color: rgb(255, 255, 255)
+            text-decoration: none 
+            cursor: pointer
+          a:hover
+            text-decoration: underline
+    //以下footerプライバシーと利用規約部分
+    &__block
+      &--title
+        @include font
+      .footer-nav__list
+        display: flex
+        justify-content: center
+        &--left
+          width: 207px
+          margin-right: 10px
+          li
+            margin-top: 10px
+            font-size: 10px
+            a 
+              color: rgb(255, 255, 255)
+              text-decoration: none 
+              cursor: pointer
+            a:hover
+              text-decoration: underline
+        &--right
+          width: 80% 
+          li 
+            margin-top: 10px
+            font-size: 10px
+            a 
+              color: rgb(255, 255, 255)
+              text-decoration: none 
+              cursor: pointer
+            a:hover
+              text-decoration: underline
+    //以下footer国部分
+    &__block
+      &--title
+        @include font
+      &--country
+        margin-right: 30px
+        li
+          margin-top: 10px
+          font-size: 10px
+          a
+            color: rgb(255, 255, 255)
+            text-decoration: none 
+            cursor: pointer
+          a:hover
+            text-decoration: underline
+  .footer-copyright
+    display: flex
+    justify-content: space-around
+    &__logo
+      margin-top: 26px
+      margin-right: 115px
+    &__sign
+      line-height: 80px
+      color: rgb(255, 255, 255)
+      font-size: small
+      margin-right: 385px
+
+
+
+
+

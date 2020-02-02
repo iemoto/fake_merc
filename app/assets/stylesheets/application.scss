@@ -1,6 +1,9 @@
-/*
- *= require_tree .
- *= require_self
- */
-
-@import "font-awesome";
+ @import "./reset";
+ @import "./mixin";
+ @import "font-awesome-sprockets";
+ @import "./font-awesome";
+ @import "./top-page";
+ @import "./header";
+ @import "./item_zone";
+ @import "./exhibition_btn";
+ @import "./footer";

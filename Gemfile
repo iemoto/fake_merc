@@ -108,8 +108,8 @@ gem 'haml-rails'
 
 # FontAwesome
 gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 
 # ログイン機能
 gem 'devise'
-
 

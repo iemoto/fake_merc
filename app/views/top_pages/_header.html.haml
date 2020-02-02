@@ -1,0 +1,70 @@
+%header.header-wrapper
+  .menu-upper
+    //メルカリロゴ
+    .menu-upper__logo
+      =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",size:"134x36")
+    //検索機能(検索窓、検索ボタン、プレイスホルダーつける、)
+    .menu-upper__search
+      .menu-upper__search--icon
+        = fa_icon 'search'
+        -# = form_with model: @xxx, local:true do |form|
+        -# =faicon 'musimegane'
+  .menu-lower
+    -# //以下カテゴリーjQuery実装予定
+    .menu-lower__search
+      %ul.menu-lower__search--category
+        .icon
+          = fa_icon 'list'
+          =link_to "カテゴリーから探す"
+          -# %li
+          -#   =link_to 'レディース'
+          -# %li
+          -#   =link_to 'メンズ'
+          -# %li
+          -#   =link_to 'ベビー・キッズ'
+          -# %li
+          -#   =link_to 'インテリア・住まい・小物'
+          -# %li
+          -#   =link_to '本・音楽・ゲーム'
+          -# %li
+          -#   =link_to 'おもちゃ・ホビー・グッズ'
+          -# %li
+          -#   =link_to 'コスメ・香水・美容'
+          -# %li
+          -#   =link_to '家電・スマホ・カメラ'
+          -# %li
+          -#   =link_to 'スポーツ・レジャー'
+          -# %li
+          -#   =link_to 'ハンドメイド'
+          -# %li
+          -#   =link_to 'チケット'
+          -# %li
+          -#   =link_to '自転車・オートバイ'
+          -# %li
+          -#   =link_to 'その他'
+          -# %li
+          -#   =link_to 'カテゴリー一覧'
+        //以下カテゴリーjQuery実装予定
+      %ul.menu-lower__search--brand
+        .icon
+          =fa_icon 'tag'
+          =link_to 'ブランドから探す'
+          -# %li
+          -#   =link_to 'シャネル'
+          -# %li
+          -#   =link_to 'ナイキ'
+          -# %li
+          -#   =link_to 'ルイヴィトン'
+          -# %li
+          -#   =link_to 'シュプリーム'
+          -# %li
+          -#   =link_to 'アディダス'
+          -# %li
+          -#   =link_to 'カテゴリー一覧'
+      //いいね！一覧、お知らせ、やることリスト、マイページ
+      //命名が分からなかったのでcontensで仮置き
+    .menu-lower__register
+      .menu-lower__register--new
+        =link_to "新規会員登録"
+      .menu-lower__register--login
+        =link_to "ログイン"

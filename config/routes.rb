@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
+  root "top_pages#index"
   devise_for :users
-  root 'users#index'
   resources :users, only: [:index]
 end
