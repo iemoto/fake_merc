@@ -113,3 +113,8 @@ gem 'font-awesome-sass'
 # ログイン機能
 gem 'devise'
 
+# 都道府県データ整理
+gem 'active_hash'
+
+# カテゴリ分類
+gem 'ancestry'
