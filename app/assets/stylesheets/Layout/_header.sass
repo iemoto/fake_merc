@@ -1,16 +1,16 @@
+.wrapper
+  background: white
 .header-wrapper
   background-color: rgb(255, 255, 255)
   position: relative
   z-index: 3
-  width: 700px
   margin: 0px auto
   padding: 8px 0px 0px
+  width: 1020px
   .menu-upper
     display: flex
-    -webkit-box-pack: justify
-    justify-content: space-between
+    justify-content: center
     &__logo
-      -webkit-box-align: center
       align-items: center
       display: flex
       height: 40px
@@ -21,7 +21,7 @@
       height: 40px
       line-height: 1.4em
       position: relative
-      width: 100%
+      width: 821px
       -webkit-appearance: none
       border-width: 1px
       border-style: solid
@@ -42,7 +42,7 @@
     color: rgb(234, 53, 45)
     &__search
       display: flex
-      margin-left: -3px
+      margin-right: 140px
       &--category
         padding-left: 0px
         cursor: pointer
@@ -50,6 +50,9 @@
         position: relative
         z-index: 3
         padding: 0px 10px
+        a
+          text-decoration: none
+          color: black
         .icon
       &--brand
         padding-left: 0px
@@ -58,6 +61,9 @@
         position: relative
         z-index: 3
         padding: 0px 10px
+        a
+          text-decoration: none
+          color: black
         .icon
 
     &__register
@@ -90,3 +96,7 @@
           padding: 8px 10px
           transition: all 0.3s ease-out 0s
           text-decoration: none
+        a:hover
+          color: white
+          background-color: rgb(0, 149, 238)
+
