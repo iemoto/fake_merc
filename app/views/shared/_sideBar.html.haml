@@ -1,7 +1,7 @@
 .sideBar-wrapper
   .sideBar
     %ul.sideBar__item
-      = link_to 'マイページ', '/'
+      = link_to 'マイページ', mypage_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
       = link_to 'お知らせ', '#'
@@ -13,10 +13,10 @@
       = link_to 'いいね！一覧', '#'
       = fa_icon 'angle-right'
     %ul.sideBar__item
-      = link_to '出品する', '#'
+      = link_to '出品する', sell_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
-      = link_to '出品した商品 - 出品中', '#'
+      = link_to '出品した商品 - 出品中', mypage_listings_listing_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
       = link_to '出品した商品 - 取引中', '#'
@@ -55,10 +55,10 @@
     設定
   .sideBar
     %ul.sideBar__item
-      = link_to 'プロフィール', '#'
+      = link_to 'プロフィール', mypage_profile_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
-      = link_to '発送元・お届け先住所変更', '#'
+      = link_to '発送元・お届け先住所変更', mypage_profile_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
       = link_to '支払い方法', '#'
@@ -67,7 +67,7 @@
       = link_to 'メール/パスワード', '#'
       = fa_icon 'angle-right'
     %ul.sideBar__item
-      = link_to '本人情報', '#'
+      = link_to '本人情報', mypage_identification_path
       = fa_icon 'angle-right'
     %ul.sideBar__item
       = link_to '電話番号の確認', '#'
