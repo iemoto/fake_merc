@@ -22,7 +22,6 @@
       line-height: 1.4em
       position: relative
       width: 821px
-      -webkit-appearance: none
       border-width: 1px
       border-style: solid
       border-color: rgb(204, 204, 204)
@@ -36,7 +35,6 @@
         text-align: right
   .menu-lower
     display: flex
-    -webkit-box-pack: justify
     justify-content: space-between
     margin-top: 8px
     color: rgb(234, 53, 45)
@@ -50,6 +48,7 @@
         position: relative
         z-index: 3
         padding: 0px 10px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
         a
           text-decoration: none
           color: black
@@ -61,11 +60,22 @@
         position: relative
         z-index: 3
         padding: 0px 10px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
         a
           text-decoration: none
           color: black
         .icon
-
+    &__afterLogin
+      display: flex
+      ul
+        margin-left: 30px
+        font-size: 14px
+        font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+      a
+        text-decoration: none
+        color: black
+      i
+        color: gray
     &__register
       display: flex
       text-align: center

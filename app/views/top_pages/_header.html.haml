@@ -1,9 +1,8 @@
-.wrapper
-.header-wrapper
+%header.header-wrapper
   .menu-upper
     //メルカリロゴ
     .menu-upper__logo
-      =image_tag("/assets/logo_red.svg",size:"134x36")
+      =image_tag("https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg",size:"134x36")
     //検索機能(検索窓、検索ボタン、プレイスホルダーつける、)
     .menu-upper__search
       .menu-upper__search--icon
@@ -64,19 +63,20 @@
           -#   =link_to 'カテゴリー一覧'
       //いいね！一覧、お知らせ、やることリスト、マイページ
       //命名が分からなかったのでcontensで仮置き
-    .menu-lower__afterLogin
+    .afterLogin-wrapper
       %ul.afterLogin__list
-        = fa_icon 'heart'
+        = fa_icon ''
         = link_to 'いいね！一覧'
       %ul.afterLogin__list
-        = fa_icon 'bell'
+        = fa_icon ''
         = link_to 'お知らせ'
       %ul.afterLogin__list
-        = fa_icon 'check'
+        = fa_icon ''
         = link_to 'やることリスト'
       %ul.afterLogin__list
-        = fa_icon 'user'
-        = link_to 'マイページ'
+       = fa_icon ''
+       = link_to 'マイページ'
+
 
     -# .menu-lower__register
     -#   .menu-lower__register--new
