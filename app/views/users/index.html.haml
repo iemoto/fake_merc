@@ -1,26 +1,27 @@
 = render "./shared/header"
-.mypage-wrapper
-  .contents
-    .mypageUser
-      .mypageUser__icon
-      .mypageUser__name
-        user name
-      .mypageUser__evaluation
-        評価 0  出品数 0
-    .mypageNews
-      .mypageNews__tab.isMypageButton
-        お知らせ
-        .mypageNews__content
-      .mypageNews__tab
-        やることリスト
-        .mypageNews__content
-    .mypagePurchase-title
-      購入した商品
-    .mypagePurchase
-      .mypagePurchase__tab.isMypageButton
-        取引中
-      .mypagePurchase__tab
-        過去の取引
-  = render './shared/sideBar'
-  = render './mains/exhibitionbtn'
-= render './shared/footer'
+.wrapper
+  .mypage-wrapper
+    .contents
+      .mypageUser
+        .mypageUser__icon
+        .mypageUser__name
+          user name
+        .mypageUser__evaluation
+          評価 0  出品数 0
+      .mypageNews
+        .mypageNews__tab.isMypageButton
+          お知らせ
+          .mypageNews__content
+        .mypageNews__tab
+          やることリスト
+          .mypageNews__content
+      .mypagePurchase-title
+        購入した商品
+      .mypagePurchase
+        .mypagePurchase__tab.isMypageButton
+          取引中
+        .mypagePurchase__tab
+          過去の取引
+    = render './shared/sideBar'
+    = render './mains/exhibitionbtn'
+  = render './shared/footer'
