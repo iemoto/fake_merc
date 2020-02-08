@@ -1,0 +1,10 @@
+= render "./shared/header"
+.mypage-wrapper
+  .contents
+    .l-logout__inner
+      .l-logout__block
+        .p-inner__block
+          = link_to 'ログアウト', destroy_user_session_path , method: :delete , class: "btn-default p-btn__red"
+  = render './shared/sideBar'
+= render './shared/footer'
+
