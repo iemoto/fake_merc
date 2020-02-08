@@ -10,5 +10,4 @@ class DeliverAddressesController < ApplicationController
 
   def update
   end
-
 end
