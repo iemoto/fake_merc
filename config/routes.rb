@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "mains#index"
   devise_for :users
-  resources :users, only: [:index, :destroy]
+  resources :users, only: [:index]
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
