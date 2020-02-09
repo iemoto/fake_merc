@@ -29,4 +29,7 @@
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
+.sns-login
+  = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
+  = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
 
