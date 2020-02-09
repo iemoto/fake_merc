@@ -1,2 +1,14 @@
-profiles
-edit
+= render "./shared/header"
+.mypage-wrapper
+  .mypage-contents
+    .profileTitle
+    .profileImage
+      .profileImage__icon
+        .profileImage__icon--image
+        .profileImage__icon--name
+    .profileMessage
+      .profileMessage__text
+        .hoge
+      .profileMessage_button
+  = render './shared/sideBar'
+= render './shared/footer'
