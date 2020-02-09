@@ -118,3 +118,8 @@ gem 'active_hash'
 
 # カテゴリ分類
 gem 'ancestry'
+
+#OmniAuthの脆弱性に対応する（SNS認証導入）
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
