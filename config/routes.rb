@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root "mains#index"
   devise_for :users
+<<<<<<< HEAD
 #  resources :users, only: [:index, :destroy]
+=======
+  resources :users, only: [:index]
+>>>>>>> 7ea0c9ad46caf4495a425de43e6180c0ff593eeb
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
   get '/mypage/identification', to: 'users#edit'
   patch '/mypage/identification', to: 'users#update'
   
-  # マイペーイ（ログアウト）
+  # マイページ（ログアウト）
   get '/logout', to: 'users#show'
 
   # マイページ編集画面
