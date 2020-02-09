@@ -16,5 +16,4 @@ class SellItemsController < ApplicationController
 
   def destroy
   end
-
 end
