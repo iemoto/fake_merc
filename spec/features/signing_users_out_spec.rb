@@ -11,7 +11,7 @@ RSpec.feature 'Signing out signed-in users' do
     click_button 'Log in'
   end
 
-  scenario '　ログインできるか？' do
+  scenario '　ログアウトできているか？' do
     visit '/logout'
     click_link ('logout-btn')
     expect(page).to have_content('ログイン')
