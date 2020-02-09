@@ -2,15 +2,10 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
   describe 'GET #index' do
-<<<<<<< HEAD
-
-=======
->>>>>>> 7ea0c9ad46caf4495a425de43e6180c0ff593eeb
     it 'トップページ(index)に遷移するか？' do
       get :index
       expect(response).to render_template :index
     end
-<<<<<<< HEAD
 
     it 'returns a 200 response' do
       get :index
@@ -46,8 +41,6 @@ RSpec.describe UsersController, type: :controller do
 
     end
 
-=======
->>>>>>> 7ea0c9ad46caf4495a425de43e6180c0ff593eeb
   end
 
 end
