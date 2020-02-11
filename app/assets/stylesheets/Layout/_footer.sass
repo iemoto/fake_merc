@@ -1,12 +1,12 @@
 .Publicity-wrapper
-  background-image: url(footer.lower.jpg)
+  background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?88754945")
   height: 260px
   background-size: cover
   .Publicity
     display: flex
     justify-content: space-between
-    margin-left: 100px
-    margin-right: 100px
+    margin-left: 350px
+    margin-right: 350px
     &__left-text
       justify-content: center
       &--upper
@@ -29,110 +29,112 @@
         line-height: 100px
 .footer__wrapper 
   background-color: rgb(34, 34, 34)
-  .footer-nav
-    display: flex
-    justify-content: center
-    //以下footerメルカリについて
-    &__block
-      &--title
-        @include font
-      &--list
-        margin-right: 30px
-        li
-          margin-top: 10px
-          font-size: 10px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-          a:hover
-            text-decoration: underline
-        .icon
-          color: rgb(255, 255, 255)
-          margin-top: 20px
-          margin-right: 15px
-          font-size: 20px
-          i
-            margin-right: 10px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-          a:hover
-            text-decoration: underline
-    //以下footerヘルプ&ガイド
-    &__block
-      &--title
-        @include font
-      &--list
-        margin-right: 30px
-        li
-          margin-top: 10px
-          font-size: 10px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-          a:hover
-            text-decoration: underline
-    //以下footerプライバシーと利用規約部分
-    &__block
-      &--title
-        @include font
-      .footer-nav__list
-        display: flex
-        justify-content: center
-        &--left
-          width: 207px
-          margin-right: 10px
+  .footer-container
+    width: 1000px
+    margin: auto
+    .footer-nav
+      display: flex
+      justify-content: center
+      //以下footerメルカリについて
+      &__block
+        margin-top: 10px
+        &--title
+          @include font
+        &--list
+          margin-right: 30px
           li
             margin-top: 10px
             font-size: 10px
-            a 
+            a
               color: rgb(255, 255, 255)
               text-decoration: none 
               cursor: pointer
             a:hover
               text-decoration: underline
-        &--right
-          width: 80% 
-          li 
+          .icon
+            color: rgb(255, 255, 255)
+            margin-top: 20px
+            margin-right: 15px
+            font-size: 20px
+            i
+              margin-right: 10px
+            a
+              color: rgb(255, 255, 255)
+              text-decoration: none 
+              cursor: pointer
+            a:hover
+              text-decoration: underline
+      //以下footerヘルプ&ガイド
+      &__block
+        &--title
+          @include font
+        &--list
+          margin-right: 30px
+          li
             margin-top: 10px
             font-size: 10px
-            a 
+            a
               color: rgb(255, 255, 255)
               text-decoration: none 
               cursor: pointer
             a:hover
               text-decoration: underline
-    //以下footer国部分
-    &__block
-      &--title
-        @include font
-      &--country
-        margin-right: 30px
-        li
-          margin-top: 10px
-          font-size: 10px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-          a:hover
-            text-decoration: underline
-  .footer-copyright
-    display: flex
-    justify-content: space-around
-    &__logo
-      margin-top: 26px
-      margin-right: 115px
-    &__sign
-      line-height: 80px
-      color: rgb(255, 255, 255)
-      font-size: small
-      margin-right: 385px
-
-
-
+      //以下footerプライバシーと利用規約部分
+      &__block
+        &--title
+          @include font
+        .footer-nav__list
+          display: flex
+          justify-content: center
+          &--left
+            width: 207px
+            margin-right: 10px
+            li
+              margin-top: 10px
+              font-size: 10px
+              a 
+                color: rgb(255, 255, 255)
+                text-decoration: none 
+                cursor: pointer
+              a:hover
+                text-decoration: underline
+          &--right
+            width: 80% 
+            li 
+              margin-top: 10px
+              font-size: 10px
+              a 
+                color: rgb(255, 255, 255)
+                text-decoration: none 
+                cursor: pointer
+              a:hover
+                text-decoration: underline
+      //以下footer国部分
+      &__block
+        &--title
+          @include font
+        &--country
+          margin-right: 30px
+          li
+            margin-top: 10px
+            font-size: 10px
+            a
+              color: rgb(255, 255, 255)
+              text-decoration: none 
+              cursor: pointer
+            a:hover
+              text-decoration: underline
+    .footer-copyright
+      display: flex
+      margin-left: 70px
+      &__logo
+        margin-top: 26px
+      &__sign
+        line-height: 80px
+        color: rgb(255, 255, 255)
+        font-size: x-small
+        text-align: center
+        width: 100%
+        margin-right: 220px
 
 
