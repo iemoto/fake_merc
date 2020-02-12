@@ -1,0 +1,12 @@
+.simple-footer
+  .simple-footer__nav
+    = link_to "https://www.mercari.com/jp/privacy/", class: "nav-menu" do
+      プライバシーポリシー
+    = link_to "https://www.mercari.com/jp/tos/", class: "nav-menu" do
+      メルカリ利用規約
+    = link_to "https://www.mercari.com/jp/tokutei/", class: "nav-menu" do
+      特定商品取引に関する表記
+  .simple-footer__logo
+    = link_to "https://www.mercari.com/jp/", class: "simple-footer__logo--link" do
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3642602565", class: "simple-footer__logo--img", alt: "mercari", size: "80x65" 
+    %p.simple-footer__logo--small © Mercari, Inc.

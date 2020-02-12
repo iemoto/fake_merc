@@ -1,0 +1,21 @@
+.bread-header
+  = link_to "https://www.mercari.com/jp/", class: "bread-header__link" do
+    = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3642602565", class: "bread-header__link--logo", alt: "mercari", size:"134x36"
+  .bread-header-right
+    %ol.clearfix
+      %li.active
+        会員登録
+        .progress-status__active
+      %li
+        電話番号認証
+        .progress-status
+      %li
+        住所入力
+        .progress-status
+      %li
+        支払い方法
+        .progress-status
+      %li
+        完了
+        .progress-status
+      .boder

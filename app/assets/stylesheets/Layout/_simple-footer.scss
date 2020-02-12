@@ -1,0 +1,31 @@
+.simple-footer {
+  width: 700px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px;
+  // position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .simple-footer__nav {
+    text-align: center;
+    .nav-menu {
+      text-decoration: none;
+      color: #333;
+      touch-action: manipulation;
+      cursor: pointer;
+      font-size: 12px;
+      margin: 0 8px;
+    }
+  }
+  .simple-footer__logo {
+    width: 85px;
+    height: 65px;
+    margin: 40px auto 0;
+    text-align: center;
+    &--small {
+      color: #000;
+      font-size: 75%;
+    }
+  }
+}

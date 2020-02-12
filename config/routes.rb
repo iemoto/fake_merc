@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/:id/show', to: 'mains#show'
 
   # マイページトップページ、本人情報登録画面
-  get '/mypage', to: 'users#index'
+  get '/mypage', to: 'users#new_member'
   get '/mypage/identification', to: 'users#edit'
   patch '/mypage/identification', to: 'users#update'
 
