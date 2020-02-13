@@ -11,11 +11,13 @@
           =image_tag('/assets/fakelogo-color.svg', size:'68x68',)
         %ul.clearfix
           %li
-            =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
+            =link_to 'https://apps.apple.com/jp/app/id667861049?l=ja',target: :_blank do 
+              =image_tag('/assets/app-store.svg')
           %li
-            =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
+            =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja',target: :_blank do
+              =image_tag('/assets/google-play.svg')
     .contents__right
-      =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', size:'300x260')
+      =image_tag('/assets/content_pc.png', size:'300x260')
 //フッター
 %footer.footer__wrapper
   %nav.clearfix
@@ -34,10 +36,10 @@
         %li
           =link_to 'メルカリロゴ利用ガイドライン'
         %li.icon
-          =link_to 'https://twitter.com/mercari_jp' do
+          =link_to 'https://twitter.com/mercari_jp',target: :_blank do
             =fa_icon 'twitter'
         %li.icon
-          =link_to 'https://www.facebook.com/mercarijp' do
+          =link_to 'https://www.facebook.com/mercarijp',target: :_blank do
             =fa_icon 'facebook-square'
     .footer-nav__block
       %h2.footer-nav__block--title
