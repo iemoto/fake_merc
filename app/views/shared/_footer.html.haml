@@ -17,11 +17,11 @@
       =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', size:'300x260')
 //フッター
 %footer.footer__wrapper
-  %nav.footer-nav
+  %nav.clearfix
     .footer-nav__block
       %h2.footer-nav__block--title
         メルカリについて
-      %ul.footer-nav__block--list
+      %ul
         %li
           =link_to '会社概要(運営会社)'
         %li
@@ -38,7 +38,7 @@
     .footer-nav__block
       %h2.footer-nav__block--title
         ヘルプ＆ガイド
-      %ul.footer-nav__block--list
+      %ul
         %li
           =link_to 'メルカリガイド'
         %li
@@ -60,7 +60,7 @@
     .footer-nav__block.two-block
       %h2.footer-nav__block--title
         プライバシーと利用規約
-      .footer-nav__list
+      .footer-nav__block--list
         %ul
           %li
             =link_to 'プライバシーポリシー'
@@ -70,7 +70,7 @@
             =link_to 'あんしんスマホサポート制度に関する利用特約'
           %li
             =link_to 'コンプライアンスポリシー'
-      .footer-nav__list
+      .footer-nav__block--list
         %ul
           %li
             =link_to '個人データの安全管理に係る基本方針'
@@ -80,16 +80,16 @@
             =link_to '資金決済方に基づく表示'
           %li
             =link_to '法令遵守と犯罪抑止のために'
-    .footer-nav__block
-      .footer-nav__block--title
+    .footer-nav__block.footer-nav__country
+      %h2.footer-nav__block--title
         国
-      %ul.footer-nav__block--country
+      %ul
         %li
           =link_to '日本'
         %li
           =link_to 'United States'
   .footer-copyright
-    =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg'), root_path,class: 'footer-copyright__logo'
+    =link_to image_tag("/assets/fakelogo_white.svg",width:"151", height:"31"), root_path,class: 'footer-copyright__logo'
     %span.footer-copyright__sign
       %small
-        © Fack Merc, Inc.
+        © Fake Merc, Inc.

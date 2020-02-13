@@ -1,14 +1,34 @@
+@media screen and (min-width: 1068px) 
+  .footer__wrapper 
+    nav
+      .footer-nav
+        &__block:first-child
+          padding: 0 20px 0 0
+          width: 20%
+        &__block.two-block
+          margin-top: 18px
+          padding: 0 40px 0 0
+          width: 42%
+        &__block
+          width: 23%
+          padding: 0 40px 0 0
+          vertical-align: top
+        &__country
+          margin-top: 18px
+          li
+            display: block
+
 @media screen and (min-width: 768px)
-  .footer-copyright
-    width: 700px 
+  .footer__wrapper 
+    nav
+      width: 768px
+      margin: 0 auto
 
 @media screen and (min-width: 1068px) 
-  .footer-copyright
-    margin: 30px auto 20px
-    width: 1020px
-    &__sign
-      width: 745px
-  
+  .footer__wrapper 
+    nav
+      width: 1020px
+
 .Publicity-wrapper
   background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?88754945")
   height: 260px
@@ -49,147 +69,93 @@
     font-size: 12px
     line-height: 1.5em
   .footer-nav
-    width: 1020px
-    margin: 0 auto
-    display: flex
     //以下footerメルカリについて
     &__block:first-child
-      width: 20%
-      padding: 0 20px 0 0
+      padding: 0 10px 0 0
     &__block.two-block
-      padding: 0 40px 0 0
-      width: 42%
+      width: 100%
+      margin: 30px 0 0
+      padding: 0
     &__block
       margin-top: 18px
-      width: 23%
-      padding: 0 40px 0 0
-      vertical-align: top
+      width: 50%
       display: block
+      padding-left: 10px
       float: left
-      margin-top: 18px
       &--title
         @include font
-      &--list
+      ul
+        li:first-child
+          margin: 16px 0 0
         li
           margin-top: 16px
-          font-size: 12px
+          font-size: 14px
           font-family: $font--basic
           a
-            color: rgb(255, 255, 255)
             text-decoration: none 
             opacity: 0.7
             cursor: pointer
             line-height: 1.5em
           a:hover
             text-decoration: underline
-        .icon
-          color: rgb(255, 255, 255)
-          margin-top: 20px
-          margin-right: 15px
-          font-size: 20px
-          i
-            margin-right: 10px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-          a:hover
-            text-decoration: underline
-      // .footer-nav__list
-      //   display: flex
-      //   justify-content: center
-      //   &--left
-      //     width: 207px
-      //     padding: 0 10px 0 0 
-      //     li
-      //       margin-top: 16px
-      //       font-size: 12px
-      //       a 
-      //         color: rgb(255, 255, 255)
-      //         font-family: $font--basic
-      //         text-decoration: none 
-      //         opacity: 0.7
-      //         cursor: pointer
-      //       a:hover
-      //         text-decoration: underline
-      //   &--right
-      //     padding: 0 0 0 10px
-      //     width: 80% 
-      //     li 
-      //       margin-top: 10px
-      //       font-size: 12px
-      //       a 
-      //         opacity: 0.7
-      //         font-family: $font--basic
-      //         color: rgb(255, 255, 255)
-      //         text-decoration: none 
-      //         cursor: pointer
-      //       a:hover
-      //         text-decoration: underline
-    //以下footerプライバシーと利用規約部分
+          .icon
+            margin-top: 20px
+            margin-right: 15px
+            font-size: 26px
+            i
+              margin-right: 10px
+      &--list:first-of-type
+        padding: 0 10px 0 0
+      &--list
+        float: left
+        padding-left: 10px
+        vertical-align: top
+        width: 50%
+.footer-nav
+  &__country
+    margin-top: 35px
+    padding: 0
+    ul
+      li
+        display: inline-block
+        padding-right: 30px
 
-      &--title
-        @include font
-      .footer-nav__list
-        display: flex
-        justify-content: center
-        &--left
-          width: 207px
-          padding: 0 10px 0 0 
-          li
-            margin-top: 16px
-            font-size: 12px
-            a 
-              color: rgb(255, 255, 255)
-              font-family: $font--basic
-              text-decoration: none 
-              opacity: 0.7
-              cursor: pointer
-            a:hover
-              text-decoration: underline
-        &--right
-          padding: 0 0 0 10px
-          width: 80% 
-          li 
-            margin-top: 10px
-            font-size: 12px
-            a 
-              opacity: 0.7
-              font-family: $font--basic
-              color: rgb(255, 255, 255)
-              text-decoration: none 
-              cursor: pointer
-            a:hover
-              text-decoration: underline
-    //以下footer国部分
-    &__block
-      &--title
-        @include font
-      &--country
-        margin-right: 30px
-        li
-          margin-top: 10px
-          font-size: 12px
-          a
-            color: rgb(255, 255, 255)
-            text-decoration: none 
-            cursor: pointer
-            opacity: 0.7
-            font-family: $font--basic
-          a:hover
-            text-decoration: underline
+.footer-copyright
+  margin: 50px auto 0
+  &__logo
+    display: inline-block
+    margin-right: 10px
+    height: 31px
+    width: auto
+    vertical-align: sub
+  &__sign
+    display: inline-block
+    margin: 8px 0 0
+    text-align: center
+    vertical-align: super
+    font-size: 14px
+    small
+      font-size: 12px
+      font-family: $font--basic
+@media screen and (min-width: 768px)
+  .footer__wrapper 
+    nav
+      .footer-nav
+        &__country
+          width: auto
+@media screen and (min-width: 768px)
+  .footer-copyright
+    width: 700px 
+
+@media screen and (min-width: 1068px) 
   .footer-copyright
     margin: 30px auto 20px
-    &__logo
-      display: inline-block
-      margin-right: 10px
-      width: auto
+    width: 1020px
     &__sign
-      display: inline-block
-      margin: 8px 0 0
-      text-align: center
-      vertical-align: super
-      font-size: 14px
-      small
-        font-size: 12px
-        font-family: $font--basic
+      width: 745px
+@media screen and (min-width: 1068px) 
+  .footer-nav
+    &__country
+      margin-top: 18px
+      li
+        display: block
