@@ -35,6 +35,7 @@
   background-image: url("/assets/bg_pc.jpg")
   background-position: center
   background-size: cover
+
 .Publicity
   overflow: hidden
   position: relative
@@ -45,23 +46,46 @@
   color: rgb(255, 255, 255)
   font-family: $font--basic
 
+  figure
+
   &__left-text
     position: absolute
     top: 50%
     left: 16px
     -webkit-transform: translate(0,-50%)
-    transform: translate(0,50%)
+    transform: translate(0,-50%)
 
     &--upper
       font-size: 16px
+
     &--lower
       font-size: 24px
       margin: 10px 0 0
 
-    .left__app-images
-      display: flex
-      justify-content: space-between
-      line-height: 100px
+
+.left__app-images
+  margin: 20px 0 0
+  .app-images__left
+    float: left
+  img
+    vertical-align: middle
+  ul
+    float: left
+    margin: 0 0 0 24px
+    line-height: 68px
+  li
+    float: left
+  li:last-child
+    margin: 0 0 0 16px
+.contents__right
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  width: 300px
+  height: 100%
+  img
+    width: 100%
 .footer__wrapper 
   background-color: rgb(34, 34, 34)
   color: rgb(255, 255, 255)
