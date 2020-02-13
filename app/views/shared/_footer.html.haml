@@ -2,9 +2,9 @@
 %aside.Publicity-wrapper
   .Publicity
     .Publicity__left-text
-      .Publicity__left-text--upper
+      .Publicity__left-text--upper.l-text-shadow
         スマホでかんたんフリマアプリ
-      .Publicity__left-text--lower
+      .Publicity__left-text--lower.l-text-shadow
         今すぐ無料ダウンロード!
       .left__app-images
         .app-images__left
@@ -23,7 +23,7 @@
         メルカリについて
       %ul
         %li
-          =link_to '会社概要(運営会社)'
+          =link_to '会社概要（運営会社）'
         %li
           =link_to '採用情報'
         %li
@@ -32,8 +32,11 @@
           =link_to '公式ブログ'
         %li
           =link_to 'メルカリロゴ利用ガイドライン'
-          .icon
+        %li.icon
+          =link_to 'https://twitter.com/mercari_jp' do
             =fa_icon 'twitter'
+        %li.icon
+          =link_to 'https://www.facebook.com/mercarijp' do
             =fa_icon 'facebook-square'
     .footer-nav__block
       %h2.footer-nav__block--title
