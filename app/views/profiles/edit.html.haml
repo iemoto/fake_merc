@@ -1,18 +1,18 @@
 = render "./shared/header"
 .mypage-wrapper
+  = render './shared/sideBar'
   .profile-content
-  = form_with(model: @user, url: '/new', local: true, class: 'profile-contents') do |f|
+  = form_with(model: @user, url: mypage_profile_path, local: true, class: 'profile-contents') do |f|
     .profileTitle
       プロフィール
     .profileImage
       .profileImage__icon
-        .profileImage__icon--image
+        .profileImage__icon--user
         .profileImage__icon--name
-          = f.text_field(:hoge, placeholder: '例)AYA☆セール中')
+          = f.text_field(:nick_name, placeholder: '例)AYA☆セール中')
     .profileMessage
       .profileMessage__text
-        = f.text_area(:hoge, placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪')
-      .profileMessage_button
-        = f.submit("変更する", {class: 'btn'})
-  = render './shared/sideBar'
+        = f.text_area(:profile, placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪')
+      .profileMessage__btn
+        = f.submit("変更する", {class: 'changeProfileBtn'})
 = render './shared/footer'
