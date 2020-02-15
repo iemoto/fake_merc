@@ -8,13 +8,13 @@
       .p-reg-contents
         .p-reg-btn
           .p-reg-btn__mail
-            %i.far.fa-envelope
+            -# = far.fa-envelope
             = link_to "メールアドレスで登録する", "#", class: "p-reg-btn__link"
           .p-reg-btn__facebook
-            %i.fab.fa-facebook-square
+            = fa_icon 'facebook-square'
             = link_to "Facebookで登録する", "#", class: "p-reg-btn__link"
           .p-reg-btn__google
-            %i.fab.fa-google
+            = fa_icon 'google'
             = link_to "Googleで登録する", "#", class: "p-reg-btn__link--color"
 
 = render './shared/simple-footer'
