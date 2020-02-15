@@ -1,10 +1,10 @@
-def facebook_mock(name, email)
+def facebook_mock(name)
   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
     provider: 'facebook',
     uid: 1234567890,
     info: {
-      name: name,
-      email: email
+      nick_name: name,
+      email: "email@kkk",
     },
     credentials: {
       token: 'kou1234'

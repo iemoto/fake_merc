@@ -43,22 +43,5 @@ RSpec.describe User, type: :model do
       another_user.valid?
       expect(another_user.errors[:email]).to include('has already been taken')
     end
-
-    discribe 'Facebookのアカウント情報を取得し、すでにDBに登録されていればログインさせる' do
-      let(:user) { User.create(nick_name: 'kou', email: 'kou@kou') }
-      before do
-        OmniAuth.config.mock_auth[:facebook] = nil
-        Rails.application.env_config['omniauth.auth'] = facebook_mock(
-          email: user.email,
-          name: user.name 
-        )
-        click_link 'Facebookを利用してログインする'
-      end
-    
-    
-      it 'should succeed' do
-        expect(page.status_code).to eq 200
-      end
-    end
   end
 end
