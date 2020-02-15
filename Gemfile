@@ -44,6 +44,9 @@ group :development, :test do
   # テスト
   gem 'rspec-rails', '~> 3.6.0'
   gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+
   # テスト用データ
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'faker'
@@ -75,7 +78,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
@@ -113,7 +116,7 @@ gem 'font-awesome-sass'
 # ログイン機能
 gem 'devise'
 
-# 都道府県データ整理
+# 都道府県等のデータ整理
 gem 'active_hash'
 
 # カテゴリ分類
