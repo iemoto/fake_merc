@@ -1,0 +1,100 @@
+.mem-bread-header
+  = link_to "https://www.mercari.com/jp/", class: "mem-bread-header__link" do
+    = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3642602565", class: "mem-bread-header__link--logo", alt: "mercari", size:"134x36"
+  .mem-bread-header-right
+    %ol.clearfix
+      %li.active
+        会員情報
+        .progress-status__active
+      %li
+        電話番号認証
+        .progress-status__num
+      %li
+        完了
+        .progress-status__done
+
+.p-member
+  .p-member-container
+    .p-member-header
+      会員情報入力
+    .p-member-forms
+      .p-member-content
+        .p-member-form
+          .p-member-form__label
+            ニックネーム
+            %span.required 必須
+          %input.p-member-form__input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "nickname", :value => ""}/
+        .p-member-form  
+          .p-member-form__label
+            メールアドレス
+            %span.required 必須
+          %input.p-member-form__input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+        .p-member-form  
+          .p-member-form__label
+            パスワード
+            %span.required 必須
+          %input.p-member-form__input{:name => "password", :placeholder => "7文字以上の半角英数字", :type => "password", :value => "", :id => "password-input"}/
+          .alert1 英字と数字両方を含むパスワードを設定してください
+          .alert2 7文字以上128文字以下で入力してください
+          %p.note ※英字と数字の両方を含めて設定してください
+          .password-check
+            %input.passcheck{:name => "passcheck", :type => "checkbox", :value => ""}/
+            %label_tag.label パスワードを表示する 
+            .passshow
+
+            -# = check_box_tag :password, id: "passcheck"
+            -# = label_tag :password, "パスワードを表示する", class: "password-check"
+        .p-member-form  
+          %p.person 本人確認
+          %p.safety-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .p-member-form
+          .p-member-form__label
+            お名前(全角)
+            %span.required 必須
+          %input.p-member-form__half{:name => "last-name", :placeholder => "例）山田", :type => "name", :value => ""}/
+          %input.p-member-form__half{:name => "first-name", :placeholder => "例）彩", :type => "name", :value => ""}/
+        .p-member-form
+          .p-member-form__label
+            お名前カナ(全角)
+            %span.required 必須
+          %input.p-member-form__half{:name => "last-name-kana", :placeholder => "例）ヤマダ", :type => "name", :value => ""}/
+          %input.p-member-form__half{:name => "first-name-kana", :placeholder => "例）アヤ", :type => "name", :value => ""}/
+        .p-member-form  
+          .p-member-form__label
+            生年月日
+            %span.required 必須
+          .p-member-form__birthday
+            -# != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'select-default', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+            .p-member-form__birthday--select
+              %i.icon-arrow-bottom
+                = select_tag'year',options_for_select(1950..2020),class:'select-default'
+            %span 年
+            .p-member-form__birthday--select
+              %i.icon-arrow-bottom
+                = select_tag'month',options_for_select(1..12),class:'select-default'
+            %span 月
+            .p-member-form__birthday--select
+              %i.icon-arrow-bottom
+                = select_tag'day',options_for_select(1..31),class:'select-default'
+            %span 日
+          %p.note ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .p-member-form__terms
+          %p.text
+          「次へ進む」のボタンを押すことにより、
+          %a.terms-text{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
+          に同意したものとみなします
+      .p-member-content
+        .p-member-form
+          .p-member-btn
+            = link_to "次へ進む", "#", class: "p-member-btn__link"
+          .p-member-reg
+            = link_to "本人情報の登録について", "#", class: "p-member-reg__link"
+          .p-member-policy
+            %p.p-member-policy__terms
+              This site is protected by reCAPTCHA and the Google
+              %a.p-member-policy__terms--link{:href => "https://policies.google.com/privacy", :target => "_blank"} Privacy Policy
+              and
+              %a.p-member-policy__terms--link{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
+              apply.
+
+= render 'shared/simple-footer'

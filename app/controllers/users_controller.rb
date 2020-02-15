@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def index
+  def index_login
   end
 
   def show

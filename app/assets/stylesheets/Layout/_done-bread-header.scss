@@ -1,0 +1,68 @@
+.done-bread-header {
+  height: 128px;
+  text-align: center;
+  &__link {
+    margin: 40px 0 0;
+    display: inline-block;
+    &--logo {
+      width: 185px;
+      height: 49px;
+      margin: 0 8px 0 0;
+    }
+  }
+}
+.done-bread-header-right {
+  padding: 32px 0 0 44px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  ol.clearfix {
+    font-size: 12px;
+    display: inline-block;
+    li.active {
+      font-weight: 600;
+      min-width: 60px;
+      color: #ea352e;
+      .progress-status__active {
+        background: #ea352e;
+        @include progress;
+      }
+      .progress-status__active::before {
+        right: 50%;
+        @include status;
+        background: #ea352e;
+      }
+    }
+    li {
+      min-width: 60px;
+      color: #888888;
+      margin: 0 40px 0 0;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      .progress-status__mem {
+        background: #ea352e;
+        @include progress;
+      }
+      .progress-status__mem::after {
+        left: 50%;
+        @include status;
+        background: #ea352e;
+      }
+    }
+    .progress-status__num {
+      background: #ea352e;
+      @include progress;
+    }
+    .progress-status__num::before {
+      right: 50%;
+      @include status;
+      background: #ea352e;
+    }
+    .progress-status__num::after {
+      left: 50%;
+      @include status;
+      background: #ea352e;
+    }
+  }
+}

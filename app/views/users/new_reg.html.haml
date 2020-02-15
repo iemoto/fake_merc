@@ -1,0 +1,20 @@
+= render './shared/simple-header'
+
+.p-reg
+  .p-reg__container
+    .p-reg__container--head
+      新規会員登録
+    .p-reg__container--inner
+      .p-reg-contents
+        .p-reg-btn
+          .p-reg-btn__mail
+            %i.far.fa-envelope
+            = link_to "メールアドレスで登録する", "#", class: "p-reg-btn__link"
+          .p-reg-btn__facebook
+            %i.fab.fa-facebook-square
+            = link_to "Facebookで登録する", "#", class: "p-reg-btn__link"
+          .p-reg-btn__google
+            %i.fab.fa-google
+            = link_to "Googleで登録する", "#", class: "p-reg-btn__link--color"
+
+= render './shared/simple-footer'
