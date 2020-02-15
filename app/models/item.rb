@@ -9,6 +9,5 @@ class Item < ApplicationRecord
   belongs_to :brand_id
   belongs_to :size_id
 
-  validates :name, :despriction, :money, :sold_out, :prefecture_address_id, :categorie_id, :item_condition_id, :shipping_fee_id, :shipping_fee_side,
-            :ship_date_id, :shipping_method_id, :brand_id, :size_id, presence: true
+  validates :name, :despriction, :money, :sold_out, :shipping_fee_side, presence: true
 end
