@@ -1,34 +1,4 @@
-@media screen and (min-width: 1068px) 
-  .footer__wrapper 
-    nav
-      .footer-nav
-        &__block:first-child
-          padding: 0 20px 0 0
-          width: 20%
-        &__block.two-block
-          margin-top: 18px
-          padding: 0 40px 0 0
-          width: 42%
-        &__block
-          width: 23%
-          padding: 0 40px 0 0
-          vertical-align: top
-        &__country
-          margin-top: 18px
-          li
-            display: block
-
-@media screen and (min-width: 768px)
-  .footer__wrapper 
-    nav
-      width: 768px
-      margin: 0 auto
-
-@media screen and (min-width: 1068px) 
-  .footer__wrapper 
-    nav
-      width: 1020px
-.l-text-shadow
+.u-text-shadow
   text-shadow: 0 0 5px rgba(0,0,0,0.4)
 
 .Publicity-wrapper
@@ -47,7 +17,6 @@
   font-family: $font--basic
 
   figure
-
   &__left-text
     position: absolute
     top: 50%
@@ -61,7 +30,17 @@
     &--lower
       font-size: 24px
       margin: 10px 0 0
+  @media screen and (min-width: 1068px)
+    .Publicity__left-text
+      left: 0 
+      &--upper
+        font-size: 24px
+      &--lower
+        font-size: 35px
 
+@media screen and (min-width: 768px)
+  .Publicity
+    display: block
 
 .left__app-images
   margin: 20px 0 0
@@ -87,8 +66,10 @@
   bottom: 0
   width: 300px
   height: 100%
+  
   img
     width: 100%
+
 .footer__wrapper 
   background-color: rgb(34, 34, 34)
   color: rgb(255, 255, 255)
@@ -99,6 +80,7 @@
     color: #fff
     font-size: 12px
     line-height: 1.5em
+
 .footer-nav
   //以下footerメルカリについて
   &__block:first-child
@@ -175,39 +157,57 @@
     small
       font-size: 12px
       font-family: $font--basic
+
+@media screen and (min-width: 1068px) 
+  .footer__wrapper 
+    nav
+      .footer-nav
+        &__block:first-child
+          padding: 0 20px 0 0
+          width: 20%
+        &__block.two-block
+          margin-top: 18px
+          padding: 0 40px 0 0
+          width: 42%
+        &__block
+          width: 23%
+          padding: 0 40px 0 0
+          vertical-align: top
+        &__country
+          margin-top: 18px
+          li
+            display: block
+
+@media screen and (min-width: 768px)
+  .footer__wrapper 
+    nav
+      width: 768px
+      margin: 0 auto
+
+@media screen and (min-width: 1068px) 
+  .footer__wrapper 
+    nav
+      width: 1020px
+
 @media screen and (min-width: 768px)
   .footer__wrapper 
     nav
       .footer-nav
         &__country
           width: auto
-          
-@media screen and (min-width: 768px)
   .footer-copyright
     width: 700px 
-
-@media screen and (min-width: 1068px) 
-  .footer-copyright
-    margin: 30px auto 20px
-    width: 1020px
-    &__sign
-      width: 745px
+  
 @media screen and (min-width: 1068px) 
   .footer-nav
     &__country
       margin-top: 18px
       li
         display: block
-@media screen and (min-width: 768px)
-  .Publicity
-    display: block 
-@media screen and (min-width: 1068px)
-  .Publicity
-    &__left-text
-      left: 0 
-@media screen and (min-width: 1068px)
-  .Publicity__left-text
-    &--upper
-      font-size: 24px
-    &--lower
-      font-size: 35px
+  .footer-copyright
+    margin: 30px auto 20px
+    width: 1020px
+    &__sign
+      width: 745px
+ 
+
