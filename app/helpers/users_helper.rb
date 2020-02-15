@@ -12,7 +12,4 @@ module UsersHelper
       }
     )
   end
-  
-  
-  # OmniAuth.config.test_mode = true
 end
