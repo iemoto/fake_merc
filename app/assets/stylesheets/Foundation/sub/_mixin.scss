@@ -1,7 +1,7 @@
 //footerナビのフォント設定(ﾒﾙｶﾘについて、ﾍﾙﾌﾟ&ｶﾞｲﾄﾞ...)
 @mixin font {
   color: rgb(255, 255, 255); 
-  font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "游ゴシック", YuGothic, メイリオ, Meiryo, sans-serif;
   font-weight: 600;
 }
 

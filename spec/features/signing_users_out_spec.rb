@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Signing out signed-in users' do
-
   before do
     @user = FactoryBot.create(:user)
 
@@ -17,5 +16,4 @@ RSpec.feature 'Signing out signed-in users' do
     expect(page).to have_content('ログイン')
     expect(page).not_to have_content('ログアウト')
   end
-
 end
