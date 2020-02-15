@@ -6,6 +6,7 @@ class SellItemsController < ApplicationController
   end
 
   def show
+    @sell_items = Sell_item.includes(:images).order('created_at DESC')
   end
 
   def edit
