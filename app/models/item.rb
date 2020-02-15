@@ -1,4 +1,4 @@
-class SellItem < ApplicationRecord
+class Item < ApplicationRecord
   belongs_to :prefecture_address_id
   belongs_to :categorie_id
   belongs_to :item_condition_id
