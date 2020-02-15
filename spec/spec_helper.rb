@@ -95,5 +95,24 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+<<<<<<< HEAD
 OmniAuth.config.test_mode = true
+=======
+# def facebook_mock(name, email)
+#   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+#     provider: 'facebook',
+#     uid: 1234567890,
+#     info: {
+#       name: name,
+#       email: email
+#     },
+#     credentials: {
+#       token: 'hogepiyo1234'
+#     }
+#   )
+# end
+
+
+# OmniAuth.config.test_mode = true
+>>>>>>> remotes/origin/userlogin
 end

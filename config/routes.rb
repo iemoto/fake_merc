@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root "mains#index"
-  devise_for :users
+  devise_for :users, controllers: {
+  omniauth_callbacks: 'users/omniauth_callbacks',
+  registrations: 'users/registrations'
+  }
+
+  resources :users, only: [:index]
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
