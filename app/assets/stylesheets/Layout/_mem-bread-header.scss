@@ -22,9 +22,9 @@
     li.active {
       font-weight: 600;
       min-width: 60px;
-      color: #ea352e;
+      color: $color--mercred;
       .progress-status__active {
-        background: #ea352e;
+        background: $color--mercrede;
         z-index: 1;
         @include progress;
       }
