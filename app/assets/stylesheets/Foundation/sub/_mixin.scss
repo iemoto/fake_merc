@@ -4,3 +4,19 @@
   font-family: "游ゴシック", YuGothic, メイリオ, Meiryo, sans-serif;
   font-weight: 600;
 }
+
+@mixin mypageTab__fonts {
+  width: 50%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  background-color: #eee;
+  height: 72px;
+}
+
+@mixin mypageUser__fonts {
+  text-align: center;
+  margin-top: 8px;
+}
