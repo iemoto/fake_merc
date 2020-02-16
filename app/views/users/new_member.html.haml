@@ -1,6 +1,6 @@
 .mem-bread-header
   = link_to "https://www.mercari.com/jp/", class: "mem-bread-header__link" do
-    = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3642602565", class: "mem-bread-header__link--logo", alt: "mercari", size:"134x36"
+    = image_tag "/assets/fakelogo.svg", class: "mem-bread-header__link--logo", alt: "mercari", size:"134x36"
   .mem-bread-header-right
     %ol.clearfix
       %li.active
@@ -23,19 +23,21 @@
           .p-member-form__label
             ニックネーム
             %span.required 必須
-          %input.p-member-form__input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "nickname", :value => ""}/
+          %input.p-member-form__input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "nickname", :value => "", :id => "nickname-input"}/
+          .nickname-error ニックネームを入力してください
         .p-member-form  
           .p-member-form__label
             メールアドレス
             %span.required 必須
-          %input.p-member-form__input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+          %input.p-member-form__input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => "", :id => "email-input"}/
+          .email-error フォーマットが不適切です
         .p-member-form  
           .p-member-form__label
             パスワード
             %span.required 必須
           %input.p-member-form__input{:name => "password", :placeholder => "7文字以上の半角英数字", :type => "password", :value => "", :id => "password-input"}/
-          .alert1 英字と数字両方を含むパスワードを設定してください
-          .alert2 7文字以上128文字以下で入力してください
+          .password-error1 英字と数字両方を含むパスワードを設定してください
+          .password-error2 7文字以上128文字以下で入力してください
           %p.note ※英字と数字の両方を含めて設定してください
           .password-check
             %input.passcheck{:name => "passcheck", :type => "checkbox", :value => ""}/
@@ -59,6 +61,8 @@
             %span.required 必須
           %input.p-member-form__half{:name => "last-name-kana", :placeholder => "例）ヤマダ", :type => "name", :value => ""}/
           %input.p-member-form__half{:name => "first-name-kana", :placeholder => "例）アヤ", :type => "name", :value => ""}/
+
+
         .p-member-form  
           .p-member-form__label
             生年月日
@@ -66,17 +70,17 @@
           .p-member-form__birthday
             -# != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'select-default', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
             .p-member-form__birthday--select
-              %i.icon-arrow-bottom
-                = select_tag'year',options_for_select(1950..2020),class:'select-default'
+              = select_tag 'year', class:'year', :value => ""
             %span 年
             .p-member-form__birthday--select
-              %i.icon-arrow-bottom
-                = select_tag'month',options_for_select(1..12),class:'select-default'
+              = select_tag 'month', class:'month', :value => ""
             %span 月
             .p-member-form__birthday--select
-              %i.icon-arrow-bottom
-                = select_tag'day',options_for_select(1..31),class:'select-default'
+              = select_tag 'date', class:'date', :value => ""
             %span 日
+            .birthday-error 生年月日を入力してください
+
+
           %p.note ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .p-member-form__terms
           %p.text

@@ -40,15 +40,31 @@
       border-radius: 4px;
       margin: 0 0 16px 0;
       background: #ea352d;
-      .far.fa-envelope {
-        color: #fff;
-      }
+      position: relative;
+    }
+    .fa-envelope:before {
+      color: #fff;
+      background-color:#ea352d;
+      font-size: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 22px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
     }
     &__facebook {
       border-radius: 4px;
       background: #385185;
-      .fab.fa-facebook-square {
+      position: relative;
+      .fa-facebook-square:before {
         color: #fff;
+        font-size: 35px;
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
       }
     }
     &__google {
@@ -56,8 +72,16 @@
       margin: 16px 0 0;
       background: #fff;
       border: #979797 solid 1px;
-      .fab.fa-google {
+      position: relative;
+      .fa-google:before {
         color: #000;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 22px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
       }
     }
   }

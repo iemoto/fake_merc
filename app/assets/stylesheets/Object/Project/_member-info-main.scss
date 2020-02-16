@@ -43,19 +43,33 @@
         line-height: 1.5;
         font-size: 16px;
       }
-      &__input.has-error{
+      &__input.nickname-error{
         outline: 1px solid #ea352d ;
       }
       &__input:focus{
         outline: 1px solid #0099e8 ;
-
       }
-      .alert1 {
+      .nickname-error {
         margin: 8px 0 0;
         color: #ea352d;
         display: none;
       }
-      .alert2 {
+      .email-error {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .password-error1 {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .password-error2 {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .birthday-error {
         margin: 8px 0 0;
         color: #ea352d;
         display: none;
@@ -118,15 +132,33 @@
           width: 76px;
           height: 48px;
           display: inline-block;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
           .icon-arrow-bottom {
             width: 100px;
-            .select-default {
-              height: 48px;
-              padding: 0 16px;
-              width: 100%;
-              background: #fff;
-              cursor: pointer;
-            }
+          }
+          #year {
+            height: 48px;
+            padding: 0 16px;
+            width: 100%;
+            background: #fff;
+            cursor: pointer;
+          }
+          #month {
+            height: 48px;
+            padding: 0 16px;
+            width: 100%;
+            background: #fff;
+            cursor: pointer;
+          }
+          #date {
+            height: 48px;
+            padding: 0 16px;
+            width: 100%;
+            background: #fff;
+            cursor: pointer;
           }
         }
       }
