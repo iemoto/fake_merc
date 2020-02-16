@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   root "mains#index"
-  devise_for :users
-
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+    }
+  
   devise_scope :user do
-    get '/signin', to: 'devise/registrations#new'
+    get '/signup', to: 'users/registrations#index'
+    get '/signup/registration/', to: 'devise/registrations#new'
   end
+
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
   get '/:id/show', to: 'mains#show'
