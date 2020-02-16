@@ -1,13 +1,30 @@
 .main-wrapper
   background-color: whitesmoke
   .main-contents
-    position: relative
     &__notice
       object-fit: cover
-      .img
-        height: 290px
-        width: 100%
-        margin: 0px
+      display: flex
+      justify-content: center
+      &--slide
+        max-width: 600px 
+        margin: 0 auto
+        padding: 0
+        height: auto
+        .prev-arrow,
+        .next-arrow 
+          position: absolute
+          top: 50%
+          margin: 0
+          padding: 0
+          line-height: 1
+          transform: translateY(-50%)
+          cursor: pointer
+          font-weight: bold
+        .prev-arrow 
+          left: -20px
+        .next-arrow 
+          right: -20px
+
     .category
       padding: 56px 0px 30px
       background-color: rgb(255, 255, 255)
