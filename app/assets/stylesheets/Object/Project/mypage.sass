@@ -1,30 +1,12 @@
-@mixin mypageTab__fonts
-  width: 50%
-  text-align: center
-  font-size: 16px
-  line-height: 72px
-  font-weight: bold
-  color: rgb(51, 51, 51)
-  background-color: #eee
-  height: 72px
-
-@mixin mypageUser__fonts
-  text-align: center
-  margin-top: 8px
-
 .mypage-wrapper
   width: 1020px
   display: flex
-  // hamlで表示順を逆にしているため追記
-  flex-direction: row-reverse
+  justify-content: center
   margin: auto
   margin-top: 40px
-  // スマホ対応するなら以下も対応
-    // @media (max-width: 1060px)
-    // display: flex
-    // flex-direction: column
+  margin-bottom: 50px
 
-.contents
+.mypage-contents
   margin-right: auto
   margin-left: auto
 
@@ -69,7 +51,3 @@
   display: flex
   &__tab
     @include mypageTab__fonts
-
-.isMypageButton
-  border-top: 2px solid red
-  background-color: white

@@ -1,6 +1,7 @@
 = render "./shared/header"
 .mypage-wrapper
-  .contents
+  = render './shared/sideBar'
+  .mypage-contents
     .mypageUser
       .mypageUser__icon
       .mypageUser__name
@@ -21,5 +22,4 @@
         取引中
       .mypagePurchase__tab
         過去の取引
-  = render './shared/sideBar'
 = render './shared/footer'
