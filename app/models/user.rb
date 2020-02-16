@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :nick_name, presence: true
 
-  
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     # sns認証したことがあればアソシエーションで取得

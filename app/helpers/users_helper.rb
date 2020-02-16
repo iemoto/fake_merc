@@ -12,5 +12,4 @@ module UsersHelper
       }
     )
   end
-  
 end
