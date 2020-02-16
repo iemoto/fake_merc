@@ -44,6 +44,7 @@
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
+
   .p-member
     .p-member-container
       .p-member-header
@@ -54,14 +55,15 @@
             .p-member-form__label
               ニックネーム
               %span.required 必須
-              = f.text_field :nick_name, autofocus: true, require: true, autocomplete: "nick_name", placeholder: "例）メルカリ太郎"
+              = f.text_field :nick_name, autofocus: true, require: true, autocomplete: "nick_name", placeholder: "例）メルカリ太郎", class: "nick_name"
             -# %input.p-member-form__input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "nickname", :value => "", :id => "nickname-input"}/
             .nickname-error ニックネームを入力してください
           .p-member-form  
             .p-member-form__label
               メールアドレス
               %span.required 必須
-            %input.p-member-form__input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => "", :id => "email-input"}/
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "email"
+            -# %input.p-member-form__input{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => "", :id => "email-input"}/
             .email-error フォーマットが不適切です
           .p-member-form  
             .p-member-form__label
