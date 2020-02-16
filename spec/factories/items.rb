@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :sell_item do
+  factory :item do
     name "MyString"
     despriction "MyString"
     money 1
