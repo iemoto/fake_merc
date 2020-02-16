@@ -1,0 +1,6 @@
+= form_for @item do |f|
+  商品名 = f.text.field :name
+  価格 = f.number_field :money
+  = f.fileds_for :images do |i|
+    i.fiel_field :image_url
+  =f.submit
