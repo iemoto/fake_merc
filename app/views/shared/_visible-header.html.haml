@@ -1,1 +1,8 @@
 %header.l-visible-header
+  .l-visible-inner
+    .u-visible-logo
+      = link_to image_tag(asset_path("fakelogo.svg"),size:"134x36"), root_path
+  %div
+  %div
+  - form_with
+    = fa_icon 'search'
