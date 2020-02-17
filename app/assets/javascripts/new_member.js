@@ -1,8 +1,8 @@
 $(function(){
   //バリデーション　ニックネーム
-  $('#nickname-input').on('blur',function(){
+  $('#user_nick_name').on('blur',function(){
     let error;
-    let value = $('#nickname-input').val();
+    let value = $('#user_nick_name').val();
     // console.log(value)
     if(value == ""){
       error = true;}
@@ -10,11 +10,11 @@ $(function(){
     //   error = true;}
     if(error){
       $('.nickname-error').show();
-      $('#nickname-input').css({'border':'1px solid #ea352d'});
+      $('#user_nick_name').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.nickname-error').hide();
-      $('#nickname-input').css({'border':'1px solid #0099e8'});
+      $('#user_nick_name').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -22,9 +22,9 @@ $(function(){
 
 $(function(){
   //バリデーション　メールアドレス
-  $('#email-input').on('blur',function(){
+  $('#user_email').on('blur',function(){
     let error;
-    let value = $('#email-input').val();
+    let value = $('#user_email').val();
     // console.log(value)
     if(value == ""){
       error = true;}
@@ -32,11 +32,11 @@ $(function(){
     //   error = true;}
     if(error){
       $('.email-error').show();
-      $('#email-input').css({'border':'1px solid #ea352d'});
+      $('#user_email').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.email-error').hide();
-      $('#email-input').css({'border':'1px solid #0099e8'});
+      $('#user_email').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -44,9 +44,9 @@ $(function(){
 
 $(function(){
   //バリデーション　パスワード
-  $('#password-input').on('blur',function(){
+  $('#user_password').on('blur',function(){
     let error;
-    let value = $('#password-input').val();
+    let value = $('#user_password').val();
     // console.log(value)
     if(value == ""){
       error = true;}
@@ -54,11 +54,11 @@ $(function(){
       error = true;}
     if(error){
       $('.password-error1').show();
-      $('#password-input').css({'border':'1px solid #ea352d'});
+      $('#user_password').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.password-error1').hide();
-      $('#password-input').css({'border':'1px solid #0099e8'});
+      $('#user_password').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -72,11 +72,11 @@ $(function(){
   $(function(){
     $('.passcheck').click(function(){
       // passcheckをクッリクしたら
-        var text = $('#password-input').val();
-        // valで#password-inputの値を取ってきて、変数textに入れる
-        console.log(text)
-        $('.passshow').text(text);
-        // pssshowにtextメソッドでtextを入れる
+      var text = $('#user_password').val();
+      // valで#password-inputの値を取ってきて、変数textに入れる
+      console.log(text)
+      $('.passshow').text(text);
+      // pssshowにtextメソッドでtextを入れる
     });
   });
 });

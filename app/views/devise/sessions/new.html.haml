@@ -15,3 +15,34 @@
   .actions
     = f.submit "Log in"
 = render "devise/shared/links"
+
+
+= render './shared/simple-header'
+
+.p-login-main
+  .p-login-user
+    .p-login-user__account
+      %p アカウントをお持ちでない方はこちら
+      = link_to signup_registration_path, class: "p-login-user__account--link" do
+        新規会員登録
+    .p-login-user__inner
+      .p-login-user__inner--btn
+        %button.facebook-login
+          = fa_icon 'facebook-square'
+          Facebookでログイン
+        %button.google-login
+          = fa_icon 'google'
+          Googleでログイン
+    .p-login-form
+      .p-login-form__group
+        %input.mail{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+      .p-login-form__group
+        %input.password{:name => "password", :placeholder => "パスワード", :type => "password", :value => ""}/
+      .p-login-form__g-recaptcha
+        %iframe{:frameborder => "0", :height => "78", :name => "a-eay3grodipxw", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=TYDIjJAqCk6g335bFk3AjlC3&size=normal&cb=5i4n4os9copa", :width => "304"}
+      .p-login-form__submit
+        %button.p-login-form__submit--btn{:type => "submit"} ログイン
+        = link_to "https://www.mercari.com/jp/password/reset/start/", class: "p-login-form__submit--help" do
+          %p.p-login-form__submit--help パスワードをお忘れの方
+
+= render './shared/simple-footer'

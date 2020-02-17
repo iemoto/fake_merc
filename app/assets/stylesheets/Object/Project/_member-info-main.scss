@@ -32,7 +32,7 @@
           vertical-align: top;
         }
       }
-      &__input {
+      .nick_name {
         width: 100%;
         padding: 10px 16px 8px;
         margin: 8px 0 0;
@@ -43,22 +43,42 @@
         line-height: 1.5;
         font-size: 16px;
       }
-      &__input.nickname-error{
-        outline: 1px solid #ea352d ;
-      }
-      &__input:focus{
-        outline: 1px solid #0099e8 ;
-      }
+      // .nick_name:focus{
+      //   outline: 1px solid #0099e8 ;
+      // }
       .nickname-error {
         margin: 8px 0 0;
         color: #ea352d;
         display: none;
+      }
+      .email {
+        width: 100%;
+        padding: 10px 16px 8px;
+        margin: 8px 0 0;
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
       }
       .email-error {
         margin: 8px 0 0;
         color: #ea352d;
         display: none;
       }
+      .password {
+        width: 100%;
+        padding: 10px 16px 8px;
+        margin: 8px 0 0;
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
       .password-error1 {
         margin: 8px 0 0;
         color: #ea352d;
@@ -112,6 +132,7 @@
           overflow-wrap: break-word;
           text-align: center;
           line-height: 35px;
+          color: #000;
         }
       }
       &__half {
@@ -173,21 +194,20 @@
     }
   }
 }
-
-.p-member-btn {
+.submit {
+  color: #fff;
+  text-decoration: none;
+  line-height: 48px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
   margin: 8px 0 0;
   height: 48px;
   background: #ea352d;
   border: 1px solid #ea352d;
-  &__link {
-    color: #fff;
-    text-decoration: none;
-    line-height: 48px;
-    cursor: pointer;
-    text-align: center;
-    display: block;
-  }
+  width: 100%;
 }
+
 .p-member-reg {
   margin: 24px 0 0;
   text-align: right;
