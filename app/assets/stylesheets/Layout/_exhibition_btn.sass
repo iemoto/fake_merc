@@ -1,25 +1,35 @@
-.Exhibition__wrapper
-  bottom: 32px
-  font-size: 22px
-  height: 160px
-  right: 32px
-  z-index: 3
-  display: flex
-  justify-content: flex-end
-  margin-right: 30px
+.Exhibition__btn
   position: fixed
-  margin-right: 100px
+  bottom: -14px
+  right:  -14px
+  z-index: 1000
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  background-color: $color--mercred
+  color: $color--sub-block__font
+  text-align: center
+  font-family: $font--basic
+  text-decoration: none
+
+  &--text
+    margin: 14px 0 0 
+
+@media screen and (min-width: 768px)
   .Exhibition__btn
-    padding-top: 15px
-    text-align: center
-    height: 120px
-    width: 120px
-    background-color: rgb(234, 53, 45)
-    border-radius: 50%
+    bottom: 32px
+    right:  32px
+    width:  160px
+    height: 160px
+    font-size: 22px
     &--text
-      color: rgb(255, 255, 255)
-      font-size: 17px
-      font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
-    &--icon
-      color: rgb(255, 255, 255)
-      font-size: 50px
+      margin: 32px 0 0 
+
+.fa-camera
+  marign: 4px 0 0 
+  font-size: 24px
+
+@media screen and (min-width: 768px)
+  .fa-camera
+    marign: 8px 0 0 
+    font-size: 54px

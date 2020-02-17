@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    describe '新規会員登録' do
+  describe '新規会員登録' do
     it 'nick_name,email,passwordが全部ある場合、登録できる' do
       user = build(:user)
       expect(user).to be_valid
