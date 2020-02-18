@@ -67,17 +67,13 @@ $(function(){
 $(function(){
   //パスワード表示
   $('.passcheck').click(function(){
-      $('.passshow').toggle();
-  });
-  $(function(){
-    $('.passcheck').click(function(){
-      // passcheckをクッリクしたら
-      var text = $('#user_password').val();
-      // valで#password-inputの値を取ってきて、変数textに入れる
-      console.log(text)
-      $('.passshow').text(text);
-      // pssshowにtextメソッドでtextを入れる
-    });
+    $('.passshow').toggle();
+    // passcheckをクッリクしたら
+    var text = $('#user_password').val();
+    // valで#password-inputの値を取ってきて、変数textに入れる
+    // console.log(text)
+    $('.passshow').text(text);
+    // pssshowにtextメソッドでtextを入れる
   });
 });
 

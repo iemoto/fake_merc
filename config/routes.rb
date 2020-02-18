@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/signup', to: 'users/registrations#index'
     get '/signup/registration/', to: 'devise/registrations#new'
+    post '/signup/registration/', to: 'users/registrations#create'
+    get '/signup/registration/:id/', to: 'users/registrations#show'
   end
 
   # メイン画面、商品詳細画面
