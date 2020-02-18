@@ -108,7 +108,6 @@
           -#     %span 日
           -#     .birthday-error 生年月日を入力してください
 
-
             %p.note ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .p-member-form__terms
             %p.text
@@ -118,7 +117,6 @@
         .p-member-content
           .p-member-form
             = f.submit "次に進む", class: "submit"
-            -# %input{"data-disable-with" => "次に進む", :name => "commit", :type => "submit", :value => "Sign up"}/
             .p-member-reg
               = link_to "本人情報の登録について", "#", class: "p-member-reg__link"
             .p-member-policy
