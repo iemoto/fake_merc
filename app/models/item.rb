@@ -9,6 +9,6 @@ class Item < ApplicationRecord
   # belongs_to :brand_id
   # belongs_to :size_id
   has_many :images
-  accepts_nested_attributes_for :images
-  validates :name, :despriction, :money, :sold_out, :shipping_fee_side, presence: true
+  accepts_nested_attributes_for :images, allow_destroy: true
+  validates :name, :money, presence: true
 end
