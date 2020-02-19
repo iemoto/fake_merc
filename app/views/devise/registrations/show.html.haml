@@ -23,11 +23,12 @@
 -#   .actions
 -#     = f.submit "Sign up"
 -# = render "devise/shared/links"
--# 参考に残しておく、最終的には調整する。
+-# ↑↑↑本来は不要ですが、コメント化したものは念のため残しております。最終的には調整する。
+
 
 .done-bread-header
   = link_to "https://www.mercari.com/jp/", class: "done-bread-header__link" do
-    = image_tag "/assets/fakelogo.svg", class: "done-bread-header__link--logo", alt: "mercari", size:"134x36"
+    = image_tag asset_path('fakelogo.svg'), class: "done-bread-header__link--logo", alt: "mercari", size:"134x36"
   .done-bread-header-right
     %ol.clearfix
       %li
