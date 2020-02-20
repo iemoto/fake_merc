@@ -73,7 +73,7 @@
             .password-error2 7文字以上128文字以下で入力してください
             %p.note ※英字と数字の両方を含めて設定してください
             .password-check
-              %input.passcheck{:name => "passcheck", :type => "checkbox", :value => ""}/
+              %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
               %label_tag.label パスワードを表示する 
               .passshow
 
@@ -113,7 +113,7 @@
           .p-member-form__terms
             %p.text
             「次へ進む」のボタンを押すことにより、
-            %a.terms-text{:href => "/jp/tos_list/", :target => "_blank"}> 利用規約
+            %a.terms-text{href: "/jp/tos_list/", target: "_blank"} 利用規約
             に同意したものとみなします
         .p-member-content
           .p-member-form
@@ -123,9 +123,9 @@
             .p-member-policy
               %p.p-member-policy__terms
                 This site is protected by reCAPTCHA and the Google
-                %a.p-member-policy__terms--link{:href => "https://policies.google.com/privacy", :target => "_blank"} Privacy Policy
+                %a.p-member-policy__terms--link{href: "https://policies.google.com/privacy", target: "_blank"} Privacy Policy
                 and
-                %a.p-member-policy__terms--link{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
+                %a.p-member-policy__terms--link{href: "https://policies.google.com/terms", target: "_blank"} Terms of Service
                 apply.
 
   = render 'shared/simple-footer'
