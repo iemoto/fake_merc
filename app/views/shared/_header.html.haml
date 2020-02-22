@@ -1,23 +1,22 @@
-%header.header-wrapper
+%header.header-wrapper.u-visible-pc 
   .header-inner
-  
     .menu-upper
       //メルカリロゴ
       .menu-upper__logo
-        =link_to image_tag(asset_path("fakelogo.svg"),size:"134x36"), root_path
+        =link_to image_tag(asset_path("fakelogo.svg"),alt:'fake_merc', size:"134x36"), root_path
       //検索機能(検索窓、検索ボタン、プレイスホルダーつける、)
-      .menu-upper__search
-        .menu-upper__search--icon
-          = fa_icon 'search'
-          -# = form_with model: @xxx, local:true do |form|
-          -# =faicon 'musimegane'
-    .menu-lower
+      = form_with url: root_path , local: true, class: 'menu-upper__search__form' do |f|
+        = f.text_field :search , class: 'menu-upper__search__form__text-box input-default', placeholder: '何かお探しですか？' 
+        = fa_icon 'search',class: 'u-search_bar_icon'
+    .menu-lower.clearfix
       -# //以下カテゴリーjQuery実装予定
-      .menu-lower__search
-        %ul.menu-lower__search--category
-          .icon
-            = fa_icon 'list'
-            =link_to "カテゴリーから探す"
+      %nav.menu-lower__search
+        %ul.menu-lower__search--nav
+          %li
+            %h2
+              = link_to root_path, class: 'l-list-block l-list-parent' do
+                = fa_icon 'list',class: 'l-list-icon'
+                %span カテゴリーから探す
             -# %li
             -#   =link_to 'レディース'
             -# %li
@@ -47,10 +46,11 @@
             -# %li
             -#   =link_to 'カテゴリー一覧'
           //以下カテゴリーjQuery実装予定
-        %ul.menu-lower__search--brand
-          .icon
-            =fa_icon 'tag'
-            =link_to 'ブランドから探す'
+          %li
+            %h2
+              = link_to root_path, class: 'l-list-block l-list-parent' do
+                = fa_icon 'tag',class: 'l-list-icon'
+                %span ブランドから探す
             -# %li
             -#   =link_to 'シャネル'
             -# %li
@@ -65,23 +65,30 @@
             -#   =link_to 'カテゴリー一覧'
         //いいね！一覧、お知らせ、やることリスト、マイページ
         //命名が分からなかったのでcontensで仮置き
-      -if user_signed_in?
-        .menu-lower__afterLogin
-          %ul.afterLogin__list
-            = fa_icon 'heart'
-            = link_to 'いいね！一覧'
-          %ul.afterLogin__list
-            = fa_icon 'bell-o'
-            = link_to 'お知らせ'
-          %ul.afterLogin__list
-            = fa_icon 'check'
-            = link_to 'やることリスト'
-          %ul.afterLogin__list
-            = fa_icon 'user'
-            = link_to 'マイページ', mypage_path
-      -else
-        .menu-lower__register
-          .menu-lower__register--new
-            =link_to  "新規会員登録", new_user_registration_path
-          .menu-lower__register--login
-            =link_to "ログイン", user_session_path
+      .menu-lower__afterLogin
+        -if user_signed_in?
+          %ul
+            %li.afterLogin__like-list
+              = link_to root_path , class: 'l-list-nav u-over-icon' do
+                = fa_icon 'heart-o',class: 'l-user-icon'
+                %span.u-over-span いいね！一覧
+            %li
+              = link_to root_path , class: 'l-list-nav u-over-icon' do
+                = fa_icon 'bell-o',class: 'l-user-icon'
+                %span.u-over-span おしらせ
+            %li
+              = link_to root_path , class: 'l-list-nav u-over-icon' do
+                = fa_icon 'check',class: 'l-user-icon'
+                %span.u-over-span やることリスト
+            %li
+              = link_to mypage_path, class: 'l-list-nav u-over-icon' do
+                %figure
+                  %div
+                    = image_tag(asset_path('no-image-boy.png'), width: "32",class: 'u-over-icon')
+                %span.u-over-span マイページ
+        -else
+          .menu-lower__register
+            .menu-lower__register--new
+              =link_to  "新規会員登録", new_user_registration_path
+            .menu-lower__register--login
+              =link_to "ログイン", user_session_path

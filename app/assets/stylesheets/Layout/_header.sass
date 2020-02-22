@@ -5,78 +5,132 @@
   z-index: 1001
   background-color: #fff
   .header-inner
+    width: 700px
+    margin: 0 auto
+    padding: 8px 0 0
+    @media screen and(min-width: 1068px)
+      width: 1020px
     .menu-upper
+      display: -webkit-box
+      display: -ms-flexbox
       display: flex
-      justify-content: center
-      width: 1000px
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      -webkit-box-pack: justify
+      -ms-flex-pack: justify
+      justify-content: space-between
       &__logo
         align-items: center
         display: flex
         height: 40px
-        margin-right: 45px
-      &__search
-        background-color: rgb(245, 245, 245)
-        font-size: 16px
-        height: 40px
-        line-height: 1.4em
+        &:hover
+          
+      &__search__form
         position: relative
-        width: 821px
-        border-width: 1px
-        border-style: solid
-        border-color: rgb(204, 204, 204)
-        border-image: initial
-        border-radius: 4px
-        outline: none
-        padding-right: 20px
-        transition: all 0.3s ease-out 0s
-        &--icon
-          line-height: 40px
-          text-align: right
+        margin-left: 45px
+        width: 100%
+        -webkit-box-flex: 1
+        -ms-flex: 1
+        flex: 1
+        &__text-box
+          background: #f5f5f5
+          border-radius: 4px
+          padding: 0 42px 0 10px
+          width: 100%
+          height: 40px
+          -webkit-transition: all ease-out .3s
+          transition: all ease-out .3s
     .menu-lower
-      display: flex
-      justify-content: space-between
-      margin-top: 8px
-      color: rgb(234, 53, 45)
-      margin-right: 63px
-      width: 1000px
+      margin: 8px 0 0
       &__search
-        display: flex
-        margin-right: 140px
-        &--category
-          padding-left: 0px
-          cursor: pointer
-          height: 44px
-          position: relative
-          z-index: 3
-          padding: 0px 10px
-          font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+        float: left
+        &--nav
+          font-size: 0
+          li
+            position: relative
+            display: inline-block
+            padding: 0 11px
+            cursor: pointer
+          li:first-child
+            padding-left: 0
+          li:last-child
+          h2
+            font-size: 14px
+            font-weight: 400
+            line-height: 1.4
+            .l-list-block
+              position: relative
+              height: 44px
+              line-height: 32px
+            .l-list-parent
+              font-weight: 700
           a
+            display: block
+            color: #333
             text-decoration: none
-            color: black
-          .icon
-            margin-top: 0
-        &--brand
-          padding-left: 0px
-          cursor: pointer
-          height: 44px
-          position: relative
-          z-index: 3
-          padding: 0px 10px
-          font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
-          a
-            text-decoration: none
-            color: black
-          .icon
-            margin-top: 0
+          .l-list-icon
+            color: #ea352d
+            font-size: 14px
+            margin-right: 4px
+            display: inline
+          span
+            vertical-align: middle
+
       &__afterLogin
-        display: flex
+        float: right
         ul
-          margin-left: 30px
-          font-size: 14px
-          font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
-        a
-          text-decoration: none
-          color: black
+          font-size: 0
+          li
+            position: relative
+            display: inline-block
+            padding: 0 7px
+            cursor: pointer
+            @media screen and(min-width: 1068px)
+              padding: 0 14px
+              
+            .l-list-nav
+              position: relative
+              display: block
+              height: 44px
+              line-height: 32px
+              font-size: 0
+              color: #333
+              &:hover .l-user-icon
+                color: $color--mercblue
+
+            a
+              text-decoration: none
+
+              .l-user-icon
+                font-size: 18px
+                color: #ccc
+                display: inline
+                vertical-align: middle
+
+              span
+                margin-left: 10px
+                font-size: 14px
+                vertical-align: middle
+
+            figure
+              display: inline-block
+              position: relative
+              text-align: center
+              vertical-align: middle
+              margin: 0 auto
+              div
+                overflow: hidden
+                border-radius: 50%
+                img
+                  vertical-align: bottom
+        .afterLogin__like-list
+          display: none
+          @media screen and(min-width: 1068px)
+            display: inline-block
+
+        .afterLogin__like-list:first-child
+          padding-left: 0
         i
           color: gray
       &__register
@@ -93,9 +147,9 @@
             border-color: rgb(234, 53, 45)
             border-image: initial
             border-radius: 4px
-            padding: 8px 10px
+            padding: 5px 10px
             text-decoration: none
-            margin: 0px 20px
+            margin: 0px 10px
         &--login
           a
             color: rgb(0, 149, 238)
@@ -106,10 +160,9 @@
             border-color: rgb(0, 149, 238)
             border-image: initial
             border-radius: 4px
-            padding: 8px 10px
+            padding: 5px 10px
             transition: all 0.3s ease-out 0s
             text-decoration: none
           a:hover
             color: white
             background-color: rgb(0, 149, 238)
-
