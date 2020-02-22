@@ -1,2 +1,59 @@
-sell_items
-new
+.sell-wrapper
+= form_with(model: @item, url: sell_path, local: true, class: 'sell-wrapper') do |f|
+  .sell-wrapper__Title
+    商品の情報を入力
+  .sellHeading
+    %h3.sellImage__title
+      出品画像
+      = render 'mustLabel'
+    %p.subscription
+      最大10枚までアップロードできます
+    .label-box__inner
+      %label
+        = f.file_field(:image, class: 'input-default', placeholder: 'ドラッグアンドドロップまたはクリックしてファイルをアップロード')
+        .boxFileSelect
+          ドラッグアンドドロップまたはクリックしてファイルをアップロード
+
+  %h3.sellHeading
+    商品名
+    = render 'mustLabel'
+    .sellTitle
+      = f.text_field(:title, placeholder: '40文字まで')
+  %h3.sellHeading
+    商品の説明
+    = render 'mustLabel'
+    .sellDescription
+      = f.text_area(:description, rows: 7, id: 'js-count', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n \n 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
+    .textCount
+      0
+    %p
+      /1500
+  .sellHeading
+    商品の詳細
+  .sellHeading
+    発送について
+  .sellHeading
+    .sellValue__title
+      販売価格(300 〜 9,999,999)
+    .sellValue__items
+      .sellValue__items--value
+        価格
+        .label
+          必須
+        .cost
+          ￥
+      .sellValue__items--tax
+      .sellValue__items--gain
+  .sellHeading
+    %p
+      禁止されている出品、行為を必ずご確認ください。
+    %p
+      またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+    %p
+      また、出品をもちまして加盟店規約に同意したことになります。
+  .sellSubmit
+    出品する 
+    %br
+    戻る
+
+

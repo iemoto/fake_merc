@@ -1,0 +1,77 @@
+@mixin sharedStyle
+  border-top: solid 2px rgb(245, 245, 245)
+  padding: 15px
+
+.sell-wrapper
+  background-color: white
+  @media (min-width: 768px)
+    width: 700px
+    margin: 0 auto
+  .sell-wrapper__Title
+    text-align: center
+    font-weight: bold
+    padding: 24px 8px
+    font-size: 18px
+    @media (min-width: 760px)
+      padding: 32px 16px
+      font-size: 22px
+
+.sellHeading
+  @include sharedStyle
+  .sellImage__title
+    margin-bottom: 0
+  .subscription
+    font-size: 1rem
+  .label-box__inner
+    .input-default
+      display: none
+    .boxFileSelect
+      width: 100%
+      height: 150px
+      background-color: rgb(245, 245, 245)
+      border: dashed 1px black
+      text-align: center
+      line-height: 150px
+
+.sellTitle
+  margin-top: 10px
+  input
+    padding: 5px
+    padding-left: 20px
+    height: 48px
+    font-size: 15px
+    font-weight: normal
+    width: 100%
+
+.sellDescription
+  margin-top: 10px
+  textarea
+    // height: 150px
+    width: 100%
+    padding: 20px
+    // padding-left: 20px
+    height: 170px
+    font-size: 15px
+    font-weight: normal
+
+
+  // @include sharedStyle
+  // border-top: solid 2px rgb(245, 245, 245)
+  // border-bottom: solid 2px rgb(245, 245, 245)
+
+.sellDescription
+  @include sharedStyle
+  // border-top: solid 2px rgb(245, 245, 245)
+  // border-bottom: solid 2px rgb(245, 245, 245)
+.sellDetail
+  @include sharedStyle
+  // border-top: solid 2px rgb(245, 245, 245)
+  // border-bottom: solid 2px rgb(245, 245, 245)
+.sellShip
+  @include sharedStyle
+  // border-top: solid 2px rgb(245, 245, 245)
+  // border-bottom: solid 2px rgb(245, 245, 245)
+.sellValue
+  @include sharedStyle
+  // border-top: solid 2px rgb(245, 245, 245)
+  // border-bottom: solid 2px rgb(245, 245, 245)
