@@ -1,0 +1,53 @@
+= render './shared/simple-header'
+
+.p-buy-container
+  .p-buy-content-header
+    .p-buy-content-header__caption
+      購入内容の確認
+  .p-buy-content-item
+    .p-buy-content-item-inner
+      .p-buy-content-item-inner__box
+        .buy-item-image
+        = image_tag '/Users/aokiyasuhiro/Desktop/fake_merc/app/assets/images/content_pc.png', alt: '商品写真', height: '80px', width: '60px', class: 'item-image'
+        .buy-item-detail
+          .buy-item-detail__name 
+          スマホ本体
+          .buy-item-detail__price
+            .buy-item-detail__price--ja
+            ¥20,000
+            .buy-item-detail__price--fee
+            (税込)送料込み
+    .p-buy-content-item
+      .p-buy-content-item-inner
+        .p-buy-content-item-inner__form
+        %ul.buy-price-table
+          %li.buy-price-row
+            .buy-price-display
+            支払い金額
+            .bay-price-ja
+            ¥20,000
+        %ul.buy-accordion
+          %li.acoordion-parent
+            .checkbox-default
+              %input{type: "checkbox", name: "checkbox"}
+              .checkbox-default__label
+              ポイントを使用（所持ポイント: P0）
+        .buy-user-info
+          .buy-content-inner
+            .clearfix
+            %h3 支配い方法
+            = link_to "https://www.mercari.com/jp/transaction/select_card/m67619539449/", class: "buy-user-info-fix" do
+              変更する
+      .p-buy-content-contents
+        .p-buy-content-btn
+          .p-buy-content-btn__mail
+            = fa_icon 'envelope'
+            = link_to "メールアドレスで登録する", "#", class: "p-buy-content-btn__link"
+          .p-buy-content-btn__facebook
+            = fa_icon 'facebook-square'
+            = link_to "Facebookで登録する", "#", class: "p-buy-content-btn__link"
+          .p-buy-content-btn__google
+            = fa_icon 'google'
+            = link_to "Googleで登録する", "#", class: "p-buy-content-btn__link--color"
+
+= render './shared/simple-footer'
