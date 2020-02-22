@@ -32,10 +32,10 @@
         .p-login-user__inner--btn
           %button.facebook-login
             = fa_icon 'facebook-square'
-            Facebookでログイン
+            = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
           %button.google-login
             = fa_icon 'google'
-            Googleでログイン
+            = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
       .p-login-form
         .p-login-form__group
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "email"
@@ -52,5 +52,5 @@
           -# %button.p-login-form__submit--btn{:type => "submit"} ログイン
           = link_to "https://www.mercari.com/jp/password/reset/start/", class: "p-login-form__submit--help" do
             %p.p-login-form__submit--help パスワードをお忘れの方
-
-  = render './shared/simple-footer'
+            
+= render './shared/simple-footer'
