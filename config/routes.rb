@@ -36,7 +36,11 @@ Rails.application.routes.draw do
   patch '/sell/edit/:id', to: 'sell_items#update'
   delete '/sell/edit/:id', to: 'sell_items#destroy'
 
+  #商品詳細ページ（購入をする前）
+  get '/detailed',to: 'buy_item#show'
+
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
+
 end
