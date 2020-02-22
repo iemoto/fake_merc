@@ -6,28 +6,31 @@
         =image_tag("https://1.bp.blogspot.com/-DaxjfJ5r4R8/XeihF5SThkI/AAAAAAABWVg/MW3LcTUBjdYHliOnnnsUrFpj8msoVDBXACNcBGAsYHQ/s1600/medical_oushin_car_woman.png", size:"1073x390")
     //人気のカテゴリー
     .category
-      %h2
-      .category__title
+      %h2.category__title
         人気のカテゴリー
       .category__nav
         %ul.category__nav--list
           %li
-            =link_to 'レディース'
+            =link_to 'レディース', root_path,class: 'l-category-pc-link u-deco-none'
+            =link_to 'レディース', root_path,class:  'l-category-sp-link u-deco-none'
           %li
-            =link_to 'メンズ'
+            =link_to 'メンズ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'メンズ' ,root_path,class:'l-category-sp-link u-deco-none'
           %li
-            =link_to '家電・スマホ・カメラ'
+            =link_to '家電・スマホ・カメラ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to '家電・スマホ・カメラ' ,root_path,class:'l-category-sp-link u-deco-none'
           %li
-            =link_to 'おもちゃ・ホビー・グッズ'
+            =link_to 'おもちゃ・ホビー・グッズ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'おもちゃ・ホビー・グッズ' ,root_path,class:'l-category-sp-link u-deco-none'
     .new-items
       .category__new-items
-        .category__new-items--title
-          %h3
-            レディース新着アイテム
-        .category__new-items--more
-          =link_to 'もっと見る'
-          =fa_icon 'chevron-right'
+        .category__new-items--innner
+          %h3.category__new-items--innner--title.l-title-h3 レディース新着アイテム
+          = link_to root_path, class: 'category__new-items--innner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
       .category__new-goods
+        .category__new-goods
         %ul.category__new-goods--list
           %li
             =link_to '商品1'
