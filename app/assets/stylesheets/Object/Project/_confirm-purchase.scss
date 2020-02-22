@@ -1,8 +1,8 @@
 .p-buy-container {
   color: #333;
-  height: calc(100vh - 350px);
+  height: calc(100% - 350px);
 }
-.p-buy-content-header {
+.p-buy-header {
   width: 700px;
   margin: 0 auto;
   background-color: #fff;
@@ -13,7 +13,7 @@
     text-align: center;
   }
 }
-.p-buy-content-item {
+.p-buy-main {
   width: 700px;
   margin: 0 auto;
   background-color: #fff;

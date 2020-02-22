@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "mains#index"
+  root "mains#index_confirm-purchase"
   devise_for :users, controllers: {
     registrations: 'users/registrations'
     }
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   # メイン画面、商品詳細画面
-  get '/', to: 'mains#index'
+  get '/', to: 'mains#index_confirm-purchase'
   get '/:id/show', to: 'mains#show'
 
   # マイページトップページ、本人情報登録画面
