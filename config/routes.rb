@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/mypage', to: 'users#index'
   get '/mypage/identification', to: 'users#edit'
   patch '/mypage/identification', to: 'users#update'
-  
+
   # マイページ（ログアウト）
   get '/logout', to: 'users#show'
 
