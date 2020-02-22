@@ -3,11 +3,8 @@ $(function(){
   $('#user_nick_name').on('blur',function(){
     let error;
     let value = $('#user_nick_name').val();
-    // console.log(value)
     if(value == ""){
       error = true;}
-    // else if(!value.match(/[0-9a-zA-Z]/)){
-    //   error = true;}
     if(error){
       $('.nickname-error').show();
       $('#user_nick_name').css({'border':'1px solid #ea352d'});
@@ -25,11 +22,8 @@ $(function(){
   $('#user_email').on('blur',function(){
     let error;
     let value = $('#user_email').val();
-    // console.log(value)
     if(value == ""){
       error = true;}
-    // else if(!value.match(/[0-9a-zA-Z]/)){
-    //   error = true;}
     if(error){
       $('.email-error').show();
       $('#user_email').css({'border':'1px solid #ea352d'});
@@ -47,7 +41,6 @@ $(function(){
   $('#user_password').on('blur',function(){
     let error;
     let value = $('#user_password').val();
-    // console.log(value)
     if(value == ""){
       error = true;}
     else if(!value.match(/[0-9a-zA-Z]/)){
@@ -71,13 +64,10 @@ $(function(){
     // passcheckをクッリクしたら
     var text = $('#user_password').val();
     // valで#password-inputの値を取ってきて、変数textに入れる
-    // console.log(text)
     $('.passshow').text(text);
     // pssshowにtextメソッドでtextを入れる
   });
 });
-
-
 
 
 
@@ -163,16 +153,17 @@ $(function() {
   });
 });
 
+
+
+
+
 $(function(){
   //バリデーション　生年月日
   $('.p-member-form__birthday--select').on('click',function(){
     let error;
     let value = $('#date').val();
-    console.log(value)
     if(value == "0"){
       error = true;}
-    // else if(!value.match(/[0-9a-zA-Z]/)){
-    //   error = true;}
     if(error){
       $('.birthday-error').show();
       $('.p-member-form__birthday--select').css({'border':'1px solid #ea352d'});

@@ -19,9 +19,8 @@
 
 = render './shared/simple-footer'
 
+-# ↓↓↓本来は不要ですが、コメント化したものは念のため残しております。最終的には調整する。
 -# %h2 Sign up
--# = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
--# = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
 -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 -#   = render "devise/shared/error_messages", resource: resource
 -#   .field
@@ -50,6 +49,3 @@
 -#   .actions
 -#     = f.submit "Sign up"
 -# = render "devise/shared/links"
--# .sns-login
--#   = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
--#   = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
