@@ -4,6 +4,4 @@ class BuyItemController < ApplicationController
 
   def show
   end
-
-  
 end
