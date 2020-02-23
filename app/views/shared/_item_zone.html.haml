@@ -24,16 +24,22 @@
             =link_to 'おもちゃ・ホビー・グッズ' ,root_path,class:'l-category-sp-link u-deco-none'
     .new-items
       .category__new-items
-        .category__new-items--innner
-          %h3.category__new-items--innner--title.l-title-h3 レディース新着アイテム
-          = link_to root_path, class: 'category__new-items--innner--more u-font-14 u-deco-none' do
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 レディース新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
             %span もっと見る
             = fa_icon 'chevron-right'
       .category__new-goods
-        .category__new-goods
-        %ul.category__new-goods--list
-          %li
-            =link_to '商品1'
+        .category__new-goods__inner
+        %ul.category__new-goods__inner--list
+          %li.l-list-category
+            .l-list-min
+              =link_to root_path , class: 'l-list-a' do
+                %figure.l-list-figu
+                  %figcaption
+                    %span 商品名１
+                    .l-span-under
+                  .l-figu-under
           %li
             =link_to '商品2'
           %li
