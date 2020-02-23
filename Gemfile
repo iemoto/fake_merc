@@ -78,8 +78,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  # gem 'capybara'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
@@ -121,3 +121,8 @@ gem 'active_hash'
 
 # カテゴリ分類
 gem 'ancestry'
+
+# OmniAuthの脆弱性に対応する（SNS認証導入）
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
