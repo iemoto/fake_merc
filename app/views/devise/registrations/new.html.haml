@@ -56,14 +56,14 @@
               = f.text_field :nick_name, autofocus: true, require: true, autocomplete: "nick_name", placeholder: "例）メルカリ太郎", class: "nick_name"
             .nickname-error ニックネームを入力してください
 
-          .p-member-form  
+          .p-member-form
             .p-member-form__label
               メールアドレス
               %span.required 必須
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "email"
             .email-error フォーマットが不適切です
 
-          .p-member-form  
+          .p-member-form
             .p-member-form__label
               パスワード
               %span.required 必須
@@ -73,11 +73,11 @@
             %p.note ※英字と数字の両方を含めて設定してください
             .password-check
               %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
-              %label_tag.label パスワードを表示する 
+              %label_tag.label パスワードを表示する
               .passshow
 
           -# ↓後々反映する
-          -# .p-member-form  
+          -# .p-member-form
           -#   %p.person 本人確認
           -#   %p.safety-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           -# .p-member-form
@@ -92,7 +92,7 @@
           -#     %span.required 必須
           -#   %input.p-member-form__half{:name => "last-name-kana", :placeholder => "例）ヤマダ", :type => "name", :value => ""}/
           -#   %input.p-member-form__half{:name => "first-name-kana", :placeholder => "例）アヤ", :type => "name", :value => ""}/
-          -# .p-member-form  
+          -# .p-member-form
           -#   .p-member-form__label
           -#     生年月日
           -#     %span.required 必須
