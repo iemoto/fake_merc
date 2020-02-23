@@ -2,6 +2,7 @@
   width: 100%
   margin: 0px auto
   padding: 0px 10px
+  font-family: $font--basic
   @media (min-width:768px)
     max-width: 700px
     padding: 0px
@@ -9,6 +10,7 @@
     max-width: 1020px
     
   .main-contents
+    position: relative
     &__notice
       object-fit: cover
       display: flex
@@ -97,7 +99,6 @@
 
              
     .new-items
-      font-family: $font--basic
       padding: 30px 0px 60px
       @media (min-width: 768px)
         padding: 42px 0px 100px
@@ -219,7 +220,27 @@
                           padding: 0 12px
                           position: absolute
                           z-index: 2
-                
+                    .l-list-image
+                      height: 0
+                      overflow: hidden
+                      padding: 0 0 100%
+                      
+                      span
+                        align-items: center
+                        background: rgba(0,0,0,.4)
+                        border-radius: 0 14px 14px 0
+                        bottom: 8px
+                        box-sizing: border-box
+                        color: #fff
+                        display: inline-flex
+                        font-size: 17px
+                        height: 28px
+                        letter-spacing: .02em
+                        margin: 0
+                        padding: 0 12px
+                        position: absolute
+                        z-index: 2
+
     .bland
       text-align: center
       padding: 56px 0px 30px
