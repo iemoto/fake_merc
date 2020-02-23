@@ -104,6 +104,10 @@
         padding: 42px 0px 100px
       .category
         &__new-items
+          &:not(:first-child)
+            margin-top: 40px
+            @media (min-width: 768px)
+              margin-top: 60px
           &--inner
             margin-bottom: 16px
             -webkit-box-align: center
@@ -181,6 +185,10 @@
                         z-index: 0
                         @media (min-width: 768px)
                           height: 64px
+                        @media (max-width: 767px) and (min-width: 375px)
+                          font-size: 12px
+                          height: 46px
+                          padding: 6px 8px
                         span
                           display: inline-block
                           height: 2.8em
@@ -220,6 +228,16 @@
                           padding: 0 12px
                           position: absolute
                           z-index: 2
+                        .l-span-under
+                          align-items: center
+                          background: #fff
+                          bottom: 0
+                          display: flex
+                          height: 1.4em
+                          margin: auto
+                          position: absolute
+                          right: 12px
+                          top: 1.4em
                     .l-list-image
                       height: 0
                       overflow: hidden
@@ -240,6 +258,18 @@
                         padding: 0 12px
                         position: absolute
                         z-index: 2
+
+                      img
+                        bottom: 0
+                        position: absolute
+                        top: 0
+                        height: 100%
+                        -o-object-fit: cover
+                        object-fit: cover
+                        vertical-align: top
+                        width: 100%
+                        z-index: 1
+                        vertical-align: middle
 
     .bland
       text-align: center
