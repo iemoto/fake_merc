@@ -2,8 +2,9 @@
 .mypage-wrapper.clearfix
   = render './shared/sideBar'
   .l-identification-content
-    %section.l-identification__block
-      %h2.l-identification__head 本人情報の登録
+    %section.l-identification-block
+      %h2.l-identification-head
+        本人情報の登録
       = form_with url:'/',class: 'l-identification__form' do |f|
 
         .p-inner__block
