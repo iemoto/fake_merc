@@ -1,10 +1,12 @@
-= form_for @item, url: sell_path do |f|
-  %p 商品名
-  = f.text_field :name
-  %p 価格
-  = f.number_field :money
-  %br
-  = f.fields_for :images, @item.images.build do |i|
-    = i.file_field :image_url
+= form_with(model: @item,url: sell_path, local: true)do |f|
+  .formItem-name
+    = f.label :商品名
+    = f.text_field :name
+  .formItem-money
+    = f.label :価格
+    = f.number_field :money
+    %br
+    = f.fields_for :images, @item&.images&.build do |i|
+      = i.file_field :image_url
   %br
   =f.submit

@@ -6,15 +6,24 @@ class SellItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
+    # binding.pry
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully created.' }
+        format.json { render :show, status: :created, location: @item }
+      else
+        format.html { render :new }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def show
-    @item = Item.includes(:images).order('created_at DESC')
+    item_foreignKey = Item.find(params[:id])
+    @image = Image.find_by("item_id = #{item_foreignKey.id}")
+    # @image2 = Image.where("item_id = #{item_foreignKey.id}")
+    # binding.pry
+    @item = Item.find("#{params[:id]}")
   end
 
   def edit
@@ -25,10 +34,10 @@ class SellItemsController < ApplicationController
 
   def destroy
   end
-end
 
   private
 
   def item_params
     params.require(:item).permit(:name, :money, images_attributes: [:image_url])
+  end
 end
