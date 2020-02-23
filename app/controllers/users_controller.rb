@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
   end
-  
+
   def index_login
   end
 
