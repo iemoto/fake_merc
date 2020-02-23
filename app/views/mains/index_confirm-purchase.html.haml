@@ -1,0 +1,79 @@
+= render './shared/simple-header'
+
+.p-buy-container
+  .p-buy-header
+    .p-buy-header__caption
+      購入内容の確認
+  .p-buy-main
+    .p-buy-content-item-inner
+      .p-buy-content-item-inner__box
+        .buy-item-image
+        = image_tag '/Users/aokiyasuhiro/Desktop/fake_merc/app/assets/images/content_pc.png', alt: '商品写真', height: '80px', width: '60px', class: 'item-image'
+        .buy-item-detail
+          .buy-item-detail__name 
+          スマホ本体
+          .buy-item-detail__price
+            .buy-item-detail__price--ja
+            ¥20,000
+            .buy-item-detail__price--fee
+            (税込)送料込み
+    .p-buy-content-item
+      .p-buy-content-item-inner
+        .p-buy-content-item-inner__form
+        %ul.buy-price-table
+          %li.buy-price-row
+            .buy-price-display
+            支払い金額
+            .bay-price-ja
+            ¥20,000
+        %ul.buy-accordion
+          %li.acoordion-parent
+            .checkbox-default
+              %input{type: "checkbox", name: "checkbox"}
+              .checkbox-default__label
+              ポイントを使用（所持ポイント: P0）
+        .buy-user-info
+          .buy-content-inner
+            .clearfix
+            %h3 支配い方法
+            = link_to "https://www.mercari.com/jp/transaction/select_card/m67619539449/", class: "buy-user-info-fix" do
+              変更する
+            .buy-user-text
+            クレジットカード
+            %br/
+            ************0009
+            %br/
+            有効期限 04 / 20 
+            .buy-card-logo
+            = image_tag "https://www.f-regi.com/download/cardimage/img/card_5brand_500px.gif", class: "card-logo"
+        .buy-user-info
+          .buy-content-inner
+            .clearfix
+            %h3 配送先
+            = link_to "https://www.mercari.com/jp/transaction/select_card/m67619539449/", class: "buy-user-info-fix" do
+              変更する
+            .buy-user-text
+            〒520-****
+            %br/
+            滋賀県 ***
+            *****-*
+            *******-***
+            %br/
+            山田 **
+        .buy-error-content
+          .buy-error-text
+          この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+          .buy-btn
+            .buy-btn__nomal
+            = link_to "購入する"
+            .buy-btn__app
+            アプリで購入
+            .buy-btn__app--not
+            アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+          .left__app-images
+            .app-images__left
+              =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
+            .app-images__right
+              =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
+
+= render './shared/simple-footer'
