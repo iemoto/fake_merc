@@ -1,5 +1,5 @@
 $(function(){
-  //バリデーション　ニックネーム
+  //バリデーション ニックネーム
   $('#user_nick_name').on('blur',function(){
     let error;
     let value = $('#user_nick_name').val();
@@ -18,7 +18,7 @@ $(function(){
 
 
 $(function(){
-  //バリデーション　メールアドレス
+  //バリデーション メールアドレス
   $('#user_email').on('blur',function(){
     let error;
     let value = $('#user_email').val();
@@ -37,7 +37,7 @@ $(function(){
 
 
 $(function(){
-  //バリデーション　パスワード
+  //バリデーション パスワード
   $('#user_password').on('blur',function(){
     let error;
     let value = $('#user_password').val();
@@ -81,8 +81,8 @@ $(function() {
   var date = time.getDate();
 
   // 選択された年月日を取得
-  var selected_year = document.getElementById("year").value;
-  var selected_month = document.getElementById("month").value;
+  var selected_year = document.getElementById("year");
+  var selected_month = document.getElementById("month");
 
   // 年(初期): 1900〜現在の年 の値を設定
   for (var i = year; i >= 1900 ; i--) {
@@ -158,7 +158,7 @@ $(function() {
 
 
 $(function(){
-  //バリデーション　生年月日
+  //バリデーション 生年月日
   $('.p-member-form__birthday--select').on('click',function(){
     let error;
     let value = $('#date').val();
