@@ -5,8 +5,11 @@
   .formItem-money
     = f.label :価格
     = f.number_field :money
-    %br
-    = f.fields_for :images, @item&.images&.build do |i|
-      = i.file_field :image_url
-  %br
-  =f.submit
+    #image-box
+      = f.fields_for :images, @item&.images do |i|
+        .js-file_group{data: {id: "#{i.index}"}}
+          .js-file
+            = i.file_field :image_url
+          %span.js-remove
+            削除
+    =f.submit
