@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "mains#index"
+  root "mains#index_buy-confirm"
   devise_for :users, controllers: {
 
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   # メイン画面、商品詳細画面
-  get '/', to: 'mains#index'
+  get '/', to: 'mains#index_buy-confirm'
   get '/:id/show', to: 'mains#show'
 
   # マイページトップページ、本人情報登録画面

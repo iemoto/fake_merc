@@ -1,0 +1,191 @@
+.p-buy-container {
+  color: #333;
+  height: calc(100% - 350px);
+}
+.p-buy-header {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  &__caption {
+    padding: 32px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+.p-buy-main {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  &__inner {
+    padding: 32px 16px;
+    border-top: 1px solid #f5f5f5;
+    &--box {
+      max-width: 343px;
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+}
+.item-image {
+  min-width: 80px;
+  display: flex;
+}
+.item-detail {
+  margin-left: 16px;
+  &__name {
+    font-size: 14px;
+    padding: 0 0 8px;
+  }
+  &__price {
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    &--fee {
+      margin-left: 8px;
+    }
+  }
+}
+
+.p-buy-content {
+  border-top: 1px solid #f5f5f5;
+  padding: 32px 16px;
+  &__form {
+    max-width: 343px;
+    margin: 0 auto;
+  }
+}
+
+.price-table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  .price{
+    display: table-row;
+    font-weight: 600;
+    &__display{
+      font-size: 18px;
+      display: table-cell;
+    }
+    &__ja {
+      font-size: 24px;
+      text-align: right;
+    }
+  }
+}
+.accordion {
+  color: #888;
+  margin: 19px 0 32px;
+  &__parent {
+    height: 14px;
+    line-height: 14px;
+    position: relative;
+    .checkbox {
+      transform: scale(1.5);
+      position: absolute;
+      left: 2px;
+    }
+    .checkbox-label {
+      font-size: 13px;
+      position: absolute;
+      left: 27px;
+      top: 2px;
+    }
+  }
+}
+
+.user-info {
+  padding: 32px 0;
+  border-top: 1px solid #f5f5f5;
+  font-size: 14px;
+  .content-inner {
+    position: relative;
+    .clearfix {
+      font-weight: 600;
+    }
+    .user-info-fix {
+      color: #0099eb;
+      text-decoration: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .user-text {
+      margin: 8px 0 0;
+    }
+    .card-logo {
+      width: 65px;
+      height: 40px;
+    }
+  }
+}
+
+// appあり
+.buy-btn {
+  display: none;
+  border-top: 1px solid #f5f5f5;
+  text-align: center;
+  &__text {
+    margin: 24px 0;
+    font-size: 14px;
+    color: #ea352d;
+    text-align: left;
+  }
+  &__btn {
+    background: #ea352d;
+    &--link {
+      color: #fff;
+      text-decoration: none;
+      line-height: 48px;
+      font-size: 14px;
+    }
+  }
+  &__coment {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+// appなし
+.buy-btn-error {
+  border-top: 1px solid #f5f5f5;
+  text-align: center;
+  &__text {
+    margin: 24px 0;
+    font-size: 14px;
+    color: #ea352d;
+    text-align: left;
+  }
+  &__btn {
+    background: #888;
+    &--link {
+      color: #fff;
+      text-decoration: none;
+      line-height: 48px;
+      font-size: 14px;
+    }
+  }
+  &__app {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+.app-images {
+  margin-top: 14px;
+  &__left {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  &__right {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
