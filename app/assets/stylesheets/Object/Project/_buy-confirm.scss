@@ -122,15 +122,9 @@
 
 // appあり
 .buy-btn {
-  display: none;
   border-top: 1px solid #f5f5f5;
   text-align: center;
-  &__text {
-    margin: 24px 0;
-    font-size: 14px;
-    color: #ea352d;
-    text-align: left;
-  }
+  padding: 24px 0 0;
   &__btn {
     background: #ea352d;
     &--link {
@@ -140,25 +134,21 @@
       font-size: 14px;
     }
   }
-  &__coment {
-    margin-top: 40px;
-    font-size: 14px;
-    text-align: left;
-  }
 }
 
 // appなし
 .buy-btn-error {
   border-top: 1px solid #f5f5f5;
   text-align: center;
+  padding: 24px 0 0;
   &__text {
-    margin: 24px 0;
     font-size: 14px;
     color: #ea352d;
     text-align: left;
   }
   &__btn {
     background: #888;
+    margin: 24px 0 0;
     &--link {
       color: #fff;
       text-decoration: none;
