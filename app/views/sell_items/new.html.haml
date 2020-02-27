@@ -11,49 +11,64 @@
     .label-box__inner
       %label
         = f.file_field(:image, class: 'input-default', placeholder: 'ドラッグアンドドロップまたはクリックしてファイルをアップロード')
-        .boxFileSelect
-          ドラッグアンドドロップまたはクリックしてファイルをアップロード
+        %p.boxFileSelect
+          = fa_icon 'camera'
+          %br
+          ドラッグアンドドロップ
+          %br
+          またはクリックしてファイルをアップロード
 
   %h3.sellHeading
     商品名
     = render 'mustLabel'
     .sellTitle
       = f.text_field(:title, placeholder: '40文字まで')
-  %h3.sellHeading
+  %h3.sellDescription
     商品の説明
     = render 'mustLabel'
-    .sellDescription
-      = f.text_area(:description, rows: 7, id: 'js-count', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n \n 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
+    = f.text_area(:description, rows: 7, id: 'js-count', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n \n 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
     .textCount
-      0
-    %p
-      /1500
+      0/1500
+
   .sellHeading
     商品の詳細
+    %h4.sellCategory
+      カテゴリー
+      = render 'mustLabel'
+    %h4.sellBland
+      ブランド
+      = render 'mustLabel'
+    %h4.sellState
+      商品の状態
+      = render 'mustLabel'
+  
   .sellHeading
     発送について
+    %h4.sellCost
+      配送料の負担
+      = render 'mustLabel'
+    %h4.sellShip
+      発送元の地域
+      = render 'mustLabel'
+    %h4.sellDate
+      発送までの日数
+      = render 'mustLabel'
   .sellHeading
     .sellValue__title
-      販売価格(300 〜 9,999,999)
-    .sellValue__items
-      .sellValue__items--value
-        価格
-        .label
-          必須
-        .cost
-          ￥
-      .sellValue__items--tax
-      .sellValue__items--gain
-  .sellHeading
-    %p
-      禁止されている出品、行為を必ずご確認ください。
-    %p
-      またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-    %p
-      また、出品をもちまして加盟店規約に同意したことになります。
+      価格(¥300 〜 9,999,999)
+    %h4.sellValue
+      販売価格
+      = render 'mustLabel'
+    %h4.sellTax
+      販売手数料 (10%)
+    %h4.sellBenefit
+      販売利益
   .sellSubmit
     出品する 
     %br
     戻る
 
-
+  %p.sellHeading
+    禁止されている出品、行為を必ずご確認ください。
+    またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+    また、出品をもちまして加盟店規約に同意したことになります。

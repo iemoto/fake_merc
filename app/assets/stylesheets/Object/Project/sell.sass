@@ -25,13 +25,18 @@
   .label-box__inner
     .input-default
       display: none
-    .boxFileSelect
+    p.boxFileSelect
       width: 100%
       height: 150px
+      font-size: 15px
+      line-height: 20px
       background-color: rgb(245, 245, 245)
       border: dashed 1px black
       text-align: center
-      line-height: 150px
+      .fa-camera
+        padding-top: 35px
+        padding-bottom: 10px
+        font-size: 25px
 
 .sellTitle
   margin-top: 10px
@@ -44,34 +49,23 @@
     width: 100%
 
 .sellDescription
-  margin-top: 10px
+  padding: 15px
+  @include sharedStyle
   textarea
-    // height: 150px
+    margin-top: 15px
     width: 100%
     padding: 20px
-    // padding-left: 20px
     height: 170px
     font-size: 15px
     font-weight: normal
+  .textCount
+    font-size: 15px
+    color: gray
+    font-weight: normal
+    text-align: right
 
-
-  // @include sharedStyle
-  // border-top: solid 2px rgb(245, 245, 245)
-  // border-bottom: solid 2px rgb(245, 245, 245)
-
-.sellDescription
-  @include sharedStyle
-  // border-top: solid 2px rgb(245, 245, 245)
-  // border-bottom: solid 2px rgb(245, 245, 245)
-.sellDetail
-  @include sharedStyle
-  // border-top: solid 2px rgb(245, 245, 245)
-  // border-bottom: solid 2px rgb(245, 245, 245)
 .sellShip
   @include sharedStyle
-  // border-top: solid 2px rgb(245, 245, 245)
-  // border-bottom: solid 2px rgb(245, 245, 245)
+
 .sellValue
   @include sharedStyle
-  // border-top: solid 2px rgb(245, 245, 245)
-  // border-bottom: solid 2px rgb(245, 245, 245)

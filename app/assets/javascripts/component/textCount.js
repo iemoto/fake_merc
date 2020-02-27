@@ -1,20 +1,8 @@
 $(function(){
   $('#js-count').keyup(function(){
-    var count = $(this).val().length;
-    $('.textCount').text(count);
+    let count = $(this).val().length;
+    $('.textCount').text(`${count}/1500`);
   })
 })
 
 
-
-// new Vue({
-//   el: "#app",
-//   data: {
-//     hoge: 'aaaa'
-//   },
-//   method: {
-//     hogehoge: function(){
-//       return hogehoge
-//     }
-//   }
-// })
