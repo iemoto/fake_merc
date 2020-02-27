@@ -3,8 +3,11 @@
   = @item&.name
 %p
   = @item&.money
+  
 .images
   = image_tag(@image.image_url.url)
+
+= link_to '編集', "/sell/edit/#{@item.id}", method: :get
 
 
 
