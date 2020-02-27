@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
     }
-  
+
   devise_scope :user do
     get '/signup', to: 'users/registrations#index'
     get '/signup/registration', to: 'users/registrations#new'
