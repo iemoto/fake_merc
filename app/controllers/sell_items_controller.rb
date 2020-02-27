@@ -6,7 +6,7 @@ class SellItemsController < ApplicationController
   end
 
   def show
-    @app = 1
+    @app = 0
   end
 
   def edit
