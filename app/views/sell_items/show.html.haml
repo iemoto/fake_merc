@@ -1,2 +1,175 @@
-sell_items
-show
+= render "./shared/header"
+.detail-wrapper
+  .detail-contents
+    .itemzone
+      .itemzone__name
+        COACHミニバック
+      .itemzone__message
+        『【春間近最終値下げ】COACH ミニバッグ(ピンク)』は、10回の取引実績を持つあやぼんさんから出品されました。コーチ（ショルダーバッグ/レディース）の商品で、神奈川県から2~3日で発送されます。
+      %clearfix.itemzone__main
+        .main--photo
+          =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"300x300")
+        %table.itemzone__main--table
+          %tr
+            %th
+              出品者
+            %td
+              .username
+                あやぽん
+              .evaluateicon
+                .goodicon
+                  = fa_icon 'smile-o'
+                .number
+                  356
+                .sosoicon
+                  = fa_icon 'meh-o'
+                .number
+                  0
+                .badicon
+                  = fa_icon 'frown-o'
+                .number
+                  0
+          %tr
+            %th
+              カテゴリー
+            %td
+              レディース
+          %tr
+            %th
+              ブランド
+            %td
+              コーチ
+          %tr
+            %th
+              商品状態
+            %td
+              やや傷あり
+          %tr
+            %th
+              送料の負担
+            %td
+              送料込み（出品者負担）
+          %tr
+            %th
+              配送方法
+            %td
+              らくらくメルカリ便
+          %tr
+            %th
+              配送元地域
+            %td
+              神奈川県
+          %tr
+            %th
+              発送日の目安
+            %td
+              ２〜3日
+      .itempricezone
+        .itempricezone__price
+          ¥2,800
+        .itempricezone__tax
+          (税込)
+        .itempricezone__fee
+          送料込み
+      .buybtn
+        =link_to "購入画面に進む"
+      .iteminfo
+        .iteminfo__inner
+          COACH ミニバッグ ピンク
+
+          横 26.5cm
+
+          縦 16cm
+
+          持ち手 38cm
+
+          (素人採寸で失礼します)
+
+
+          3、4回かは使いましたが最近ほとんど使う機会がなくなったので出品します。
+
+          底のスエード部分に多少の汚れ、擦れがあります。(写真4枚目)
+
+          小ぶりで可愛らしい鮮やかなピンク色のバッグです。春のお出かけにぴったりです。
+
+          COACH専用袋つきです。
+      %ul.otherbtn
+        .otherbtn__left
+          %il.goodbtn
+            = fa_icon 'heart-o'
+            =link_to "いいね7"
+          %il.reportbtn
+            = fa_icon 'flag-o'
+            =link_to "不適切な商品の報告"
+        .otherbtn__right
+          .ligthbtn
+            = fa_icon 'unlock-alt'
+            =link_to "あんしん・あんぜんへの取り組み"
+
+    .messagezone
+      .messagezone__messages
+        .usericon
+        .usermessagezone
+          .usermessagezone__upper
+            コメント失礼します２６００円購入希望ですが可能でしょうか
+          .usermessagezone__under
+            .under__left
+              = fa_icon 'clock-o '
+              140日前
+            .under__light
+              = fa_icon 'flag-o'
+    %ul.itemlink
+      %li.itemlink__left
+        =link_to "＜ チョロQ"
+      %li.itemlink__right
+        =link_to "ジーンズ >"
+    .snszone
+      %ul.snszone__logo
+        %li.icon
+          =link_to 'https://www.facebook.com/mercarijp',target: :_blank do
+            =fa_icon 'facebook-square'
+        %li.icon
+          =link_to 'https://twitter.com/mercari_jp',target: :_blank do
+            =fa_icon 'twitter'
+
+    .useritems
+      %h2.useritem__head
+      =link_to "りゅうさんのその他の作品"
+      .useritems__content
+        %section.item1
+          %a
+            =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"220x220")
+          .itembody
+            .itembody__name
+              ジーンズ
+            .itembody__under
+              .price
+                100円
+              .good
+                = fa_icon 'heart-o'
+                ８
+        %section.item2
+          %a
+            =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"220x220")
+          .itembody
+            .itembody__name
+              パーカー
+            .itembody__under
+              .price
+                100円
+              .good
+                = fa_icon 'heart-o'
+                ８
+        %section.item3
+          %a
+            =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"220x220")
+          .itembody
+            .itembody__name
+              ダウンジャケット
+            .itembody__under
+              .price
+                100円
+              .good
+                = fa_icon 'heart-o'
+                ８
+= render './shared/footer'
