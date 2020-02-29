@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
-  get '/:id', to: 'mains#show', as: 'main_show'
+  get '/show/:id', to: 'mains#show', as: 'main_show'
 
   # マイページトップページ、本人情報登録画面
   get '/mypage', to: 'users#index'
@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   # 商品出品、商品詳細、商品編集、商品削除
   get '/sell', to: 'sell_items#new'
   put '/sell', to: 'sell_items#create'
-  get '/transaction/buy/:id', to: 'sell_items#show'
+  get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
   get '/sell/edit/:id', to: 'sell_items#edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
   delete '/sell/edit/:id', to: 'sell_items#destroy'
