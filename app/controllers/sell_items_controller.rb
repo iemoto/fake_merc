@@ -1,5 +1,5 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, except: [:new, :create, :show]
+  before_action :set_item, only: [:show, :edit, :destroy]
   def new
     @item = Item.new
     @item.images.new
@@ -21,8 +21,7 @@ class SellItemsController < ApplicationController
 
   def show
     item_foreignKey = Item.find(params[:id])
-    @image = Image.find_by("item_id = #{item_foreignKey.id}")
-    @item = Item.find("#{params[:id]}")
+    @images = Image.where("item_id = #{item_foreignKey.id}")
   end
 
   def update
@@ -36,17 +35,11 @@ class SellItemsController < ApplicationController
       end
     end
   end
-  #   if @item.update(item_params)
-  #     redirect_to "/sell/edit/#{@item.id}"
-  #   else
-  #     render :edit
-  #   end
-  # end
+
 
   def edit
     item_foreignKey = Item.find(params[:id])
-    @image = Image.find_by("item_id = #{item_foreignKey.id}")
-    @item = Item.find("#{params[:id]}")
+    @images = Image.find_by("item_id = #{item_foreignKey.id}")
   end
 
   def destroy
@@ -59,6 +52,6 @@ class SellItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find("#{params[:id]}")
+    @item = Item.find(params[:id])
   end
 end

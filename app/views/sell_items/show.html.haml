@@ -4,10 +4,11 @@
 %p
   = @item&.money
 
-.images
-  = image_tag(@image.image_url.url)
+-@images.each do |image|
+  =image_tag(image.image_url.url)
 
-= link_to '編集', "/sell/edit/#{@item.id}", method: :get
+%br
+  = link_to '編集', "/sell/edit/#{@item.id}", method: :get
 
 
 
