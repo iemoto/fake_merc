@@ -30,7 +30,10 @@ Rails.application.routes.draw do
   patch '/mypage/profile', to: 'profiles#update'
 
   # 決済機能実装時にコントローラー等を作成
-  # get '/mypage/card', to: ''
+  get '/mypage/card', to: 'cards#index'
+  get '/mypage/card/create', to: 'cards#new'
+  put '/mypage/card/create', to: 'cards#create'
+
 
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
@@ -50,4 +53,5 @@ Rails.application.routes.draw do
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
+
 end
