@@ -1,5 +1,5 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
   def new
     @item = Item.new
     @item.images.new
@@ -13,6 +13,7 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
+        binding.pry
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -27,6 +28,8 @@ class SellItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
+        item_foreignKey = Item.find(params[:id])
+        @images = Image.where("item_id = #{item_foreignKey.id}")
         format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully update.' }
         format.json { render :show, status: :created, location: @item }
       else
@@ -48,7 +51,7 @@ class SellItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :money, images_attributes: [:image_url, :_destroy, :id])
+    params.require(:item).permit(:name, :money, images_attributes: [:image_url])
   end
 
   def set_item
