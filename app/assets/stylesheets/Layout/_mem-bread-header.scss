@@ -1,0 +1,66 @@
+.mem-bread-header {
+  height: 128px;
+  text-align: center;
+  &__link {
+    margin: 40px 0 0;
+    display: inline-block;
+    &--logo {
+      width: 185px;
+      height: 49px;
+      margin: 0 8px 0 0;
+    }
+  }
+}
+.mem-bread-header-right {
+  padding: 32px 0 0 44px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  ol.clearfix {
+    font-size: 12px;
+    display: inline-block;
+    li.active {
+      font-weight: 600;
+      min-width: 60px;
+      color: $color--mercred;
+      .progress-status__active {
+        background: $color--mercred;
+        z-index: 1;
+        @include progress;
+      }
+      .progress-status__active::after {
+        left: 50%;
+        @include status;
+        z-index: -1;
+      }
+    }
+    li {
+      min-width: 60px;
+      color: #888888;
+      margin: 0 40px 0 0;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      .progress-status__num {
+        background: #ccc;
+        @include progress;
+      }
+      .progress-status__num::before {
+        right: 50%;
+        @include status;
+      }
+      .progress-status__num::after {
+        left: 50%;
+        @include status;
+      }
+    }
+    .progress-status__done {
+      background: #ccc;
+      @include progress;
+    }
+    .progress-status__done::before {
+      right: 50%;
+      @include status;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+%header.l-visible-header
+  .l-visible-inner
+    .u-visible-logo
+      = link_to image_tag(asset_path("fakelogo.svg"),size:"132x36"), root_path
+    .l-visible-nav
+      - if user_signed_in?
+        = link_to  root_path , class: 'l-visible-login-icon' do
+          %figure
+            = fa_icon 'bell-o' , class: 'u-login-icon'
+        = link_to root_path , class: 'l-visible-login-icon' do
+          %figure
+            = fa_icon 'check' , class: 'u-login-icon'
+        = link_to root_path , class: 'l-visible-login-icon' do
+          %figure
+            %div
+              = image_tag(asset_path('no-image-boy.png'), width: "32")
+      - else
+        = link_to '新規会員',root_path, class: 'l-visible-btn u-red-btn u-deco-none'
+        = link_to 'ログイン',root_path, class: 'l-visible-btn u-white-btn u-deco-none'
+
+  .l-visible-search_bar
+    = form_with url: '/'  ,local: true do |f|
+      = f.text_field :search, class: 'l-visible-text-filed input-default',placeholder: '何をお探しですか？'
+      = fa_icon 'search',class: 'u-search_bar_icon'

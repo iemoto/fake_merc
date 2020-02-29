@@ -1,0 +1,13 @@
+.simple-header {
+  height: 128px;
+  width: 700px;
+  margin: auto;
+  display: flex;
+  &__link {
+    margin: 40px auto;
+    &--logo {
+    width: 185px;
+    height: 49px;
+    }
+  }
+}

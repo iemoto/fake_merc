@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   root "mains#index"
-  devise_for :users
+  devise_for :users, controllers: {
+
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+    }
+
+  devise_scope :user do
+    get '/signup', to: 'users/registrations#index'
+    get '/signup/registration', to: 'users/registrations#new'
+    post '/signup/registration', to: 'users/registrations#create'
+    # get '/signup/registration/:id', to: 'users/registrations#show'
+  end
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
@@ -19,7 +30,10 @@ Rails.application.routes.draw do
   patch '/mypage/profile', to: 'profiles#update'
 
   # 決済機能実装時にコントローラー等を作成
-  # get '/mypage/card', to: ''
+  get '/mypage/card', to: 'cards#index'
+  get '/mypage/card/create', to: 'cards#new'
+  put '/mypage/card/create', to: 'cards#create'
+
 
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
@@ -39,4 +53,5 @@ Rails.application.routes.draw do
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
+
 end
