@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # メイン画面、商品詳細画面
   get '/', to: 'mains#index'
-  get '/:id/show', to: 'mains#show'
+  get '/:id', to: 'mains#show', as: 'main_show'
 
   # マイページトップページ、本人情報登録画面
   get '/mypage', to: 'users#index'
