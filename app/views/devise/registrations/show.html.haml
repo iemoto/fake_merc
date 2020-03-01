@@ -27,7 +27,7 @@
 
 
 .done-bread-header
-  = link_to "https://www.mercari.com/jp/", class: "done-bread-header__link" do
+  = link_to root_path, class: "done-bread-header__link" do
     = image_tag asset_path('fakelogo.svg'), class: "done-bread-header__link--logo", alt: "mercari", size:"134x36"
   .done-bread-header-right
     %ol.clearfix
