@@ -25,16 +25,29 @@ ActiveRecord::Schema.define(version: 2020_02_15_102434) do
     t.string "despriction"
     t.integer "money"
     t.boolean "sold_out"
+    t.integer "prefecture_address_id"
+    t.integer "categorie_id"
+    t.integer "item_condition_id"
+    t.integer "shippong_fee_id"
+    t.integer "shipping_fee_side_id"
+    t.integer "shipping_method_id"
+    t.integer "ship_date_id"
+    t.integer "brand_id"
+    t.integer "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "sell_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
     t.boolean "delibery_for"
     t.boolean "arrival_to"
     t.integer "commition_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_sell_items_on_item_id"
+    t.index ["user_id"], name: "index_sell_items_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,5 +73,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_102434) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "sell_items", "items"
+  add_foreign_key "sell_items", "users"
   add_foreign_key "sns_credentials", "users"
 end
