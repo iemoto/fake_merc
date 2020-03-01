@@ -23,7 +23,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     if @user.save
       redirect_to "/signup/registration/#{@user.id}"
-      binding.pry
       bypass_sign_in(@user)
     else
       render :new
