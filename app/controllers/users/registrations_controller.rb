@@ -55,7 +55,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def user_params
-    params.require(:user).permit(:nick_name,:email,:password)
+    params.require(:user).permit(:nick_name, :email, :password)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
