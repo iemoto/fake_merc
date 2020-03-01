@@ -12,7 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :shipping_fee_side_id, foreign_key: true
       t.integer :shipping_method_id, foreign_key: true
       t.integer :ship_date_id, foreign_key: true
-      t.integer :brand_id, foreign_key: true
+      t.references :brand, foreign_key: true
       t.integer :size_id, foreign_key: true
 
       t.timestamps
