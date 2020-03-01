@@ -29,7 +29,7 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
 
   .mem-bread-header
-    = link_to "https://www.mercari.com/jp/", class: "mem-bread-header__link" do
+    = link_to root_path, class: "mem-bread-header__link" do
       = image_tag asset_path('fakelogo.svg'), class: "mem-bread-header__link--logo", alt: "mercari", size:"134x36"
     .mem-bread-header-right
       %ol.clearfix
@@ -127,4 +127,4 @@
                 %a.p-member-policy__terms--link{href: "https://policies.google.com/terms", target: "_blank"} Terms of Service
                 apply.
 
-  = render 'shared/simple-footer'
+  = render 'devise/../shared/simple-footer'
