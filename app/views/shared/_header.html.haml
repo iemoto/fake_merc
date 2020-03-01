@@ -1,4 +1,4 @@
-%header.header-wrapper.u-visible-pc 
+%header.header-wrapper.u-visible-pc
   .header-inner
     .menu-upper
       //メルカリロゴ
@@ -6,7 +6,7 @@
         =link_to image_tag(asset_path("fakelogo.svg"),alt:'fake_merc', size:"134x36"), root_path
       //検索機能(検索窓、検索ボタン、プレイスホルダーつける、)
       = form_with url: root_path , local: true, class: 'menu-upper__search__form' do |f|
-        = f.text_field :search , class: 'menu-upper__search__form__text-box input-default', placeholder: '何かお探しですか？' 
+        = f.text_field :search , class: 'menu-upper__search__form__text-box input-default', placeholder: '何かお探しですか？'
         = fa_icon 'search',class: 'u-search_bar_icon'
     .menu-lower.clearfix
       -# //以下カテゴリーjQuery実装予定

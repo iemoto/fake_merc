@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    @user = User.find(current_user.id)
   end
 
   def show
@@ -10,6 +11,4 @@ class UsersController < ApplicationController
 
   def edit
   end
-
-
 end
