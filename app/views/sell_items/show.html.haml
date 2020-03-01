@@ -1,77 +1,11 @@
-= render './shared/simple-header'
+= link_to '出品', sell_path
+%p
+  = @item&.name
+%p
+  = @item&.money
 
-.p-buy-container
-  .p-buy-header
-    .p-buy-header__caption
-      購入内容の確認
-  .p-buy-main
-    .p-buy-main__inner
-      .p-buy-main__inner--box
-        .item-image
-          = image_tag asset_path("content_pc.png"), alt: '商品写真', height: '80px', width: '60px'
-        .item-detail
-          .item-detail__name
-            【スマホ本体】アイフォン
-          .item-detail__price
-            .item-detail__price--ja
-              ¥20,000
-            .item-detail__price--fee
-              (税込) 送料込み
-    .p-buy-content
-      .p-buy-content__form
-        %ul.price-table
-          %li.price
-            .price__display
-              支払い金額
-            .price__ja
-              ¥20,000
-        %ul.accordion
-          %li.accordion__parent
-            %input.checkbox{type: "checkbox", id: "checkbox"}
-            .checkbox-label
-              ポイントを使用（所持ポイント: P0）
-        .user-info
-          .content-inner
-            .clearfix 支配い方法
-            = link_to "https://www.mercari.com/jp/transaction/select_card/m67619539449/", class: "user-info-fix" do
-              変更する
-            .user-text
-              クレジットカード
-              %br/
-              ************0009
-              %br/
-              有効期限 04/20
-            .card-logo
-              = image_tag asset_path("visa-logo.png"), class: "card-logo"
-        .user-info
-          .content-inner
-            .clearfix 配送先
-            = link_to "https://www.mercari.com/jp/transaction/select_card/m67619539449/", class: "user-info-fix" do
-              変更する
-            .user-text
-              〒520-****
-              %br/
-              滋賀県 ***
-              *****-*
-              *******-***
-              %br/
-              山田 **
-        -if @app == 1
-          .buy-btn
-            .buy-btn__btn
-              = link_to "購入する", "#", class: "buy-btn__btn--link"
-        - else
-          .buy-btn-error
-            .buy-btn-error__text
-              この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-            .buy-btn-error__btn
-              = link_to "購入する", "#", class: "buy-btn-error__btn--link"
-            .buy-btn-error__app
-              アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
-            .app-images
-              .app-images__left
-                =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
-              .app-images__right
-                =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
+-@images.each do |image|
+  =image_tag(image.image_url.url)
 
-= render './shared/simple-footer'
+%br
+  = link_to '編集', "/sell/edit/#{@item.id}", method: :get
