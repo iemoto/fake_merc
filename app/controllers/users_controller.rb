@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  add_breadcrumb 'マイページ'
+
   def index
+    add_breadcrumb 'マイページ'
     @user = User.find(current_user.id)
   end
 
