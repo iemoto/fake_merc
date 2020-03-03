@@ -1,0 +1,2 @@
+class PersonalUser < ApplicationRecord
+end

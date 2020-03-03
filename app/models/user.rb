@@ -7,13 +7,13 @@ class User < ApplicationRecord
   has_many :sns_credentials
 
   validates :nick_name, presence: true;
-            :first_name, presence: true;
-            :last_name, presence: true;
-            :first_name_kana, presence: true;
-            :last_name_kana, presence: true;
-            :birth_year, presence: true;
-            :birth_month, presence: true;
-            :birth_day, presence: true;
+            # :first_name, presence: true;
+            # :last_name, presence: true;
+            # :first_name_kana, presence: true;
+            # :last_name_kana, presence: true;
+            # :birth_year, presence: true;
+            # :birth_month, presence: true;
+            # :birth_day, presence: true;
 
 
   def self.from_omniauth(auth)
