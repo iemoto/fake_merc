@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
   # 商品出品、商品詳細、商品編集、商品削除
   get '/sell', to: 'sell_items#new'
-  put '/sell', to: 'sell_items#create'
+  post '/sell', to: 'sell_items#create'
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
   get '/sell/edit/:id', to: 'sell_items#edit'
   patch '/sell/edit/:id', to: 'sell_items#update'

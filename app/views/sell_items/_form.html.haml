@@ -12,12 +12,37 @@
             = i.file_field :image_url
           %span.js-remove
             削除
-        -# -if @item.persisted?
-        -#   .hidden-destroy{data: {id: "#{i.index}"}}, image.check_box :_destroy
-        -# -if @item.persisted?
-        -#   .js-file_group{data: {id: "#{@item.images.count}"}}
-        -#     .js-file
-        -#       = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url], "
-        -#       .js-remove
-        -#         削除
-    =f.submit
+    %h3#category-box2
+      %p
+        種類
+    %h3#category-box
+      = f.collection_select :category_id, Category.where(ancestry: "1"), :id, :name
+    %h3#category-box3
+      = binding.pry 
+      - hoge = 2
+      = f.collection_select :category_id, Category.where(ancestry: "1/#{hoge}"), :id, :name
+    %h3#category-box-size
+      %p
+        サイズ
+    = f.collection_select :size_id, Size.all, :id, :name
+    %h3#item-condition-box
+      %p
+        商品の状態
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name
+    %h3#itemCost
+      %p
+        配送料の負担
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name
+    %h3#itemCost
+      %p
+        配送の方法
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name
+    %h3#sellShipping
+      %p
+        発送元の地域
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name
+    %h3#sellDate
+      %p
+        発送までの日数
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name
+  =f.submit
