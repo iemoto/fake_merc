@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  add_breadcrumb 'マイページ'
+  add_breadcrumb 'Home', 'http://www.example.com'
 
   def index
     add_breadcrumb 'マイページ'

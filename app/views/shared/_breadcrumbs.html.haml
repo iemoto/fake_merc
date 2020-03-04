@@ -1,0 +1,11 @@
+- if elements.present?
+  %ul.l-gretel-brock
+    - elements.each do |element|
+      %li
+        - if element.path.present?
+          = link_to element.path, element.name 
+        - else
+          = element.name
+          = fa_icon 'chevron-right'
+
+    = elements.last.name
