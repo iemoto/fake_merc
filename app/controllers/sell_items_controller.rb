@@ -7,13 +7,11 @@ class SellItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
     respond_to do |format|
       if @item.save
         format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        binding.pry
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -51,7 +49,7 @@ class SellItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :money, :size_id, :item_condition_id, :shipping_fee_id, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
+    params.require(:item).permit(:name, :money, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
     # params.require(:item).permit(:name, :money, images_attributes: [:image_url])
   end
 
