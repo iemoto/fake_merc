@@ -1,11 +1,12 @@
 - if elements.present?
   %ul.l-gretel-brock
     - elements.each do |element|
-      %li
+      %li.l-gretel-inline
         - if element.path.present?
-          = link_to element.path, element.name 
+          = link_to element.name ,element.path, class: 'l-gretel-link u-deco-none'
+          = fa_icon 'chevron-right', class: 'l-gretel-icon'
+
         - else
           = element.name
-          = fa_icon 'chevron-right'
 
     = elements.last.name
