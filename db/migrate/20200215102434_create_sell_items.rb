@@ -6,7 +6,6 @@ class CreateSellItems < ActiveRecord::Migration[5.2]
       t.boolean :delibery_for
       t.boolean :arrival_to
       t.integer :commition_fee
-
       t.timestamps
     end
   end

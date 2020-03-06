@@ -3,7 +3,6 @@ class SellItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-
   end
 
   def create
@@ -13,13 +12,13 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        binding.pry
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
 
+  # if文で分岐する、tureの場合商品停止、falseの場合再出品、
   def show
     item_foreignKey = Item.find(params[:id])
     @images = Image.where("item_id = #{item_foreignKey.id}")
@@ -51,7 +50,7 @@ class SellItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :money, images_attributes: [:image_url])
+    params.require(:item).permit(:name, :money, :exhibition, :soldout, :during_transaction, images_attributes: [:image_url])
   end
 
   def set_item

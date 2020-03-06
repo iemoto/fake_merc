@@ -1,6 +1,6 @@
 class SellItem < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :item_id
+  belongs_to :user
+  belongs_to :item
 
-  validates :delibery_for, :arrival_to, :commition, presence: true
+  # validates :user_id, :item_id, :delibery_for, :arrival_to, :commition_fee,  presence: true,
 end
