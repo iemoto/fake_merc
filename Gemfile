@@ -116,6 +116,9 @@ gem 'font-awesome-sass'
 # ログイン機能
 gem 'devise'
 
+# ログインセキュリティ
+gem 'recaptcha', require: "recaptcha/rails"
+
 # 都道府県等のデータ整理
 gem 'active_hash'
 

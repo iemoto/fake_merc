@@ -327,6 +327,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    recaptcha (5.3.0)
+      json
     regexp_parser (1.6.0)
     require_all (3.0.0)
     responders (3.0.0)
@@ -486,6 +488,7 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-controller-testing
   rails_best_practices
+  recaptcha
   rspec-rails (~> 3.6.0)
   rubocop
   rubocop-rails_config
