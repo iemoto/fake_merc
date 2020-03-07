@@ -6,7 +6,10 @@ class SellItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @brand = Brand.create(brand_params)
+    # @brand = Brand.create(item_params)
+    allItem_params = item_params.merge(brand_id: @brand.id)
+    @item = Item.new(allItem_params)
     respond_to do |format|
       if @item.save
         format.html { redirect_to "/transaction/buy/#{@item.id}", notice: 'Item was successfully created.' }
@@ -55,5 +58,9 @@ class SellItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def brand_params
+    params.require(:item).permit(:brand_name)
   end
 end
