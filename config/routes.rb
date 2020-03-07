@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root "mains#index"
   devise_for :users, controllers: {
-
     omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
     }
 
   devise_scope :user do

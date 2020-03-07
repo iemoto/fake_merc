@@ -3,8 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # sign_up parameter :first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day
   before_action :configure_permitted_parameters, if: :devise_controller?
-  # prepend_before_action :check_captcha, only: [:create]
-  # prepend_before_action :customize_sign_up_params, only: [:create]
+
 
   def index
   end
