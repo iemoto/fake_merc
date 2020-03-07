@@ -43,7 +43,8 @@
           = f.password_field :password, autocomplete: "current-password", class: "password", placeholder: 'パスワード'
         - if devise_mapping.rememberable?
           .p-login-form__g-recaptcha
-            %input#recaptchaResponse{name: "recaptcha_response", type: "hidden"}
+            -# = recaptcha_tags
+            -# %input#recaptchaResponse{name: "recaptcha_response", type: "hidden"}
             -# %iframe{frameborder: "0", height: "78", name: "a-eay3grodipxw", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=TYDIjJAqCk6g335bFk3AjlC3&size=normal&cb=5i4n4os9copa", width: "304"}
           .p-login-form__submit
             .actions
