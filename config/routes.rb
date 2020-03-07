@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   root "mains#index"
   devise_for :users, controllers: {
 
@@ -32,7 +34,8 @@ Rails.application.routes.draw do
   # 決済機能実装時にコントローラー等を作成
   get '/mypage/card', to: 'cards#index'
   get '/mypage/card/create', to: 'cards#new'
-  put '/mypage/card/create', to: 'cards#create'
+  post '/mypage/card/create', to: 'cards#pay'
+  
 
 
   # 発送元・お届け先住所画面
@@ -54,4 +57,6 @@ Rails.application.routes.draw do
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
 
+
+  
 end

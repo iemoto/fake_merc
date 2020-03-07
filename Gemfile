@@ -126,3 +126,6 @@ gem 'ancestry'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+# 支払い情報を登録
+gem 'payjp'
