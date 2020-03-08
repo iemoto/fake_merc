@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    name "MyString"
-    despriction "MyString"
+    name 'MyString'
+    despriction 'MyString'
     money 1
     sold_out false
     prefecture_address_id nil

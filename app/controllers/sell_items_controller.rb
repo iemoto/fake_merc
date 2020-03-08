@@ -12,7 +12,7 @@ class SellItemsController < ApplicationController
     @item = Item.new(allItem_params)
     respond_to do |format|
       if @item.save
-        @sellItem = SellItem.new(item_id:@item.id)
+        @sellItem = SellItem.new(item_id: @item.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
           format.json { render json: @item.errors, status: :unprocessable_entity }
