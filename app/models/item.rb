@@ -1,15 +1,16 @@
 class Item < ApplicationRecord
-  # belongs_to :prefecture_address_id
-  # belongs_to :categorie_id
-  # belongs_to :item_condition_id
-  # belongs_to :shippong_fee_id
-  # belongs_to :shipping_fee_side
-  # belongs_to :shipping_method_id
-  # belongs_to :ship_date_id
-  # belongs_to :brand_id
-  # belongs_to :size_id
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :size, optional: true
+  belongs_to_active_hash :shipping_method
+  belongs_to_active_hash :shipping_fee
+  belongs_to_active_hash :ship_date
+  belongs_to_active_hash :prefecture_address  
+  belongs_to_active_hash :item_condition
+  belongs_to :category
+  belongs_to :brand, optional: true
   has_many :images
   accepts_nested_attributes_for :images, allow_destroy: true
+
   validates :name, :money, presence: true
   validates :exhibition, :during_transaction, :soldout, inclusion: { in: [true, false] }
 end

@@ -2,9 +2,6 @@
   .formItem-name
     = f.label :商品名
     = f.text_field :name
-  .formItem-money
-    = f.label :価格
-    = f.number_field :money
     #image-box
       = f.fields_for :images, @item&.images do |i|
         .js-file_group{data: {id: "#{i.index}"}}
@@ -12,12 +9,42 @@
             = i.file_field :image_url
           %span.js-remove
             削除
-        -# -if @item.persisted?
-        -#   .hidden-destroy{data: {id: "#{i.index}"}}, image.check_box :_destroy
-        -# -if @item.persisted?
-        -#   .js-file_group{data: {id: "#{@item.images.count}"}}
-        -#     .js-file
-        -#       = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url], "
-        -#       .js-remove
-        -#         削除
-    =f.submit
+    %h3#mainCategory
+      %p
+        種類
+    = f.collection_select :category_id, Category.where(ancestry: '1'), :id, :name
+    %h3#sizeCategory
+      %p
+        サイズ(任意)
+    = f.collection_select :size_id, Size.all, :id, :name
+    %h3#sizeCategory
+      %p
+        ブランド名(任意)
+    = f.text_field :brand_name
+
+    %h3#itemCondition
+      %p
+        商品の状態
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name
+    %h3#itemCost
+      %p
+        配送料の負担
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name
+    %h3#deliverMethod
+      %p
+        配送の方法
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name
+    %h3#shippingArea
+      %p
+        発送元の地域
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name
+    %h3#sellDate
+      %p
+        発送までの日数
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name
+  %br
+  .formItem-money
+    = f.label :価格
+    = f.number_field :money
+  %br
+  =f.submit

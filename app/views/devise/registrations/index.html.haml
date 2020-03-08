@@ -1,5 +1,4 @@
-= render './shared/simple-header'
-
+= render 'devise/../shared/simple-header'
 .p-reg
   .p-reg__container
     .p-reg__container--head
@@ -17,7 +16,7 @@
             = fa_icon 'google'
             = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path, class: "p-reg-btn__link--color"
 
-= render './shared/simple-footer'
+= render 'devise/../shared/simple-footer'
 
 -# ↓↓↓本来は不要ですが、コメント化したものは念のため残しております。最終的には調整する。
 -# %h2 Sign up

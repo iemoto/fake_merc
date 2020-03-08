@@ -7,7 +7,10 @@ class SellItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @brand = Brand.create(brand_params)
+    # @brand = Brand.create(item_params)
+    allItem_params = item_params.merge(brand_id: @brand.id)
+    @item = Item.new(allItem_params)
     respond_to do |format|
       if @item.save
         @sellitem = SellItem.new(item_id:@item.id)
@@ -62,10 +65,14 @@ class SellItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :money, :exhibition, :soldout, :during_transaction, images_attributes: [:image_url])
+    params.require(:item).permit(:name, :money, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
   end
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def brand_params
+    params.require(:item).permit(:brand_name)
   end
 end

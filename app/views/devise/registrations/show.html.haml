@@ -27,7 +27,7 @@
 
 
 .done-bread-header
-  = link_to "https://www.mercari.com/jp/", class: "done-bread-header__link" do
+  = link_to root_path, class: "done-bread-header__link" do
     = image_tag asset_path('fakelogo.svg'), class: "done-bread-header__link--logo", alt: "mercari", size:"134x36"
   .done-bread-header-right
     %ol.clearfix
@@ -51,22 +51,4 @@
         %p.coment 会員登録が完了しました。
     .p-done-btn
       = link_to "メルカリをはじめる", '/', class: "p-done-btn__link"
-
-      %aside.Publicity-wrapper
-    .Publicity
-      .Publicity__left-text
-        .Publicity__left-text--upper
-          スマホでかんたんフリマアプリ
-        .Publicity__left-text--lower
-          今すぐ無料ダウンロード!
-        .left__app-images
-          .app-images__left
-            =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/mercari_icon-f75780e32e41e052c8aaa8b446331cd8.png', size:'68x68',)
-          .app-images__center
-            =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
-          .app-images__right
-            =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
-      .contents__right
-        =image_tag('https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', size:'300x260')
-
 = render './shared/simple-footer'
