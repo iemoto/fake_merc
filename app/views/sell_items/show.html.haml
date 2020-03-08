@@ -1,3 +1,6 @@
+- if flash[:notice]
+  .hogeisfade
+    = flash[:notice]
 = link_to '出品', sell_path
 %p
   = @item&.name
