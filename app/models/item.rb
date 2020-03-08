@@ -13,4 +13,6 @@ class Item < ApplicationRecord
 
   validates :name, :money, presence: true
   validates :exhibition, :during_transaction, :soldout, inclusion: { in: [true, false] }
+  validates :description, presence: true
+  validates :prefecture_address, presence: true
 end
