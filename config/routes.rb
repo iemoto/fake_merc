@@ -33,10 +33,15 @@ Rails.application.routes.draw do
 
   # 決済機能実装時にコントローラー等を作成
   get '/mypage/card', to: 'cards#index'
-  get '/mypage/card/create', to: 'cards#new'
-  post '/mypage/card/create', to: 'cards#pay'
-  
-
+  # get '/mypage/card/create', to: 'cards#new'
+  # post '/mypage/card/create', to: 'cards#create'
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
