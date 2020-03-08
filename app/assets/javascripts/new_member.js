@@ -1,17 +1,17 @@
 $(function(){
   //バリデーション ニックネーム
-  $('#user_nick_name').on('blur',function(){
+  $('#nick_name').on('blur',function(){
     let error;
-    let value = $('#user_nick_name').val();
+    let value = $('#nick_name').val();
     if(value == ""){
       error = true;}
     if(error){
       $('.nickname-error').show();
-      $('#user_nick_name').css({'border':'1px solid #ea352d'});
+      $('#nick_name').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.nickname-error').hide();
-      $('#user_nick_name').css({'border':'1px solid #ccc'});
+      $('#nick_name').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -19,18 +19,18 @@ $(function(){
 
 $(function(){
   //バリデーション メールアドレス
-  $('#user_email').on('blur',function(){
+  $('#email').on('blur',function(){
     let error;
-    let value = $('#user_email').val();
+    let value = $('#email').val();
     if(value == ""){
       error = true;}
     if(error){
       $('.email-error').show();
-      $('#user_email').css({'border':'1px solid #ea352d'});
+      $('#email').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.email-error').hide();
-      $('#user_email').css({'border':'1px solid #ccc'});
+      $('#email').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -38,20 +38,20 @@ $(function(){
 
 $(function(){
   //バリデーション パスワード
-  $('#user_password').on('blur',function(){
+  $('#password').on('blur',function(){
     let error;
-    let value = $('#user_password').val();
+    let value = $('#password').val();
     if(value == ""){
       error = true;}
     else if(!value.match(/[0-9a-zA-Z]/)){
       error = true;}
     if(error){
       $('.password-error1').show();
-      $('#user_password').css({'border':'1px solid #ea352d'});
+      $('#password').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.password-error1').hide();
-      $('#user_password').css({'border':'1px solid #ccc'});
+      $('#password').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -62,10 +62,81 @@ $(function(){
   $('.passcheck').click(function(){
     $('.passshow').toggle();
     // passcheckをクッリクしたら
-    var text = $('#user_password').val();
+    var text = $('#password').val();
     // valで#password-inputの値を取ってきて、変数textに入れる
     $('.passshow').text(text);
     // pssshowにtextメソッドでtextを入れる
+  });
+});
+
+$(function(){
+  //バリデーション 姓
+  $('#first_name').on('blur',function(){
+    let error;
+    let value = $('#first_name').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.first_name-error').show();
+      $('#first_name').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.first_name-error').hide();
+      $('#first_name').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+$(function(){
+  //バリデーション 名
+  $('#last_name').on('blur',function(){
+    let error;
+    let value = $('#last_name').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.last_name-error').show();
+      $('#last_name').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.last_name-error').hide();
+      $('#last_name').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+
+
+$(function(){
+  //バリデーション 姓カナ
+  $('#first_name_kana').on('blur',function(){
+    let error;
+    let value = $('#first_name_kana').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.first_name_kana-error').show();
+      $('#first_name_kana').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.first_name_kana-error').hide();
+      $('#first_name_kana').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+$(function(){
+  //バリデーション 名カナ
+  $('#last_name_kana').on('blur',function(){
+    let error;
+    let value = $('#last_name_kana').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.last_name_kana-error').show();
+      $('#last_name_kana').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.last_name_kana-error').hide();
+      $('#last_name_kana').css({'border':'1px solid #ccc'});
+    }
   });
 });
 
@@ -159,18 +230,18 @@ $(function() {
 
 $(function(){
   //バリデーション 生年月日
-  $('.p-member-form__birthday--select').on('click',function(){
+  $('select').on('blur',function(){
     let error;
     let value = $('#birth_day').val();
     if(value == "0"){
       error = true;}
     if(error){
       $('.birthday-error').show();
-      $('.p-member-form__birthday--select').css({'border':'1px solid #ea352d'});
+      $('select').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.birthday-error').hide();
-      $('.p-member-form__birthday--select').css({'border':'1px solid #0099e8'});
+      $('select').css({'border':'1px solid #ccc'});
     }
   });
 });

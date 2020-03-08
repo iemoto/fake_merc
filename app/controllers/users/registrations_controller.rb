@@ -14,7 +14,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   
   def new
-    super
+    # super
+    @personal_user = PersonalUser.new
   end
 
   # POST /resource
@@ -39,16 +40,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       render :new
     end
-
-    # @personal_user = Personal_user.new(personal_user_params)
-    # if @user.save
-    #   redirect_to "/signup/registration/#{@user.id}"
-    #   bypass_sign_in(@user)
-    # else
-    #   render :new
-    # end
   end
-
+  
   # GET /resource/edit
   # def edit
   #   super
@@ -86,20 +79,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nick_name, :email, :password, :first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day])
   end
-
-  # private
-  # def customize_sign_up_params
-  #   devise_parameter_sanitizer.permit :sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me]
-  # end
-
-  # def check_captcha
-  #   self.resource = resource_class.new sign_up_params
-  #   resource.validate
-  #   unless verify_recaptcha(model: resource)
-  #     respond_with_navigational(resource) { render :new }
-  #   end
-  # end
-
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
