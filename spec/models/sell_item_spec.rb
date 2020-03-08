@@ -12,5 +12,6 @@ RSpec.describe SellItem, type: :model do
       user.valid?
       expect(user.errors[:nick_name]).to include("can't be blank")
     end
+  end
 
 end
