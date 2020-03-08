@@ -15,10 +15,12 @@ class ItemsController < ApplicationController
         item_foreignKey = Item.find(params[:id])
         @images = Image.where("item_id = #{item_foreignKey.id}")
         if @item.exhibition === true
+          @item.exhibition = false
           format.html { redirect_to "/mypage/items/#{@item.id}", notice: '出品を再開しました' }
           format.json { render :show, status: :created, location: @item }
         else
           @item.exhibition === false
+          @item.exhibition = true
           format.html { redirect_to "/mypage/items/#{@item.id}", notice: '商品を一旦停止しました' }
           format.json { render :show, status: :created, location: @item }
         end
