@@ -9,7 +9,6 @@ Bundler.require(*Rails.groups)
 module FakeMerc
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
-
         # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     # rails gコマンドの設定
