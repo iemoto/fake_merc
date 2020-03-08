@@ -1,2 +1,24 @@
-itmes
-show
+- if flash[:notice]
+  .c-flash.u-success.isFadeOut
+    = flash[:notice]
+    .c-closeButton
+      X
+= link_to '出品', sell_path
+%p
+  = @item&.name
+%p
+  = @item&.money
+
+- @images.each do |image|
+  = image_tag(image.image_url.url)
+
+%br
+  = link_to '編集', "/sell/edit/#{@item.id}", method: :get
+
+= form_with(model: @item, url: "/mypage/items/activate/#{@item.id}", local: true)do |f|
+  - if @item.exhibition === true
+    = f.hidden_field :exhibition, value:'0'
+    = f.submit '商品を一旦停止する'
+  - else @item.exhibition === false
+    = f.hidden_field :exhibition, value:'1'
+    = f.submit '商品を再開する'
