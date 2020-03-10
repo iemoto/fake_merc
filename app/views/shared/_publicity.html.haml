@@ -1,0 +1,20 @@
+//フッター上コンテンツ
+%aside.Publicity-wrapper
+  .Publicity
+    .Publicity__left-text
+      .Publicity__left-text--upper.u-text-shadow
+        スマホでかんたんフリマアプリ
+      .Publicity__left-text--lower.u-text-shadow
+        今すぐ無料ダウンロード!
+      .left__app-images.clearfix
+        %fugure.app-images__left
+          =image_tag(asset_path('fakelogo-color.svg'), size:'68x68',)
+        %ul.clearfix
+          %li
+            =link_to 'https://apps.apple.com/jp/app/id667861049?l=ja',target: :_blank do
+              =image_tag(asset_path('app-store.svg'))
+          %li
+            =link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja',target: :_blank do
+              =image_tag(asset_path('google-play.svg'))
+    .contents__right
+      =image_tag(asset_path('content_pc.png'), size:'300x260')

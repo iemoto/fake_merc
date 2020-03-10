@@ -1,2 +1,7 @@
-items
-index
+%p
+  = @item&.name
+%p
+  = @item&.money
+
+-@images.each do |image|
+  =image_tag(image.image_url.url)

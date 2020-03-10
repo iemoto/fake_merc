@@ -1,2 +1,23 @@
-sell_items
-edit
+= form_with(model: @item, url: "/sell/edit/#{@item.id}", local: true)do |f|
+  .formItem-name
+    = f.label :商品名
+    = f.text_field :name
+  .formItem-money
+    = f.label :価格
+    = f.number_field :money
+    #image-box
+      = f.fields_for :images, @item&.images do |i|
+        .js-file_group{data: {id: "#{i.index}"}}
+          .js-file
+            = i.file_field :image_url
+          %span.js-remove
+            削除
+        -# -if @item.persisted?
+        -#   .hidden-destroy{data: {id: "#{i.index}"}}, image.check_box :_destroy
+        -# -if @item.persisted?
+        -#   .js-file_group{data: {id: "#{@item.images.count}"}}
+        -#     .js-file
+        -#       = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url], "
+        -#       .js-remove
+                削除
+    =f.submit

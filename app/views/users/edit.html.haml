@@ -1,2 +1,63 @@
-users
-edit
+= render "./shared/header"
+.mypage-wrapper.clearfix
+  = render './shared/sideBar'
+  .l-identification-content
+    %section.l-identification-block
+      %h2.l-identification-head
+        本人情報の登録
+      = form_with url:'/',class: 'l-identification-form' do |f|
+        %div
+          %p
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.u-text-right
+            =link_to root_path , target: :_blank , class: 'l-identifaication-link u-deco-none' do
+              本人確認書類のアップロードについて
+              = fa_icon 'chevron-right',class: 'l-identifaication-icon'
+
+        .l-form-group
+          = f.label 'お名前'
+          %p フェイク　メルク
+
+        .l-form-group
+          = f.label 'お名前カナ'
+          %p フェイク　メルク
+
+        .l-form-group
+          = f.label 'birthday','生年月日'
+          %p 2013/2/1
+
+        .l-form-group
+          = f.label 'zipcode','郵便番号'
+          %span.l-form-arbitrary 任意
+          = f.text_field :zipcode, placeholder: '例）1234567', class: 'l-input-default'
+
+        .l-form-group
+          = f.label 'prefecture','都道府県'
+          %span.l-form-arbitrary 任意
+          .l-form-select
+            = fa_icon'chevron-down',class: 'l-select-icon'
+            = f.collection_select :prefecture,Prefecture_Address.all ,:id,:name,{}, class: 'l-select-default'
+        .l-form-group
+          = f.label 'city','市区町村'
+          %span.l-form-arbitrary 任意
+          = f.text_field :city, placeholder: '例) 横浜市緑区', class: 'l-input-default'
+        .l-form-group
+          = f.label 'address1_label','番地'
+          %span.l-form-arbitrary 任意
+          = f.text_field :address1_label, placeholder: '例) 青山1−1−1', class: 'l-input-default'
+
+        .l-form-group
+          = f.label 'address2_label','建物名'
+          %span.l-form-arbitrary 任意
+          = f.text_field :address2_label, placeholder: '例) 柳ビル103', class: 'l-input-default'
+
+        = f.submit '登録する',class:'l-btn-default u-btn-red'
+        .l-form-group
+          %p.u-text-right
+            =link_to root_path , target: :_blank , class: 'l-identifaication-link u-deco-none' do
+              本人情報の登録について
+              = fa_icon 'chevron-right',class: 'l-identifaication-icon'
+
+= render './shared/footer'

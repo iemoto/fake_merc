@@ -1,0 +1,203 @@
+.main-wrapper
+  .main-contents
+    .main-contents__notice
+      .main-contents__notice--slide
+        =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"1073x390")
+        =image_tag("https://1.bp.blogspot.com/-DaxjfJ5r4R8/XeihF5SThkI/AAAAAAABWVg/MW3LcTUBjdYHliOnnnsUrFpj8msoVDBXACNcBGAsYHQ/s1600/medical_oushin_car_woman.png", size:"1073x390")
+    //人気のカテゴリー
+    .category
+      %h2.category__title
+        人気のカテゴリー
+      .category__nav
+        %ul.category__nav--list
+          %li
+            =link_to 'レディース', root_path,class: 'l-category-pc-link u-deco-none'
+            =link_to 'レディース', root_path,class:  'l-category-sp-link u-deco-none'
+          %li
+            =link_to 'メンズ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'メンズ' ,root_path,class:'l-category-sp-link u-deco-none'
+          %li
+            =link_to '家電・スマホ・カメラ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to '家電・スマホ・カメラ' ,root_path,class:'l-category-sp-link u-deco-none'
+          %li
+            =link_to 'おもちゃ・ホビー・グッズ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'おもちゃ・ホビー・グッズ' ,root_path,class:'l-category-sp-link u-deco-none'
+    .new-items
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 レディース新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1) , class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 メンズ新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 家電・スマホ・カメラ新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 おもちゃ・ホビー・グッズ新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+    .category
+      %h2.category__title
+        人気のブランド
+      .category__nav
+        %ul.category__nav--list
+          %li
+            =link_to 'シャネル', root_path,class: 'l-category-pc-link u-deco-none'
+            =link_to 'シャネル', root_path,class:  'l-category-sp-link u-deco-none'
+          %li
+            =link_to 'ルイヴィトン' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'ルイヴィトン' ,root_path,class:'l-category-sp-link u-deco-none'
+          %li
+            =link_to 'シュプリーム' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'シュプリーム' ,root_path,class:'l-category-sp-link u-deco-none'
+          %li
+            =link_to 'ナイキ' ,root_path,class:'l-category-pc-link u-deco-none'
+            =link_to 'ナイキ' ,root_path,class:'l-category-sp-link u-deco-none'
+    .new-items
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 シャネル新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1) , class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 ルイヴィトン新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 シュプリーム新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+      .category__new-items
+        .category__new-items--inner
+          %h3.category__new-items--inner--title.l-title-h3 ナイキ新着アイテム
+          = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
+            %span もっと見る
+            = fa_icon 'chevron-right'
+        .category__new-goods
+          .category__new-goods__inner
+            %ul.category__new-goods__inner--list
+              - 10.times do |i|
+                %li.l-list-category
+                  .l-list-min
+                    =link_to main_show_path(1), class: 'l-list-a' do
+                      %figure.l-list-figu.u-list-figu
+                        %figcaption
+                          %span 商品名 #{i+1}
+                          .l-span-under
+                        .l-list-image.u-list-image
+                          %span ¥2,000
+                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
