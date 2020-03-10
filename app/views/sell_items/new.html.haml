@@ -1,6 +1,3 @@
-sellPage側のブランチ
-#####################################################################################
-.sell-wrapper
 = form_with(model: @item, url: sell_path, local: true, class: 'sell-wrapper') do |f|
   .sell-wrapper__Title
     商品の情報を入力
@@ -10,9 +7,15 @@ sellPage側のブランチ
       = render 'mustLabel'
     %p.subscription
       最大10枚までアップロードできます
-    .label-box__inner
+    .label-box__inner#image-box
       %label
-        = f.file_field(:image, class: 'input-default', placeholder: 'ドラッグアンドドロップまたはクリックしてファイルをアップロード')
+        = f.fields_for :images, @item&.images, class: 'input-default' do |i|
+          .js-file_group{data: {id: "#{i.index}"}}
+            .js-file
+              = i.file_field :image_url
+            %span.js-remove
+              削除
+
         %p.boxFileSelect
           = fa_icon 'camera'
           %br
@@ -24,7 +27,7 @@ sellPage側のブランチ
     商品名
     = render 'mustLabel'
     .sellTitle
-      = f.text_field(:title, placeholder: '40文字まで')
+      = f.text_field(:name, placeholder: '40文字まで')
   %h4.sellDescription
     商品の説明
     = render 'mustLabel'
@@ -38,25 +41,38 @@ sellPage側のブランチ
     %h4.sellCategory
       カテゴリー
       = render 'mustLabel'
+    = f.collection_select :category_id, Category.where(ancestry: '1'), :id, :name
+    %h3#sizeCategory
+      %p
+        サイズ(任意)
+    = f.collection_select :size_id, Size.all, :id, :name
     %h4.sellBland
       ブランド
       = render 'mustLabel'
+    = f.text_field :brand_name
     %h4.sellState
       商品の状態
       = render 'mustLabel'
-  
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name
   .sellHeading
     .sellDetail
       発送について
     %h4.sellCost
       配送料の負担
       = render 'mustLabel'
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name
+    %h3#deliverMethod
+      %p
+        配送の方法
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name
     %h4.sellShip
       発送元の地域
       = render 'mustLabel'
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, prompt: "hoge"
     %h4.sellDate
       発送までの日数
       = render 'mustLabel'
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name
   .sellHeading
     .sellDetail
       価格(¥300 〜 9,999,999)
@@ -64,21 +80,18 @@ sellPage側のブランチ
       販売価格
       = render 'mustLabel'
       .fillCost
-        = f.number_field(:price, in: 300..9999999)
+        = f.number_field(:money, in: 300..9999999)
     %h4.sellTax
       販売手数料 (10%)
     %h4.sellBenefit
       販売利益
   .sellSubmit
     出品する 
+    = f.submit
     %br
-    戻る
+      戻る
+    %p
+      禁止されている出品、行為を必ずご確認ください。
+      またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+      また、出品をもちまして加盟店規約に同意したことになります。
 
-  %p
-    禁止されている出品、行為を必ずご確認ください。
-    またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-    また、出品をもちまして加盟店規約に同意したことになります。
-
-itemsSellBranch側
-####################################################
-= render 'form'
