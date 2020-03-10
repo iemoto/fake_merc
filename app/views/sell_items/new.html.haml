@@ -41,38 +41,38 @@
     %h4.sellCategory
       カテゴリー
       = render 'mustLabel'
-    = f.collection_select :category_id, Category.where(ancestry: '1'), :id, :name
+    = f.collection_select :category_id, Category.where(ancestry: '1'), :id, :name, prompt: '選択してください'
     %h3#sizeCategory
       %p
         サイズ(任意)
-    = f.collection_select :size_id, Size.all, :id, :name
+    = f.collection_select :size_id, Size.all, :id, :name, prompt: '選択してください'
     %h4.sellBland
-      ブランド
-      = render 'mustLabel'
+      %p
+        ブランド(任意)
     = f.text_field :brand_name
     %h4.sellState
       商品の状態
       = render 'mustLabel'
-    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, prompt: '選択してください'
   .sellHeading
     .sellDetail
       発送について
     %h4.sellCost
       配送料の負担
       = render 'mustLabel'
-    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, prompt: '選択してください'
     %h3#deliverMethod
       %p
         配送の方法
-    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: '選択してください'
     %h4.sellShip
       発送元の地域
       = render 'mustLabel'
-    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, prompt: "hoge"
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, prompt: '選択してください'
     %h4.sellDate
       発送までの日数
       = render 'mustLabel'
-    = f.collection_select :ship_date_id, ShipDate.all, :id, :name
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name, prompt: '選択してください'
   .sellHeading
     .sellDetail
       価格(¥300 〜 9,999,999)
