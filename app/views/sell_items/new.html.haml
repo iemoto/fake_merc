@@ -64,6 +64,7 @@
     %h3#deliverMethod
       %p
         配送の方法
+        = render 'mustLabel'
     = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: '選択してください'
     %h4.sellShip
       発送元の地域

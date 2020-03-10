@@ -14,7 +14,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :shipping_method_id, foreign_key: true, default: nil, null: false
       t.integer :ship_date_id, foreign_key: true, default: nil, null: false
       t.references :brand, foreign_key: true
-      t.integer :size_id, foreign_key: true, default: nil, null: false
+      t.integer :size_id, foreign_key: true, default: nil
       t.timestamps
     end
   end
