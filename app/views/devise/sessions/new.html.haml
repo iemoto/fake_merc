@@ -20,8 +20,7 @@
 
 = render 'devise/../shared/simple-header'
 
--# = form_with model: @user, url: session_path(resource_name), id: 'form', local: true do |f|
-= form_for(resource, url: session_path(resource)) do |f|
+= form_with model: resource, url: session_path(resource), id: 'form', local: true do |f|
 
   .p-login-main
     .p-login-user

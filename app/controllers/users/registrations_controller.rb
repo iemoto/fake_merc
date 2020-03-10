@@ -4,15 +4,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # sign_up parameter :first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
   def index
   end
 
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
-
   # GET /resource/sign_up
-  
   def new
     # super
     @personal_user = PersonalUser.new
@@ -28,20 +23,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     @user = User.new(user_params)
     if @user.save
-      personal_params = personal_user_params.merge(user_id:@user.id)
+      personal_params = personal_user_params.merge(user_id: @user.id)
       @personal_user = PersonalUser.new(personal_params)
       if @personal_user.save
         flash[:notice]='会員登録出来ました！'
-      redirect_to "/signup/registration/#{@user.id}"
-      bypass_sign_in(@user)
+        redirect_to "/signup/registration/#{@user.id}"
+        bypass_sign_in(@user)
       else
-      render :new
+        render :new
       end
     else
       render :new
     end
   end
-  
+
   # GET /resource/edit
   # def edit
   #   super
@@ -73,7 +68,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def personal_user_params
     params.permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day)
-    
   end
 
   def configure_permitted_parameters

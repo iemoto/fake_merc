@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  has_one :parsonal_user,dependent: :delete
+  has_one :parsonal_user, dependent: :delete
   has_many :sns_credentials
 
-  validates :nick_name, presence: true;
+  validates :nick_name, presence: true
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
