@@ -31,10 +31,14 @@ Rails.application.routes.draw do
   get '/mypage/profile', to: 'profiles#edit'
   patch '/mypage/profile', to: 'profiles#update'
 
-  # 決済機能実装時にコントローラー等を作成
+  # 決済機能実装時にコントローラー等を作成 cards本物
   get '/mypage/card', to: 'cards#index'
-  # get '/mypage/card/create', to: 'cards#new'
-  # post '/mypage/card/create', to: 'cards#create'
+  get '/mypage/card/create', to: 'cards#new'
+  post '/mypage/card/create', to: 'cards#pay' , as:'mypage_pay_create'
+  get '/mypage/card/show', to: 'cards#show'
+  post '/mypage/card/delete', to: 'cards#delete'
+
+  # 偽物
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
