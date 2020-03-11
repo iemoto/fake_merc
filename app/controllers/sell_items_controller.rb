@@ -4,6 +4,7 @@ class SellItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @sellItem = SellItem.new
+    @mainCategory = Category.where(ancestry: '1')
   end
 
   def create
