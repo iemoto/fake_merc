@@ -89,8 +89,10 @@
         = f.number_field(:money, in: 300..9999999, placeholder: '0')
     %h4.sellTax
       販売手数料 (10%)
+      #sellCommision
     %h4.sellBenefit
       販売利益
+      #sellBenefit
     .sellSubmit
       = f.submit '出品する', {onClick: 'submit();', class: 'sellBtn'}
     .othersElement
