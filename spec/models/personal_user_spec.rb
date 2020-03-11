@@ -50,6 +50,5 @@ RSpec.describe PersonalUser, type: :model do
       personal_user.valid?
       expect(personal_user.errors[:birth_day]).to include("can't be blank")
     end
-
   end
 end
