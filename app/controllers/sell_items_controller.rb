@@ -1,5 +1,6 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
+  after_action :redirect_save_item, only: [:create, :update]
   def new
     @item = Item.new
     @item.images.new
@@ -8,6 +9,7 @@ class SellItemsController < ApplicationController
   end
 
   def create
+    @mainCategory = Category.where(ancestry: '1')
     @brand = Brand.create(brand_params)
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
@@ -19,7 +21,7 @@ class SellItemsController < ApplicationController
           format.json { render json: @item.errors, status: :unprocessable_entity }
         end
         format.html { redirect_to "/mypage/items/#{@item.id}"}
-        format.json { render :show, status: :created, location: @item }
+        format.json { render :show, status: :created, location: @item}
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -48,6 +50,11 @@ class SellItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def redirect_save_item
+    @mainCategory = Category.where(ancestry: '1')
+    # @item = Item.find(params[:id])
   end
 
   def brand_params
