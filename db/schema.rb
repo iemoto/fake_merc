@@ -38,17 +38,17 @@ ActiveRecord::Schema.define(version: 2020_03_03_165515) do
     t.string "name"
     t.string "description"
     t.integer "money"
-    t.boolean "exhibition", default: true, null: false
-    t.boolean "during_transaction", default: false, null: false
-    t.boolean "soldout", default: false, null: false
-    t.integer "prefecture_address_id", null: false
-    t.integer "category_id", null: false
-    t.integer "item_condition_id", null: false
-    t.integer "shipping_fee_id", null: false
-    t.integer "shipping_method_id", null: false
-    t.integer "ship_date_id", null: false
+    t.boolean "exhibition", default: true
+    t.boolean "during_transaction", default: false
+    t.boolean "soldout", default: false
+    t.integer "prefecture_address_id"
+    t.integer "category_id"
+    t.integer "item_condition_id"
+    t.integer "shipping_fee_id"
+    t.integer "shipping_method_id"
+    t.integer "ship_date_id"
     t.bigint "brand_id"
-    t.integer "size_id", null: false
+    t.integer "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"

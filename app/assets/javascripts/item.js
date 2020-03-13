@@ -19,7 +19,7 @@ $(function(){
   $('.hidden-destroy').hide();
   $('#image-box').on('change', '.js-file', function(e) {
     //fileIndexの先頭の数字をinputを作る
-    $('#image-box').append(buildFileField(fileIndex[0]));
+    $('.boxFileSelect').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
     //末尾の数に１足した数を追加する
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)

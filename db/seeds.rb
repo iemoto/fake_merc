@@ -9,7 +9,6 @@
 # Categoryモデル
 ## 親カテゴリー
 category = Category.create(name: 'すべて')
-default = category.children.create(name: '選択してください')
 ladys = category.children.create(name: 'レディース')
 mens = category.children.create(name: 'メンズ')
 babys = category.children.create(name: 'ベビー・キッズ')
