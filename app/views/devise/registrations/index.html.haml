@@ -8,28 +8,28 @@
         .p-reg-btn
           .p-reg-btn__mail
             = fa_icon 'envelope'
-            = link_to "メールアドレスで登録する", signup_registration_path, class: "p-reg-btn__link"
+            = link_to 'メールアドレスで登録する', signup_registration_path, class: 'p-reg-btn__link'
           .p-reg-btn__facebook
             = fa_icon 'facebook-square'
-            = link_to "Facebookで登録する", user_facebook_omniauth_authorize_path, class: "p-reg-btn__link"
+            = link_to 'Facebookで登録する', user_facebook_omniauth_authorize_path, class: 'p-reg-btn__link'
           .p-reg-btn__google
             = fa_icon 'google'
-            = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path, class: "p-reg-btn__link--color"
+            = link_to 'Googleで登録する', user_google_oauth2_omniauth_authorize_path, class: 'p-reg-btn__link--color'
 
 = render 'devise/../shared/simple-footer'
 
 -# ↓↓↓本来は不要ですが、コメント化したものは念のため残しております。最終的には調整する。
 -# %h2 Sign up
 -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#   = render "devise/shared/error_messages", resource: resource
+-#   = render 'devise/shared/error_messages', resource: resource
 -#   .field
 -#     = f.label :nick_name
 -#     %br/
--#     = f.text_field :nick_name, autofocus: true, require: true, autocomplete: "nick_name"
+-#     = f.text_field :nick_name, autofocus: true, require: true, autocomplete: 'nick_name'
 -#   .field
 -#     = f.label :email
 -#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#     = f.email_field :email, autofocus: true, autocomplete: 'email'
 
 -#   - if @sns_id.present?
 -#     = hidden_field_tag :sns_auth, true
@@ -40,11 +40,11 @@
 -#         %em
 -#           (#{@minimum_password_length} characters minimum)
 -#       %br/
--#       = f.password_field :password, autocomplete: "new-password"
+-#       = f.password_field :password, autocomplete: 'new-password'
 -#     .field
 -#       = f.label :password_confirmation
 -#       %br/
--#       = f.password_field :password_confirmation, autocomplete: "new-password"
+-#       = f.password_field :password_confirmation, autocomplete: 'new-password'
 -#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
+-#     = f.submit 'Sign up'
+-# = render 'devise/shared/links'
