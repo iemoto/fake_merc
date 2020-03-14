@@ -1,15 +1,14 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
   def index
   end
 
   def show
-    @item = Item.find(params[:id])
     item_foreignKey = Item.find(params[:id])
     @images = Image.where("item_id = #{item_foreignKey.id}")
   end
 
   def update
-    @item = Item.find(params[:id])
     respond_to do |format|
       if @item.update(active_params)
         item_foreignKey = Item.find(params[:id])
@@ -34,5 +33,9 @@ class ItemsController < ApplicationController
   private
   def active_params
     params.require(:item).permit(:exhibition)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
