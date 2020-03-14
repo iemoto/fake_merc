@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  add_breadcrumb "ファイクメルク" ,:root 
+  add_breadcrumb 'ファイクメルク', :root
 
   def edit
     add_breadcrumb 'マイページ', mypage_path
