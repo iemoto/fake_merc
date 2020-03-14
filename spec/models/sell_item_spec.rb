@@ -1,20 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe SellItem, type: :model do
-  # describe '新規会員登録' do
-  #   it 'nick_name,email,passwordが全部ある場合、登録できる' do
-  #     user = build(:user)
-  #     expect(user).to be_valid
-  #   end
-  #   it 'nick_nameがない場合、登録できない' do
-  #     user = build(:user, nick_name: nil)
-      # user.valid?
-  #     expect(user.errors[:nick_name]).to include("can't be blank")
-  #   end
   describe '商品出品' do
     it '必須項目が全部ある場合、登録できる' do
-      binding.pry
-      item = build(:name, :description, :money, :exhibition, :during_transaction, :soldout, :prefecture_address_id, :item_condition, :shippong_method_id, :shipping_method_id, :ship_date_id, :brand_id, :size_id)
+      item = build(:item, brand_id: nil, size_id: nil)
       item.valid?
       expect(item).to be_valid
     end
