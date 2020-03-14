@@ -14,6 +14,6 @@ class Item < ApplicationRecord
             :category_id, :item_condition_id, :shipping_method_id, \
             :shipping_fee_id, :ship_date_id, :brand_id, presence: true
   validates :exhibition, :during_transaction, :soldout, inclusion: { in: [true, false] }
-  validates :description, presence: true
+  # validates :description, presence: true
   # validates :prefecture_address, presence: true
 end

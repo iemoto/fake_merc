@@ -13,7 +13,8 @@ RSpec.describe SellItem, type: :model do
   #   end
   describe '商品出品' do
     it '必須項目が全部ある場合、登録できる' do
-      item = build(:image_url, :name, :description, :category_id, :item_condition_id, :shipping_fee_id, :prefecture_address_id, :ship_date_id, :money)
+      binding.pry
+      item = build(:name, :description, :money, :exhibition, :during_transaction, :soldout, :prefecture_address_id, :item_condition, :shippong_method_id, :shipping_method_id, :ship_date_id, :brand_id, :size_id)
       item.valid?
       expect(item).to be_valid
     end
@@ -23,8 +24,8 @@ RSpec.describe SellItem, type: :model do
       expect(image.errors[:image_url]).to include("can't be blank")
     end
     it '商品名がない場合、登録できない' do
-      @item = Item.new(:item, name: nil)
-      @item.valid?
+      item = build(:item, name: nil)
+      item.valid?
       expect(item.errors[:name]).to include("can't be blank")
     end
     it '商品説明がない場合、登録できない' do
