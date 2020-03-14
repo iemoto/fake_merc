@@ -1,6 +1,6 @@
 class Creditcardmonths < ActiveHash::Base
   self.data = [
-    {id: 0 , name:'--'},
+    {id='' , name:'--'},
     {id: 1 , name:'01'},
     {id: 2 , name:'02'},
     {id: 3 , name:'03'},
