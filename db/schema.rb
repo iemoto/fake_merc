@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 2020_03_07_053412) do
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
+ActiveRecord::Schema.define(version: 2020_03_03_144108) do
+
+  create_table "personal_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.integer "post_number"
+    t.bigint "prefecture_address_id"
+    t.string "municipality_address"
+    t.string "street_address"
+    t.string "building_name_adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

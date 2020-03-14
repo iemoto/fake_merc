@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  add_breadcrumb 'ファイクメルク', :root
+  add_breadcrumb "ファイクメルク",:root 
 
   def index
     add_breadcrumb 'マイページ'
