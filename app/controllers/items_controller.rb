@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @images = Image.where("item_id = #{item_foreignKey.id}")
+    @images = Image.where("item_id = #{@item.id}")
   end
 
   def update
