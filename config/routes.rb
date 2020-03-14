@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   get '/sell', to: 'sell_items#new'
   post '/sell', to: 'sell_items#create'
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
-  get '/sell/edit/:id', to: 'sell_items#edit'
+  get '/sell/edit/:id', to: 'sell_items#edit', as:'sell_item_edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
   delete '/sell/edit/:id', to: 'sell_items#destroy'
 
