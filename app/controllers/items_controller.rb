@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    item_foreignKey = Item.find(params[:id])
     @images = Image.where("item_id = #{item_foreignKey.id}")
   end
 
