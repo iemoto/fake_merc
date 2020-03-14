@@ -1,0 +1,40 @@
+.l-gretel-nav
+  position: relative
+  border-top: 1px solid #eee
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16)
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16)
+  background: #fff
+  font-family: $font--sub-basic
+  z-index: 10001
+
+  .l-gretel-brock
+    padding: 16px
+    font-size: 0
+    white-space: nowrap
+    overflow: auto
+    webkit-overflow-scrolling: touch
+    @media (min-width: 768px)
+      overflow: visible
+      width: 700px
+      margin: 0 auto
+      padding: 16px 0
+      white-space: normal
+    @media (min-width: 1068px)
+      width: 1020px
+
+    .l-gretel-inline
+      display: inline-block
+      font-size: 14px
+      line-height: 1.2
+      @media (min-width: 768px)
+        text-overflow: ellipsis
+        white-space: nowrap
+      &:last-child
+        font-weight: 600
+
+      .l-gretel-link
+        color: $color--mercblack
+      .l-gretel-icon
+        margin: 0 8px
+        font-size: 9px
+        color: #888

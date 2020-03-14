@@ -1,0 +1,30 @@
+.l-visible-publicity
+  background-image: url(asset_path("bg_pc.jpg"))
+  background-position: center
+  background-size: cover
+  color: $color--block__main
+  background-position: center center
+  @media (min-width:768px)
+    display: none
+
+  .l-visible-publicity-link
+    -webkit-box-align: center
+    align-items: center
+    background-color: rgba(0, 0, 0, 0.2)
+    color: $color--sub-block__font
+    display: flex
+    -webkit-box-pack: center
+    justify-content: center
+    text-align: center
+    padding: 15px 0px
+    .l-visible-publicity-img
+      height: 50px
+      margin-right: 20px
+      width: 50px
+    .l-visible-publicity-com1
+      display: inline-flex
+      flex-direction: column
+      text-align: left
+      .l-visible-publicity-com2
+        font-size: 20px
+        margin-top: 8px 

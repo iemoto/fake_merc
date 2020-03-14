@@ -1,4 +1,4 @@
-= render "./shared/header"
+= render './shared/sub-header'
 .mypage-wrapper
   = render './shared/sideBar'
   .profile-content
@@ -15,4 +15,4 @@
         = f.text_area(:profile, placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪')
       .profileMessage__btn
         = f.submit("変更する", {class: 'changeProfileBtn'})
-= render './shared/footer'
+= render './shared/sub-footer'
