@@ -6,20 +6,17 @@ class CardsController < ApplicationController
     redirect_to action: 'index' if card.exists?
     year = Time.now.year
     @year = []
-    11.times do |i|
-      @year[year] = year - 2000
+    11.times do |i = 0|
+      @year[i] = [year - 2000,year]
       year += 1
+      i += 1
     end
-    (Time.now.year).times do |i|
-      @year.delete_at(0)
-    end
+
     @month = []
-    num = 1
-    12.times do |i|
-      @month[num] = sprintf('%02d', num)
-      num += 1
+    12.times do |i = 0|
+      @month[i] = sprintf('%02d', i + 1)
+      i += 1
     end
-    @month.delete_at(0)
   end
 
   def pay # payjpとCardのデータベース作成を実施します。
