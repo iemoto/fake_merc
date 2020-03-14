@@ -13,6 +13,16 @@
           -# .btn
           -#   =fa_icon 'credit-card'
           -#   =link_to 'クレジットカードを追加する',new_card_path	
+        - if @card.present?
+          %label 登録クレジットカード情報
+          %br
+          = "**** **** **** " + @default_card_information.last4
+          %br
+          = @exp_month + " / " + @exp_year
+          = form_tag(delete_card_index_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+            %input{ type: "hidden", name: "card_id", value: "" }
+            %button 削除する
+        - else
           .btn
             = fa_icon 'credit-card'
             = link_to 'クレジットカードを追加する', mypage_card_create_path		
