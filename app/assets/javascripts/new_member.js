@@ -1,17 +1,17 @@
 $(function(){
   //バリデーション ニックネーム
-  $('#user_nick_name').on('blur',function(){
+  $('#nick_name').on('blur',function(){
     let error;
-    let value = $('#user_nick_name').val();
+    let value = $('#nick_name').val();
     if(value == ""){
       error = true;}
     if(error){
       $('.nickname-error').show();
-      $('#user_nick_name').css({'border':'1px solid #ea352d'});
+      $('#nick_name').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.nickname-error').hide();
-      $('#user_nick_name').css({'border':'1px solid #ccc'});
+      $('#nick_name').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -19,18 +19,18 @@ $(function(){
 
 $(function(){
   //バリデーション メールアドレス
-  $('#user_email').on('blur',function(){
+  $('#email').on('blur',function(){
     let error;
-    let value = $('#user_email').val();
+    let value = $('#email').val();
     if(value == ""){
       error = true;}
     if(error){
       $('.email-error').show();
-      $('#user_email').css({'border':'1px solid #ea352d'});
+      $('#email').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.email-error').hide();
-      $('#user_email').css({'border':'1px solid #ccc'});
+      $('#email').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -38,20 +38,20 @@ $(function(){
 
 $(function(){
   //バリデーション パスワード
-  $('#user_password').on('blur',function(){
+  $('#password').on('blur',function(){
     let error;
-    let value = $('#user_password').val();
+    let value = $('#password').val();
     if(value == ""){
       error = true;}
     else if(!value.match(/[0-9a-zA-Z]/)){
       error = true;}
     if(error){
       $('.password-error1').show();
-      $('#user_password').css({'border':'1px solid #ea352d'});
+      $('#password').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.password-error1').hide();
-      $('#user_password').css({'border':'1px solid #ccc'});
+      $('#password').css({'border':'1px solid #ccc'});
     }
   });
 });
@@ -62,10 +62,81 @@ $(function(){
   $('.passcheck').click(function(){
     $('.passshow').toggle();
     // passcheckをクッリクしたら
-    var text = $('#user_password').val();
+    var text = $('#password').val();
     // valで#password-inputの値を取ってきて、変数textに入れる
     $('.passshow').text(text);
     // pssshowにtextメソッドでtextを入れる
+  });
+});
+
+$(function(){
+  //バリデーション 姓
+  $('#first_name').on('blur',function(){
+    let error;
+    let value = $('#first_name').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.first_name-error').show();
+      $('#first_name').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.first_name-error').hide();
+      $('#first_name').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+$(function(){
+  //バリデーション 名
+  $('#last_name').on('blur',function(){
+    let error;
+    let value = $('#last_name').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.last_name-error').show();
+      $('#last_name').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.last_name-error').hide();
+      $('#last_name').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+
+
+$(function(){
+  //バリデーション 姓カナ
+  $('#first_name_kana').on('blur',function(){
+    let error;
+    let value = $('#first_name_kana').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.first_name_kana-error').show();
+      $('#first_name_kana').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.first_name_kana-error').hide();
+      $('#first_name_kana').css({'border':'1px solid #ccc'});
+    }
+  });
+});
+$(function(){
+  //バリデーション 名カナ
+  $('#last_name_kana').on('blur',function(){
+    let error;
+    let value = $('#last_name_kana').val();
+    if(value == ""){
+      error = true;}
+    if(error){
+      $('.last_name_kana-error').show();
+      $('#last_name_kana').css({'border':'1px solid #ea352d'});
+    }
+    else if(!error){
+      $('.last_name_kana-error').hide();
+      $('#last_name_kana').css({'border':'1px solid #ccc'});
+    }
   });
 });
 
@@ -76,55 +147,55 @@ $(function(){
 $(function() {
   // 現在の年月日を取得
   var time = new Date();
-  var year = time.getFullYear();
-  var month = time.getMonth() + 1;
-  var date = time.getDate();
+  var birth_year = time.getFullYear();
+  var birth_month = time.getMonth() + 1;
+  var birth_day = time.getDate();
 
   // 選択された年月日を取得
-  var selected_year = document.getElementById("year");
-  var selected_month = document.getElementById("month");
+  var selected_year = document.getElementById("birth_year");
+  var selected_month = document.getElementById("birth_month");
 
   // 年(初期): 1900〜現在の年 の値を設定
-  for (var i = year; i >= 1900 ; i--) {
-      $('#year').append('<option value="' + i + '">' + i + '</option>');
+  for (var i = birth_year; i >= 1900 ; i--) {
+      $('#birth_year').append('<option value="' + i + '">' + i + '</option>');
   }
 
   // 月(初期): 1~12 の値を設定
   for (var j = 1; j <= 12; j++) {
-      $('#month').append('<option value="' + j + '">' + j + '</option>');
+      $('#birth_month').append('<option value="' + j + '">' + j + '</option>');
   }
 
   // 日(初期): 1~31 の値を設定
   for (var k = 1; k <= 31; k++) {
-      $('#date').append('<option value="' + k + '">' + k + '</option>');
+      $('#birth_day').append('<option value="' + k + '">' + k + '</option>');
   }
 
   // 月(変更)：選択された年に合わせて、適した月の値を選択肢にセットする
-  $('#year').change(function() {
-      selected_year = $('#year').val();
+  $('#birth_year').change(function() {
+      selected_year = $('#birth_year').val();
 
       // 現在の年が選択された場合、月の選択肢は 1~現在の月 に設定
       // それ以外の場合、1~12 に設定
       var last_month = 12;
-      if (selected_year == year) {
-          last_month = month;
+      if (selected_year == birth_year) {
+          last_month = birth_month;
       }
-      $('#month').children('option').remove();
-      $('#month').append('<option value="' + 0 + '">--</option>');
+      $('#birth_month').children('option').remove();
+      $('#birth_month').append('<option value="' + 0 + '">--</option>');
       for (var n = 1; n <= last_month; n++) {
-          $('#month').append('<option value="' + n + '">' + n + '</option>');
+          $('#birth_month').append('<option value="' + n + '">' + n + '</option>');
       }
   });
 
   // 日(変更)：選択された年・月に合わせて、適した日の値を選択肢にセットする
-  $('#year,#month').change(function() {
-      selected_year = $('#year').val();
-      selected_month = $('#month').val();
+  $('#birth_year,#birth_month').change(function() {
+      selected_year = $('#birth_year').val();
+      selected_month = $('#birth_month').val();
 
       // 現在の年・月が選択された場合、日の選択肢は 1~現在の日付 に設定
       // それ以外の場合、各月ごとの最終日を判定し、1~最終日 に設定
-      if (selected_year == year && selected_month == month ) {
-          var last_date = date;
+      if (selected_year == birth_year && selected_month == birth_month ) {
+          var last_date = birth_day;
       }else{
           // 2月：日の選択肢は1~28日に設定
           // ※ ただし、閏年の場合は29日に設定
@@ -145,10 +216,10 @@ $(function() {
           }
       }
 
-      $('#date').children('option').remove();
-      $('#date').append('<option value="' + 0 + '">--</option>');
+      $('#birth_day').children('option').remove();
+      $('#birth_day').append('<option value="' + 0 + '">--</option>');
       for (var m = 1; m <= last_date; m++) {
-          $('#date').append('<option value="' + m + '">' + m + '</option>');
+          $('#birth_day').append('<option value="' + m + '">' + m + '</option>');
       }
   });
 });
@@ -159,18 +230,18 @@ $(function() {
 
 $(function(){
   //バリデーション 生年月日
-  $('.p-member-form__birthday--select').on('click',function(){
+  $('select').on('blur',function(){
     let error;
-    let value = $('#date').val();
+    let value = $('#birth_day').val();
     if(value == "0"){
       error = true;}
     if(error){
       $('.birthday-error').show();
-      $('.p-member-form__birthday--select').css({'border':'1px solid #ea352d'});
+      $('select').css({'border':'1px solid #ea352d'});
     }
     else if(!error){
       $('.birthday-error').hide();
-      $('.p-member-form__birthday--select').css({'border':'1px solid #0099e8'});
+      $('select').css({'border':'1px solid #ccc'});
     }
   });
 });
