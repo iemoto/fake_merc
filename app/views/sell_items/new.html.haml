@@ -10,14 +10,10 @@
       最大10枚までアップロードできます
     .label-box__inner#image-box
       %label
-        -# .input-default
         = f.fields_for :images, @item&.images do |i|
           .js-file_group{data: {id: "#{i.index}"}, class: 'input-default'}
             .js-file.input-default
               = i.file_field :image_url
-              -# %span.js-remove
-                削除
-
         %p.boxFileSelect
           = fa_icon 'camera'
           %br
