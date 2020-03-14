@@ -54,7 +54,6 @@ class SellItemsController < ApplicationController
 
   def redirect_save_item
     @mainCategory = Category.where(ancestry: '1')
-    # @item = Item.find(params[:id])
   end
 
   def brand_params
