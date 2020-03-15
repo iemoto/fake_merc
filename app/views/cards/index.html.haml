@@ -1,12 +1,4 @@
-= render './shared/sub-header'
-.cardsnav
-  %ul
-    %li
-      メルカリ＞
-    %li
-      マイページ＞
-    %li
-      支払い方法＞
+= render "./shared/header"
 .cards-wrapper
   = render './shared/sideBar'
   .cards-contents
@@ -17,10 +9,25 @@
         .name
           クレジットカード一覧
         .addcard
+          -#以下のコメントアウトはpay.jp実装の際の仮想のルートです。pay.jpを完璧に実装するまで残しておきます。
+          -# .btn
+          -#   =fa_icon 'credit-card'
+          -#   =link_to 'クレジットカードを追加する',new_card_path	
+        - if @card.present?
+          %label 登録クレジットカード情報
+          %br
+          = "**** **** **** " + @default_card_information.last4
+          %br
+          = @exp_month + " / " + @exp_year
+          = form_tag(delete_card_index_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+            %input{ type: "hidden", name: "card_id", value: "" }
+            %button 削除する
+        - else
           .btn
-            =fa_icon 'credit-card'
-            =link_to 'クレジットカードを追加する'
+            = fa_icon 'credit-card'
+            = link_to 'クレジットカードを追加する', mypage_card_create_path		
+
         .payinfo
-          =link_to '支払い方法について＞'
+          = link_to '支払い方法について＞'
 
 = render './shared/sub-footer'

@@ -1,0 +1,52 @@
+= render "./shared/header"
+
+.registercards-wrapper
+  = render './shared/sideBar'
+  .registercards
+    .registercards-head
+      クレジットカード情報入力
+    .registercardsform
+      = form_tag(mypage_pay_create_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        %label カード番号
+        %span.required 必須
+        %br
+        .number-error 半角数字で入力してください
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        %br
+        %ul.creditcardslog
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/visa.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/master-card.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/saison-card.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/jcb.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/american_express.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/dinersclub.svg?460707210", size:"48x20"
+          %li
+            = image_tag "https://pcweb-assets.mercdn.net/assets/img/card/discover.svg?460707210", size:"48x20"
+        .registercardsform__expirationdate
+          %label 有効期限
+          %span.required 必須
+          %br
+          = select_tag 'exp_month',options_for_select((@month),class: "exp_month"),prompt: "--"
+          %span 月
+          = select_tag 'exp_year',options_for_select((@year),class: "exp_year"),prompt: "--"
+          %span 年
+          %br
+        .registercardsform__securitycode
+          %label セキュリティコード
+          %span.required 必須
+          %br
+          = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3桁もしくは4桁の番号", maxlength: "4", id: "cvc"
+        .aboutcardsbacknumber
+          = fa_icon 'question-circle'
+          カード裏面の番号とは?
+        .btn
+          #card_token
+          = submit_tag "追加する", id: "token_submit"
+
+= render './shared/footer'
