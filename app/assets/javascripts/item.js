@@ -3,17 +3,17 @@ $(function(){
   $('#image-box').on('change', '.js-file', function(e) {
     const file = e.target.files[0];
     const url = window.URL.createObjectURL(file);
+    // $('input-default').remove()
     $('#previews').append(buildFileField(fileIndex[0], url));
     fileIndex.shift();
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
   });
 
-  $('#image-box').on('click', '.js-remove', function(){
-    const targetIndex = $(this).parent().data('index')
-    const hiddenCheck = $(`input[data-index"${targetIndex}").hidden-destroy`);
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
+  $('#previews').on('click', '.js-remove', function(){
+    // const targetIndex = $(this).parent().data('index')
+    // const hiddenCheck = $(`input[data-index"${targetIndex}").hidden-destroy`);
     $(this).parent().remove();
-    //画像入力蘭が0個にならないようにしておく
+    // if (hiddenCheck) hiddenCheck.prop('checked', true);
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 
@@ -22,21 +22,19 @@ $(function(){
   //画像用のinputを生成する関数
   const buildFileField = (index, url)=> {
     const html = `<div data-index="${index}" class="js-file_group">
+                    <div>
+                    <img data-index="${index}"
+                    class="boxFileSelect"
+                    src="${url}"
+                    width="100px" height="100px"
+                    style="background-color: rgb(245, 245, 245);">
+                    </div>
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][image_url]"
                     id="item_images_attributes_${index}_image_url">
-                    <div class="js-remove">削除</div>
-                    <div>
-                      <img data-index="${index}"
-                        class="boxFileSelect"
-                        src="${url}"
-                        width="100px" height="100px"
-                        style="background-color: rgb(245, 245, 245);">
-                    </div>
-                    <div class="js-remove">
-                      削除!!
-                    </div>
+                    <div class="js-remove">削除!!!</div>
                   </div>`;
+    $('.boxFileSelect').css('width',`100%/${index}`)
     return html;
   }
 
