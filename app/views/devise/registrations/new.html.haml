@@ -62,7 +62,11 @@
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "email"
             .email-error フォーマットが不適切です
 
+
           .p-member-form
+          - if @sns_id.present?
+            = hidden_field_tag :sns_auth, true
+          - else
             .p-member-form__label
               パスワード
               %span.required 必須
