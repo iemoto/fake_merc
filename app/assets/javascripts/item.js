@@ -1,8 +1,9 @@
 $(function(){
-
+  
+  var fileIndex = [1,2,3,4,5,6,7,8,9,10];
   $('#image-box').on('change', '.js-file', function(e){
     var file = e.target.files[0];
-    $('#image-box').append(buildInputField(file))
+    $('.image-box').append(buildInputField(file))
   })
 
   $('#image-box').on('click', '.js-remove',function(){
@@ -10,12 +11,22 @@ $(function(){
   })
 
   function buildPreview() {
-    const html = `<h1>input Image2!!</h1>`;
-    return html;
   }
 
+  // function index(){
+    // var fileIndex = [1,2,3,4,5,6,7,8,9,10];
+    // var index = fileIndex.shift();
+  //   return index;
+  // }
+
   function buildInputField(file) {
-    const index = 1;
+    // var index = 0;
+    var index = fileIndex.shift();
+
+    // if (index = 0){
+    //   index += 1;
+    // }
+    // const index = 1;
     const url = window.URL.createObjectURL(file);
     const html = `<div data-index="${index}" class="js-file_group">
                     <input 

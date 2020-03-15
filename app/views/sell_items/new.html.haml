@@ -8,13 +8,15 @@
       = render 'mustLabel'
     %p.subscription
       最大10枚までアップロードできます
-    .label-box__inner#image-box
+    .label-box__inner
       %label
         = f.fields_for :images, @item&.images do |i|
-          .js-file_group{data: {id: "#{i.index}"}}
-            .js-file.input-default
-              = i.file_field :image_url
-              #previews
+          #image-box.image-box
+            .js-file_group
+              .js-file.input-default
+                = i.file_field :image_url
+            #previews
+          -# .js-file_group{data: {id: "#{i.index}"}, id: 'image-box'}
 
         %p.boxFileSelect
           = fa_icon 'camera'
