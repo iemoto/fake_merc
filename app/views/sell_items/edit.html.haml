@@ -1,2 +1,15 @@
-sell_items
-edit
+= form_with(model: @item, url: sell_item_edit_path, local: true)do |f|
+  .formItem-name
+    = f.label :商品名
+    = f.text_field :name
+  .formItem-money
+    = f.label :価格
+    = f.number_field :money
+    #image-box
+      = f.fields_for :images, @item&.images do |i|
+        .js-file_group{data: {id: "#{i.index}"}}
+          .js-file
+            = i.file_field :image_url
+          %span.js-remove
+            削除
+    =f.submit

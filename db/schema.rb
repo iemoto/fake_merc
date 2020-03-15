@@ -10,24 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_144108) do
+ActiveRecord::Schema.define(version: 2020_03_03_165515) do
 
-  create_table "personal_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
-    t.integer "post_number"
-    t.bigint "prefecture_address_id"
-    t.string "municipality_address"
-    t.string "street_address"
-    t.string "building_name_adress"
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "brand_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "money"
+    t.boolean "exhibition", default: true
+    t.boolean "during_transaction", default: false
+    t.boolean "soldout", default: false
+    t.integer "prefecture_address_id"
+    t.integer "category_id"
+    t.integer "item_condition_id"
+    t.integer "shipping_fee_id"
+    t.integer "shipping_method_id"
+    t.integer "ship_date_id"
+    t.bigint "brand_id"
+    t.integer "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+  end
+
+  create_table "sell_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.boolean "delibery_for"
+    t.boolean "arrival_to"
+    t.integer "commition_fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_sell_items_on_item_id"
+    t.index ["user_id"], name: "index_sell_items_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,5 +88,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_144108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "sell_items", "items"
+  add_foreign_key "sell_items", "users"
   add_foreign_key "sns_credentials", "users"
 end

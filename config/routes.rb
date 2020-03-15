@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   get '/mypage/card/create', to: 'cards#new'
   put '/mypage/card/create', to: 'cards#create'
 
-
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
   get '/mypage/deliver_address/regist', to: 'deliver_addresses#new'
@@ -44,11 +43,14 @@ Rails.application.routes.draw do
 
   # 商品出品、商品詳細、商品編集、商品削除
   get '/sell', to: 'sell_items#new'
-  put '/sell', to: 'sell_items#create'
+  post '/sell', to: 'sell_items#create'
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
-  get '/sell/edit/:id', to: 'sell_items#edit'
+  get '/sell/edit/:id', to: 'sell_items#edit', as:'sell_item_edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
   delete '/sell/edit/:id', to: 'sell_items#destroy'
+
+  # 商品の状態更新
+  patch '/mypage/items/activate/:id', to: 'items#update'
 
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
