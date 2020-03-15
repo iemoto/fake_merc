@@ -14,7 +14,7 @@ class SellItemsController < ApplicationController
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
     respond_to do |format|
-      if @item.save
+      if @item&.save and @item&.images&.first&.save
         @sellItem = SellItem.new(item_id: @item.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
@@ -23,7 +23,9 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        format.html { render :new }
+        @item = Item.new
+        @item.images.new
+        format.html { render patial: 'sell_items/new', collection: @item}
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end

@@ -1,6 +1,6 @@
 
   #image-box
-    = f.fields_for :images, @item&.images do |i|
+    = f.fields_for :images, @item.images do |i|
       .js-file_group{data: {id: "#{i.index}"}}
         .js-file
           = i.file_field :image_url
