@@ -1,4 +1,24 @@
 $(function(){
+  // 画像の複数投稿
+  $('#image-box').on('change', '.js-file', function(e) {
+    const file = e.target.files[0];
+    const url = window.URL.createObjectURL(file);
+    $('#previews').append(buildFileField(fileIndex[0], url));
+    fileIndex.shift();
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+  });
+
+  $('#image-box').on('click', '.js-remove', function(){
+    const targetIndex = $(this).parent().data('index')
+    const hiddenCheck = $(`input[data-index"${targetIndex}").hidden-destroy`);
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+    $(this).parent().remove();
+    //画像入力蘭が0個にならないようにしておく
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });
+
+
+
   //画像用のinputを生成する関数
   const buildFileField = (index, url)=> {
     const html = `<div data-index="${index}" class="js-file_group">
@@ -19,34 +39,13 @@ $(function(){
                   </div>`;
     return html;
   }
-  //file_fieldのnameに動的なindexをつける為の配列
+
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  //既に使われているindexを除外
-  //:last==セレクタ指定で最後の要素を取得
-  //.spliceメソッド古い要素を削除して、新しい要素を追加で配列の内容を変更
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
-  $('.hidden-destroy').hide();
-  $('#image-box').on('change', '.js-file', function(e) {
-    //fileIndexの先頭の数字をinputを作る
-    const file = e.target.files[0];
-    const url = window.URL.createObjectURL(file);
-    $('#previews').append(buildFileField(fileIndex[0], url));
-    fileIndex.shift();
-    //末尾の数に１足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
 
-  $('#image-box').on('click', '.js-remove', function(){
-    const targetIndex = $(this).parent().data('index')
-    //該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index"${targetIndex}").hidden-destroy`);
-    //もしチェックボックスが存在すればチェックが入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
-    $(this).parent().remove();
-    //画像入力蘭が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
+  // $('.hidden-destroy').hide();
+
 }); 
 
 // $(function(){
@@ -57,9 +56,6 @@ $(function(){
 //     $('.image-box').append(buildInputField(file))
 //   })
 
-//   $('#image-box').on('click', '.js-remove',function(){
-//     $(this).parent().remove();
-//   })
 
 //   function buildPreview() {
 //   }
