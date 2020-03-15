@@ -64,9 +64,9 @@
 
 
           .p-member-form
-          - if @sns_id.present?
-            = hidden_field_tag :sns_auth, true
-          - else
+            - if @sns_id.present?
+              = hidden_field_tag :sns_auth, true
+            - else
             .p-member-form__label
               パスワード
               %span.required 必須
