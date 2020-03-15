@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
+  add_breadcrumb 'ファイクメルク', :root
 
   def new
     card = Card.where(user_id: current_user.id)
