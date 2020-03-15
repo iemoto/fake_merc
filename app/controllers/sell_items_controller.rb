@@ -33,10 +33,28 @@ class SellItemsController < ApplicationController
   end
 
   def edit
-    @images = Image.find_by("item_id = #{@item.id}")
+    @mainCategory = Category.where(ancestry: '1')
   end
 
   def update
+    @mainCategory = Category.where(ancestry: '1')
+    @brand = Brand.create(brand_params)
+    allItem_params = item_params.merge(brand_id: @brand.id)
+    @item = Item.update(allItem_params)
+    respond_to do |format|
+      if @item.save
+        @sellItem = SellItem.update(item_id: @item.id)
+        unless @sellItem.save
+          format.html { render :edit, notice: 'ユーザー登録がされていません'}
+          format.json { render json: @item.errors, status: :unprocessable_entity }
+        end
+        format.html { redirect_to mypage_items_show(@item.id)}
+        format.json { render :show, status: :created, location: @item}
+      else
+        format.html { render :new }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 
