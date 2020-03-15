@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-  get 'card/show'
   root "mains#index"
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -58,7 +56,5 @@ Rails.application.routes.draw do
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
-
-
   
 end

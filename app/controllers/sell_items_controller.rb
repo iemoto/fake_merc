@@ -32,12 +32,14 @@ class SellItemsController < ApplicationController
   def show
   end
 
-  def update
-  end
-
   def edit
     @images = Image.find_by("item_id = #{@item.id}")
   end
+
+  def update
+  end
+
+
 
   def destroy
   end
