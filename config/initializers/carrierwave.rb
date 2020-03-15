@@ -4,9 +4,9 @@ require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
   if Rails.env.production?
-    config.fog_provider = 'fog/aws'
     config.storage :fog
-    config.fog_directory  = 'merc61wd'
+    config.fog_provider = 'fog/aws'
+    config.fog_directory  = 'fakemerc61wd2'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
