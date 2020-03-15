@@ -37,15 +37,6 @@ Rails.application.routes.draw do
   post '/mypage/card/create', to: 'cards#pay' , as:'mypage_pay_create'
   delete '/mypage/card/delete', to: 'cards#destroy' ,as:'delete_card_index'
 
-  # # 偽物
-  # resources :card, only: [:new, :show] do
-  #   collection do
-  #     post 'show', to: 'card#show'
-  #     post 'pay', to: 'card#pay'
-  #     post 'delete', to: 'card#delete'
-  #   end
-  # end
-
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
   get '/mypage/deliver_address/regist', to: 'deliver_addresses#new'
