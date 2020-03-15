@@ -3,6 +3,9 @@ class CardsController < ApplicationController
   add_breadcrumb 'ファイクメルク', :root
 
   def new
+    add_breadcrumb 'マイページ', mypage_path
+    add_breadcrumb '支払い方法', mypage_card_create_path	
+    add_breadcrumb 'クレジットカード情報入力'
     card = Card.where(user_id: current_user.id)
     redirect_to action: 'index' if card.exists?
     year = Time.now.year
@@ -47,6 +50,8 @@ class CardsController < ApplicationController
   end
 
   def index # Cardのデータpayjpに送り情報を取り出します
+    add_breadcrumb 'マイページ', mypage_path
+    add_breadcrumb '支払い方法'
     @card = Card.where(user_id: current_user.id).first
     if @card.present?
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
