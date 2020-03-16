@@ -20,7 +20,7 @@ $(function(){
       ancestryNumber.forEach(
         element => html += (`<option value=${element.id}>${element.name}</option>`)
         )
-          $('#middleCategory').css('display', 'block').append(html)
+      $('#middleCategory').css('display', 'block').append(html)
     }
   }
 
