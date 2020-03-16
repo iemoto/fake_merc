@@ -13,7 +13,7 @@ class SellItemsController < ApplicationController
     @brand = Brand.create(brand_params)
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
-    @item.images.new(image_params)
+    # @item.images.new(image_params)
     respond_to do |format|
       if @item.save
         # binding.pry
@@ -25,8 +25,9 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        # formarender: 'new', collection: @item
+        format.html { render :new, collection: @item }
+        # format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
