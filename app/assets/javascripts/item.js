@@ -21,8 +21,8 @@ $(function(){
 
   // 画像のプレビュー表示
   const buildFileField = (index, url)=> { 
-    tmp = Math.floor(parseInt(index)/5)
-    const sizeIndex = index - tmp*5;
+    tmpIndex = Math.floor(parseInt(index)/5)
+    const sizeIndex = index - tmpIndex*5;
     const html = `<div data-index="${index}" class="js-file_group">
                     <div>
                       <img data-index="${index}"
@@ -45,13 +45,12 @@ $(function(){
                     </p>
                   </label>
                   `;
-              
+
     $(document).on('change', `#item_images_attributes_${index}_image_url`, function(){
       $(`#item_images_attributes_${index}_image_url`).css('display','none')
-    })
-    $(document).on('change', `.label${index}`, function(){
       $(`.label${index}`).css('display','none')
     })
+
     return html;
   }
-}); 
+});
