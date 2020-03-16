@@ -13,8 +13,10 @@ class SellItemsController < ApplicationController
     @brand = Brand.create(brand_params)
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
+    @item.images.new(image_params)
     respond_to do |format|
       if @item.save
+        # binding.pry
         @sellItem = SellItem.new(item_id: @item.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
@@ -46,6 +48,10 @@ class SellItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :money, :description, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
+  end
+
+  def image_params
+    params.require(:item).permit(images_attributes: [])
   end
 
   def set_item

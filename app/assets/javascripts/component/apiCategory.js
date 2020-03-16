@@ -1,5 +1,8 @@
 $(function(){
   $('#item_category_id').on('change', apiMainCategory);
+  $(document).on('change', '#middleCategory', apiSubCategory);
+
+  // 子カテゴリーのAPI処理
   function apiMainCategory(){
     $.ajax({
       method: 'GET',
@@ -24,7 +27,7 @@ $(function(){
     }
   }
 
-  $(document).on('change', '#middleCategory', apiSubCategory);
+  // 孫カテゴリーのAPI処理
   function apiSubCategory(){
     $.ajax({
       method: 'GET',
