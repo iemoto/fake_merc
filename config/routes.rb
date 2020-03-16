@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   root "mains#index"
   devise_for :users, controllers: {
-
     omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
     }
 
   devise_scope :user do
@@ -29,10 +31,11 @@ Rails.application.routes.draw do
   get '/mypage/profile', to: 'profiles#edit'
   patch '/mypage/profile', to: 'profiles#update'
 
-  # 決済機能実装時にコントローラー等を作成
+  # 決済機能実装時にコントローラー等を作成 cards本物
   get '/mypage/card', to: 'cards#index'
   get '/mypage/card/create', to: 'cards#new'
-  put '/mypage/card/create', to: 'cards#create'
+  post '/mypage/card/create', to: 'cards#pay' , as:'mypage_pay_create'
+  delete '/mypage/card/delete', to: 'cards#destroy' ,as:'delete_card_index'
 
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
@@ -45,7 +48,7 @@ Rails.application.routes.draw do
   get '/sell', to: 'sell_items#new'
   post '/sell', to: 'sell_items#create'
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
-  get '/sell/edit/:id', to: 'sell_items#edit'
+  get '/sell/edit/:id', to: 'sell_items#edit', as:'sell_item_edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
   delete '/sell/edit/:id', to: 'sell_items#destroy'
 
