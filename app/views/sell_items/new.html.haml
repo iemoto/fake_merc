@@ -40,14 +40,9 @@
     %h4.sellCategory
       カテゴリー
       = render 'mustLabel'
-    -# = f.fields_for :categories
     = f.collection_select :category_id, @mainCategory, :id, :name, prompt: '選択してください'
     %select#middleCategory
     %select#subSubCategory
-    -# name='item[category_id]', id='middleCategory', 
-    -# [style='']
-
-    -# = f.collection_select :category_id, Category.where(ancestry: `1/${ancestryNumber}`), :id, :name, prompt: '選択してください'
     %h3#sizeCategory
       %p
         サイズ(任意)
