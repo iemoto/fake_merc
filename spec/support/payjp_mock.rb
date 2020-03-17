@@ -1,0 +1,51 @@
+module PayjpMock
+  def self.prepare_customer_information
+    {
+      "amount": 3500,
+      "amount_refunded": 0,
+      "captured": true,
+      "captured_at": 1433127983,
+      "card": {
+        "address_city": null,
+        "address_line1": null,
+        "address_line2": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_zip_check": "unchecked",
+        "brand": "Visa",
+        "country": null,
+        "created": 1583375140,
+        "customer": null,
+        "cvc_check": "passed",
+        "exp_month": 2,
+        "exp_year": 2024,
+        "fingerprint": "e1d8225886e3a7211127df751c86787f",
+        "id": "car_6845da1a8651f889bc432362dfcb",
+        "last4": "4242",
+        "livemode": false,
+        "metadata": {},
+        "name": null,
+        "object": "card"
+      },
+      "created": 1433127983,
+      "currency": "jpy",
+      "customer": null,
+      "description": null,
+      "expired_at": null,
+      "failure_code": null,
+      "failure_message": null,
+      "id": "ch_fa990a4c10672a93053a774730b0a",
+      "livemode": false,
+      "metadata": null,
+      "object": "charge",
+      "paid": true,
+      "platform_fee": null,
+      "platform_fee_rate": "10.00",
+      "refund_reason": null,
+      "refunded": false,
+      "subscription": null,
+      "tenant": "ten_121673955bd7aa144de5a8f6c262",
+      "total_platform_fee": 350
+    }
+  end
+end
