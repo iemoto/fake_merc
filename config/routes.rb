@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   get '/mypage/items/:id', to: 'items#show'
 
   # 商品購入
-  post '/buy', to: 'transactions#buy'
+  post '/buy/:id', to: 'transactions#buy'
   namespace :api, format: 'json' do
     resources :env, only: [:index]
   end
