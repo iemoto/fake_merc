@@ -59,6 +59,6 @@ Rails.application.routes.draw do
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
 
-
+  post '/buy', to: 'transactions#buy'
   
 end

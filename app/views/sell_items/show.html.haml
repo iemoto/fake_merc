@@ -73,5 +73,7 @@
                 =link_to image_tag('https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg')
               .app-images__right
                 =link_to  image_tag('https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg')
-
+= form_with url: '/buy' do
+  :plain
+    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_62413e8c8f0ebd70651e5e22"></script>
 = render './shared/simple-footer'
