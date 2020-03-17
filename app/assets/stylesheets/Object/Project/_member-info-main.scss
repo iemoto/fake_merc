@@ -131,8 +131,29 @@
           color: #000;
         }
       }
+      .first_name-error {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .last_name-error {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .first_name_kana-error {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      .last_name_kana-error {
+        margin: 8px 0 0;
+        color: #ea352d;
+        display: none;
+      }
+      
       &__half {
-        width: calc(50% - 6px);
+        width: calc(50% - 3px);
         padding: 10px 16px 8px;
         margin: 8px 0 0;
         height: 48px;
@@ -156,21 +177,21 @@
           .icon-arrow-bottom {
             width: 100px;
           }
-          #year {
+          #birth_year {
             height: 48px;
             padding: 0 16px;
             width: 100%;
             background: #fff;
             cursor: pointer;
           }
-          #month {
+          #birth_month {
             height: 48px;
             padding: 0 16px;
             width: 100%;
             background: #fff;
             cursor: pointer;
           }
-          #date {
+          #birth_day {
             height: 48px;
             padding: 0 16px;
             width: 100%;

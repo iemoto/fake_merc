@@ -1,4 +1,4 @@
-= render "./shared/header"
+= render './shared/sub-header'
 .mypage-wrapper
   = render './shared/sideBar'
   .mypage-contents
@@ -7,5 +7,5 @@
         .p-inner__block
           - if user_signed_in? then
             = link_to 'ログアウト', destroy_user_session_path , method: :delete , class: 'btn-default p-btn__red' ,id: 'logout-btn'
-= render './shared/footer'
+= render './shared/sub-footer'
 

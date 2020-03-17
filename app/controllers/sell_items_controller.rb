@@ -38,9 +38,8 @@ class SellItemsController < ApplicationController
   def update
   end
 
-  def edits
-    item_foreignKey = Item.find(params[:id])
-    @images = Image.find_by("item_id = #{item_foreignKey.id}")
+  def edit
+    @images = Image.find_by("item_id = #{@item.id}")
   end
 
   def destroy
