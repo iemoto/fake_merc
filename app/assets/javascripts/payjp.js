@@ -27,8 +27,8 @@ document.addEventListener(
             $("#exp_year").removeAttr("name"); //データを自サーバにpostしないように削除
             $("#card_token").append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
-              ); //取得したトークンを送信できる状態にします
-              document.inputForm.submit();
+            ); //取得したトークンを送信できる状態にします
+            document.inputForm.submit();
             alert("登録が完了しました"); //確認用
           } else {
             alert("カード情報が正しくありません。"); //確認用
