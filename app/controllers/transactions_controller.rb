@@ -1,10 +1,9 @@
 class TransactionsController < ApplicationController
-  require 'payjp'
   def buy
-    Payjp.api_key='sk_test_6ac86173c744a32d7dbde20a'
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       # 決済する金額
-      amount: 121212,
+      amount: 1211,
       card: params['payjp-token'],
       currency: 'jpy'
     )
