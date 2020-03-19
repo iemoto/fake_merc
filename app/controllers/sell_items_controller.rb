@@ -23,9 +23,7 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        @item = Item.new
-        @item.images.new
-        format.html { render patial: 'sell_items/new', collection: @item}
+        format.html { redirect_to action: 'new' }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +36,7 @@ class SellItemsController < ApplicationController
   end
 
   def edit
-    @images = Image.find_by("item_id = #{@item.id}")
+    # @images = Image.find_by("item_id = #{@item.id}")
   end
 
   def destroy
