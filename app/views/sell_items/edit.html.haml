@@ -9,17 +9,17 @@
     %p.subscription
       最大10枚までアップロードできます
     .label-box__inner#image-box
-  -#     %label
-  -#       = f.fields_for :images, @item&.images do |i|
-  -#         .js-file_group{data: {id: "#{i.index}"}, class: 'input-default'}
-  -#           .js-file.input-default
-  -#             = i.file_field :image_url
-  -#       %p.boxFileSelect
-  -#         = fa_icon 'camera'
-  -#         %br
-  -#         ドラッグアンドドロップ
-  -#         %br
-  -#         またはクリックしてファイルをアップロード
+      %label
+        = f.fields_for :images, @item&.images do |i|
+          .js-file_group{data: {id: "#{i.index}"}, class: 'input-default'}
+            .js-file.input-default
+              = i.file_field :image_url
+        %p.boxFileSelect
+          = fa_icon 'camera'
+          %br
+          ドラッグアンドドロップ
+          %br
+          またはクリックしてファイルをアップロード
 
   %h4.sellHeading
     商品名

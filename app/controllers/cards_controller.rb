@@ -10,16 +10,14 @@ class CardsController < ApplicationController
     redirect_to action: 'index' if card.exists?
     year = Time.now.year
     @year = []
-    11.times do |i = 0|
+    11.times do |i|
       @year[i] = [year - 2000,year]
       year += 1
-      i += 1
     end
 
     @month = []
-    12.times do |i = 0|
+    12.times do |i|
       @month[i] = sprintf('%02d', i + 1)
-      i += 1
     end
   end
 

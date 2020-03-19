@@ -14,7 +14,7 @@ class SellItemsController < ApplicationController
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
     respond_to do |format|
-      if @item.save
+      if @item&.save and @item&.images&.first&.save
         @sellItem = SellItem.new(item_id: @item.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
@@ -23,7 +23,7 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        format.html { render :new }
+        format.html { redirect_to action: 'new' }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
@@ -34,30 +34,18 @@ class SellItemsController < ApplicationController
 
   def edit
     @mainCategory = Category.where(ancestry: '1')
+    @image = @item.images.where(item_id: @item.id)
   end
 
   def update
-    @mainCategory = Category.where(ancestry: '1')
     @brand = Brand.create(brand_params)
     allItem_params = item_params.merge(brand_id: @brand.id)
-    @item = Item.update(allItem_params)
-    respond_to do |format|
-      if @item.save
-        @sellItem = SellItem.update(item_id: @item.id)
-        unless @sellItem.save
-          format.html { render :edit, notice: 'ユーザー登録がされていません'}
-          format.json { render json: @item.errors, status: :unprocessable_entity }
-        end
-        format.html { redirect_to mypage_items_show(@item.id)}
-        format.json { render :show, status: :created, location: @item}
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    if @item.update(allItem_params)
+      redirect_to mypage_items_show_path(@item.id)
+    else
+      render :edit 
     end
   end
-
-
 
   def destroy
   end

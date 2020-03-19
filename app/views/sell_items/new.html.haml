@@ -39,11 +39,11 @@
     %h4.sellCategory
       カテゴリー
       = render 'mustLabel'
-    = f.collection_select :category_id, @mainCategory, :id, :name, prompt: '選択してください'
+    = f.collection_select :category_id, @mainCategory, :id, :name
     %h3#sizeCategory
       %p
         サイズ(任意)
-    = f.collection_select :size_id, Size.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :size_id, Size.all, :id, :name
     %h4.sellBland
       %p
         ブランド(任意)
@@ -51,27 +51,27 @@
     %h4.sellState
       商品の状態
       = render 'mustLabel'
-    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name
   .sellHeading
     .sellDetail
       発送について
     %h4.sellCost
       配送料の負担
       = render 'mustLabel'
-    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name
     %h3#deliverMethod
       %p
         配送の方法
         = render 'mustLabel'
-    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name
     %h4.sellShip
       発送元の地域
       = render 'mustLabel'
-    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name
     %h4.sellDate
       発送までの日数
       = render 'mustLabel'
-    = f.collection_select :ship_date_id, ShipDate.all, :id, :name, prompt: '選択してください'
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name
   .sellHeading
     .sellDetail
       価格(¥300 〜 9,999,999)
@@ -93,10 +93,5 @@
       = f.submit '出品する', {onClick: 'submit();', class: 'sellBtn'}
     .othersElement
       = link_to('戻る', '/')
-    .othersElement
-      %p
-        禁止されている出品、行為を必ずご確認ください。
-        またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-        また、出品をもちまして加盟店規約に同意したことになります。
 
 = render './shared/simple-footer'
