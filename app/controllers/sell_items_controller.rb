@@ -1,6 +1,8 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :set_item, only: [:edit, :destroy, :update]
+  before_action :item_present?, only: [:show]
   after_action :redirect_save_item, only: [:create, :update]
+
   def new
     @item = Item.new
     @item.images.new
@@ -33,12 +35,6 @@ class SellItemsController < ApplicationController
     @personal = PersonalUser.find_by(user_id: current_user.id)
     @address = PrefectureAddress.find(@personal.prefecture_address_id)
     @card = Card.where(user_id: current_user.id).first
-
-    if @item.soldout
-      redirect_to root_path
-      flash[:notice] = '商品は存在しません'
-    end
-
     if @card.present?
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -65,6 +61,14 @@ class SellItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def item_present?
+    @item = Item.find(params[:id])
+    if @item.soldout
+      redirect_to root_path
+      flash[:notice] = '商品は存在しません'
+    end
   end
 
   def redirect_save_item
