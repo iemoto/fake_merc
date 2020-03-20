@@ -20,6 +20,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end
+    # super
+  # end
 
     @user = User.new(user_params)
     if @user.save
@@ -35,6 +37,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       render :new
     end
+
+    def callback
+      auth = request.env['omniauth.auth']
+      user = User.find_by(provider: auth['provider'], uid: auth['uid']) || User.create_with_facebook(auth)
+      session[:user_id] = user.id
+      redirect_back_or root_path
+    end
+
   end
 
   # GET /resource/edit

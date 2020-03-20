@@ -62,18 +62,21 @@
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "email"
             .email-error フォーマットが不適切です
 
-          .p-member-form
-            .p-member-form__label
-              パスワード
-              %span.required 必須
-              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "password"
-            .password-error1 英字と数字両方を含むパスワードを設定してください
-            .password-error2 7文字以上128文字以下で入力してください
-            %p.note ※英字と数字の両方を含めて設定してください
-            .password-check
-              %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
-              %label_tag.label パスワードを表示する
-              .passshow
+          - if @sns_id.present?
+            = hidden_field_tag :sns_auth, true
+          - else
+            .p-member-form
+              .p-member-form__label
+                パスワード
+                %span.required 必須
+                = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "password"
+              .password-error1 英字と数字両方を含むパスワードを設定してください
+              .password-error2 7文字以上128文字以下で入力してください
+              %p.note ※英字と数字の両方を含めて設定してください
+              .password-check
+                %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
+                %label_tag.label パスワードを表示する
+                .passshow
 
           .p-member-form
             %p.person 本人確認
