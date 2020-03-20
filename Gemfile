@@ -42,7 +42,7 @@ group :development, :test do
   # binding.pryの使用で必要
   gem 'pry-rails'
   # テスト
-  gem 'rspec-rails', '~> 3.6.0'
+  gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'capybara'
   gem 'selenium-webdriver'
