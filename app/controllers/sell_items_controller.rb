@@ -23,7 +23,6 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        # binding.pry
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -39,7 +38,6 @@ class SellItemsController < ApplicationController
       @exp_month = @default_card_information.exp_month.to_s
       @exp_year = @default_card_information.exp_year.to_s.slice(2, 3)
     end
-
   end
 
   def update
