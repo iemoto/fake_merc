@@ -1,11 +1,12 @@
 = render "./shared/sub-header"
+= render './shared/flash'
 .mypage-wrapper.clearfix
   = render './shared/sideBar'
   .l-identification-content
     %section.l-identification-block
       %h2.l-identification-head
         本人情報の登録
-      = form_with url:'/',class: 'l-identification-form' do |f|
+      = form_with model: @personal, url: '/mypage/identification', class: 'l-identification-form', local: true do |f|
         %div
           %p
             お客さまの本人情報をご登録ください。
@@ -18,40 +19,43 @@
 
         .l-form-group
           = f.label 'お名前'
-          %p フェイク　メルク
+          %p
+            = @personal.first_name + ' ' + @personal.last_name
 
         .l-form-group
           = f.label 'お名前カナ'
-          %p フェイク　メルク
+          %p
+            = @personal.first_name_kana + ' ' + @personal.last_name_kana
 
         .l-form-group
           = f.label 'birthday','生年月日'
-          %p 2013/2/1
+          %p
+            = "#{@personal.birth_year}"'/'"#{@personal.birth_month}"'/'"#{@personal.birth_day}"
 
         .l-form-group
           = f.label 'zipcode','郵便番号'
           %span.l-form-arbitrary 任意
-          = f.text_field :zipcode, placeholder: '例）1234567', class: 'l-input-default'
+          = f.text_field(:post_number, placeholder: '例）1234567', class: 'l-input-default')
 
         .l-form-group
-          = f.label 'prefecture','都道府県'
+          = f.label 'prefecture', '都道府県'
           %span.l-form-arbitrary 任意
           .l-form-select
-            = fa_icon'chevron-down',class: 'l-select-icon'
-            = f.collection_select :prefecture,Prefecture_Address.all ,:id,:name,{}, class: 'l-select-default'
+            = fa_icon'chevron-down', class: 'l-select-icon'
+            = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, {}, class: 'l-select-default'
         .l-form-group
-          = f.label 'city','市区町村'
+          = f.label 'city', '市区町村'
           %span.l-form-arbitrary 任意
-          = f.text_field :city, placeholder: '例) 横浜市緑区', class: 'l-input-default'
+          = f.text_field :municipality_address, placeholder: '例) 横浜市緑区', class: 'l-input-default'
         .l-form-group
-          = f.label 'address1_label','番地'
+          = f.label 'street_address', '番地'
           %span.l-form-arbitrary 任意
-          = f.text_field :address1_label, placeholder: '例) 青山1−1−1', class: 'l-input-default'
+          = f.text_field :street_address, placeholder: '例) 青山1−1−1', class: 'l-input-default'
 
         .l-form-group
-          = f.label 'address2_label','建物名'
+          = f.label 'building_name_address', '建物名'
           %span.l-form-arbitrary 任意
-          = f.text_field :address2_label, placeholder: '例) 柳ビル103', class: 'l-input-default'
+          = f.text_field :building_name_adress, placeholder: '例) 柳ビル103', class: 'l-input-default'
 
         = f.submit '登録する',class:'l-btn-default u-btn-red'
         .l-form-group
