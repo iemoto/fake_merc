@@ -3,11 +3,14 @@
   .detail-contents
     .itemzone
       .itemzone__name
-        COACHミニバック
-      .itemzone__message
-        『【春間近最終値下げ】COACH ミニバッグ(ピンク)』は、10回の取引実績を持つあやぼんさんから出品されました。コーチ（ショルダーバッグ/レディース）の商品で、神奈川県から2~3日で発送されます。
+        = @item.name
+      -#   COACHミニバック
+      -# .itemzone__message
+      -#   = @item.description
+      -#   『【春間近最終値下げ】COACH ミニバッグ(ピンク)』は、10回の取引実績を持つあやぼんさんから出品されました。コーチ（ショルダーバッグ/レディース）の商品で、神奈川県から2~3日で発送されます。
       %clearfix.itemzone__main
         .main--photo
+          -# = @item.image
           =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"300x300")
         %table.itemzone__main--table
           %tr
@@ -15,6 +18,7 @@
               出品者
             %td
               .username
+                -# = @user.name
                 あやぽん
               .evaluateicon
                 .goodicon
@@ -33,40 +37,47 @@
             %th
               カテゴリー
             %td
-              レディース
+              = @item.category_id
+              -# レディース
           %tr
             %th
               ブランド
             %td
-              コーチ
+              = @item.brand_id
+              -# コーチ
           %tr
             %th
               商品状態
             %td
-              やや傷あり
+              = @item.item_condition_id
+              -# やや傷あり
           %tr
             %th
               送料の負担
             %td
-              送料込み（出品者負担）
+              = @item.shipping_fee_id
+              -# 送料込み（出品者負担）
           %tr
             %th
               配送方法
             %td
-              らくらくメルカリ便
+              = @item.shipping_fee_id
+              -# らくらくメルカリ便
           %tr
             %th
               配送元地域
             %td
-              神奈川県
+              = @item.prefecture_address_id
+              -# 神奈川県
           %tr
             %th
               発送日の目安
             %td
-              ２〜3日
+              = @item.ship_date_id
+              -# ２〜3日
       .itempricezone
         .itempricezone__price
-          ¥2,800
+          = "¥#{@item.money}"
         .itempricezone__tax
           (税込)
         .itempricezone__fee
@@ -75,24 +86,25 @@
         =link_to "購入画面に進む",sell_item_show_path(1)
       .iteminfo
         .iteminfo__inner
-          COACH ミニバッグ ピンク
+          = @item.description
+          -# COACH ミニバッグ ピンク
 
-          横 26.5cm
+          -# 横 26.5cm
 
-          縦 16cm
+          -# 縦 16cm
 
-          持ち手 38cm
+          -# 持ち手 38cm
 
-          (素人採寸で失礼します)
+          -# (素人採寸で失礼します)
 
 
-          3、4回かは使いましたが最近ほとんど使う機会がなくなったので出品します。
+          -# 3、4回かは使いましたが最近ほとんど使う機会がなくなったので出品します。
 
-          底のスエード部分に多少の汚れ、擦れがあります。(写真4枚目)
+          -# 底のスエード部分に多少の汚れ、擦れがあります。(写真4枚目)
 
-          小ぶりで可愛らしい鮮やかなピンク色のバッグです。春のお出かけにぴったりです。
+          -# 小ぶりで可愛らしい鮮やかなピンク色のバッグです。春のお出かけにぴったりです。
 
-          COACH専用袋つきです。
+          -# COACH専用袋つきです。
       %ul.otherbtn
         .otherbtn__left
           %il.goodbtn
