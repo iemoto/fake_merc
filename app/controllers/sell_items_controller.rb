@@ -30,6 +30,8 @@ class SellItemsController < ApplicationController
   end
 
   def show
+    @personal = PersonalUser.find_by(user_id: current_user.id)
+    @address = PrefectureAddress.find(@personal.prefecture_address_id)
     @card = Card.where(user_id: current_user.id).first
     if @card.present?
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']

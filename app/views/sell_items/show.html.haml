@@ -48,16 +48,18 @@
         .user-info
           .content-inner
             .clearfix 配送先
-            = link_to "#", class: "user-info-fix" do
+            = link_to mypage_identification_path, class: "user-info-fix" do
               変更する
             .user-text
-              〒520-****
+              〒
+              = @personal.post_number
               %br
-              滋賀県 ***
-              *****-*
-              *******-***
+              = @address.name
+              = @personal.municipality_address
+              = @personal.street_address
+              = @personal.building_name_adress
               %br
-              山田 **
+              = @personal.first_name + ' ' + @personal.last_name
           .buy-btn
             = button_to '購入する', "/buy/#{@item.id}", {class: 'sellBtn'}
 
