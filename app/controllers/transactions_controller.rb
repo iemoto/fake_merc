@@ -16,8 +16,6 @@ class TransactionsController < ApplicationController
           currency: 'jpy'
         )
         @item.update(soldout: true)
-        # @item.soldout = true
-        binding.pry
         redirect_to root_path
         flash[:notice] = '商品の購入を完了しました'
       else
