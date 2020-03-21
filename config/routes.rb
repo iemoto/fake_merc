@@ -61,7 +61,11 @@ Rails.application.routes.draw do
 
   # 商品購入
   post '/buy/:id', to: 'transactions#buy'
+  
   namespace :api, format: 'json' do
+    # 環境変数の保存
     resources :env, only: [:index]
+　  # categoryセレクトボックスの処理
+    resources :categories, only: [:index]
   end
 end
