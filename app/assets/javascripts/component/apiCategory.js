@@ -50,11 +50,11 @@ $(function(){
     function subSubCategory(data){
       var selectData = document.getElementById("item_category_id").value
       var selectSubData = document.getElementById("middleCategory").value
-      var ancestryNumber2 = data.filter(function(item){
+      var subAncestryNumber = data.filter(function(item){
         if (item.ancestry === `1/${selectData}/${selectSubData}`) return true;
       })
       var html = '';
-      ancestryNumber2.forEach(
+      subAncestryNumber.forEach(
         element => html += (`<option value=${element.id}>${element.name}</option>`)
         )
       $('#subSubCategory').css('display','block').append(html)

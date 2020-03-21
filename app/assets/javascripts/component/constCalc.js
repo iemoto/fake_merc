@@ -1,6 +1,5 @@
 $(function(){
   $('#item_money').keyup(function(){
-    console.log('hello')
     var getValue = $('#item_money').val()
     if (parseInt(getValue) > 300){
       var commisionValue = Math.round(parseInt(getValue) * 0.1)
