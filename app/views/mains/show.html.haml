@@ -3,14 +3,10 @@
   .detail-contents
     .itemzone
       .itemzone__name
-        = @item.name
-      -#   COACHミニバック
-      -# .itemzone__message
-      -#   = @item.description
-      -#   『【春間近最終値下げ】COACH ミニバッグ(ピンク)』は、10回の取引実績を持つあやぼんさんから出品されました。コーチ（ショルダーバッグ/レディース）の商品で、神奈川県から2~3日で発送されます。
+        = Item.find(@item.id).name
       %clearfix.itemzone__main
         .main--photo
-          -# = @item.image
+          -# = @item.images.first.image_url.to_s,
           =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"300x300")
         %table.itemzone__main--table
           %tr
@@ -18,8 +14,7 @@
               出品者
             %td
               .username
-                -# = @user.name
-                あやぽん
+                = @user.nick_name
               .evaluateicon
                 .goodicon
                   = fa_icon 'smile-o'
@@ -37,43 +32,43 @@
             %th
               カテゴリー
             %td
-              = @item.category_id
+              = Category.find(@item.category_id).name
               -# レディース
           %tr
             %th
               ブランド
             %td
-              = @item.brand_id
+              = Brand.find(@item.brand_id).brand_name
               -# コーチ
           %tr
             %th
               商品状態
             %td
-              = @item.item_condition_id
+              = ItemCondition.find(@item.item_condition_id).name
               -# やや傷あり
           %tr
             %th
               送料の負担
             %td
-              = @item.shipping_fee_id
+              = ShippingFee.find(@item.shipping_fee_id).name
               -# 送料込み（出品者負担）
           %tr
             %th
               配送方法
             %td
-              = @item.shipping_fee_id
+              = ShippingMethod.find(@item.shipping_method_id).name
               -# らくらくメルカリ便
           %tr
             %th
               配送元地域
             %td
-              = @item.prefecture_address_id
+              = PrefectureAddress.find(@item.prefecture_address_id).name
               -# 神奈川県
           %tr
             %th
               発送日の目安
             %td
-              = @item.ship_date_id
+              = ShipDate.find(@item.ship_date_id).name
               -# ２〜3日
       .itempricezone
         .itempricezone__price

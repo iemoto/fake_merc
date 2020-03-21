@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :parsonal_user, dependent: :delete
   has_many :sns_credentials
+  has_many :sell_money
 
   validates :nick_name, presence: true
 
