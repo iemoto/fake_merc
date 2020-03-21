@@ -1,8 +1,4 @@
-- if flash[:notice]
-  .c-flash.u-success.isFadeOut
-    = flash[:notice]
-    .c-closeButton
-      X
+= render './shared/flash'
 = link_to '出品', sell_path
 %p
   = @item&.name

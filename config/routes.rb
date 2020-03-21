@@ -56,5 +56,14 @@ Rails.application.routes.draw do
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show', as:'mypage_items_show'
+
+  # 商品購入
+  post '/buy/:id', to: 'transactions#buy', as: 'sell_item_buy'
   
+  namespace :api, format: 'json' do
+    # 環境変数の保存
+    resources :env, only: [:index]
+    # categoryセレクトボックスの処理
+    resources :categories, only: [:index]
+  end
 end

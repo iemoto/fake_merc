@@ -4,7 +4,7 @@ class CardsController < ApplicationController
 
   def new
     add_breadcrumb 'マイページ', mypage_path
-    add_breadcrumb '支払い方法', mypage_card_create_path	
+    add_breadcrumb '支払い方法', mypage_card_create_path
     add_breadcrumb 'クレジットカード情報入力'
     card = Card.where(user_id: current_user.id)
     redirect_to action: 'index' if card.exists?
@@ -44,7 +44,7 @@ class CardsController < ApplicationController
       customer.delete
       card.delete
     end
-    redirect_to action: 'index'
+    redirect_back(fallback_location: root_url)
   end
 
   def index # Cardのデータpayjpに送り情報を取り出します
