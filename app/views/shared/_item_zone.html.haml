@@ -31,9 +31,9 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              -# - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
                     =link_to main_show_path(1) , class: 'l-list-a' do
@@ -55,21 +55,20 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
-                          %span
+                          %span 
                             = item.name
                           .l-span-under
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOlZ4qana_N3ZqweVb8oiI6prz-9Nj-Qnca4IowFz9Xp5f4kZI'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
       .category__new-items
         .category__new-items--inner
           %h3.category__new-items--inner--title.l-title-h3 家電・スマホ・カメラ新着アイテム
@@ -78,21 +77,20 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
-                          %span
+                          %span 
                             = item.name
                           .l-span-under
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
       .category__new-items
         .category__new-items--inner
           %h3.category__new-items--inner--title.l-title-h3 おもちゃ・ホビー・グッズ新着アイテム
@@ -101,12 +99,11 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
                           %span 
@@ -115,7 +112,7 @@
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
     .category
       %h2.category__title
         人気のブランド
@@ -142,9 +139,8 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
                     =link_to main_show_path(1) , class: 'l-list-a' do
@@ -156,7 +152,7 @@
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
       .category__new-items
         .category__new-items--inner
           %h3.category__new-items--inner--title.l-title-h3 ルイヴィトン新着アイテム
@@ -165,12 +161,11 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
                           %span 
@@ -179,7 +174,7 @@
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
       .category__new-items
         .category__new-items--inner
           %h3.category__new-items--inner--title.l-title-h3 シュプリーム新着アイテム
@@ -188,22 +183,20 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
-                          %span
+                          %span 
                             = item.name
                           .l-span-under
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
-      .category__new-items
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
         .category__new-items--inner
           %h3.category__new-items--inner--title.l-title-h3 ナイキ新着アイテム
           = link_to root_path, class: 'category__new-items--inner--more u-font-14 u-deco-none' do
@@ -211,18 +204,17 @@
             = fa_icon 'chevron-right'
         .category__new-goods
           .category__new-goods__inner
-          - @items.each do |item|
             %ul.category__new-goods__inner--list
-              - 10.times do |i|
+              - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
-                    =link_to main_show_path(1), class: 'l-list-a' do
+                    =link_to main_show_path(1) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
-                          %span  
+                          %span 
                             = item.name
                           .l-span-under
                         .l-list-image.u-list-image
                           %span 
                             = item.money
-                          =image_tag(asset_path('ladies1.jpg'),alt: "商品名#{i+1}")
+                          = image_tag item.images.first.image_url.to_s unless item.images.blank?
