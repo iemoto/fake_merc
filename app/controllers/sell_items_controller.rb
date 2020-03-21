@@ -23,8 +23,7 @@ class SellItemsController < ApplicationController
         format.html { redirect_to "/mypage/items/#{@item.id}"}
         format.json { render :show, status: :created, location: @item}
       else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        format.html { render :new, collection: @item }
       end
     end
   end

@@ -59,6 +59,8 @@ Rails.application.routes.draw do
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
 
-
-  
+  # categoryセレクトボックスの処理
+  namespace :api, format: 'json' do
+    resources :categories, only: [:index]
+  end
 end
