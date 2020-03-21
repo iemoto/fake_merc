@@ -60,12 +60,8 @@ Rails.application.routes.draw do
   get '/mypage/items/:id', to: 'items#show'
 
   # 商品購入
-<<<<<<< HEAD
   post '/buy/:id', to: 'transactions#buy', as: 'sell_item_buy'
-=======
-  post '/buy/:id', to: 'transactions#buy'
   
->>>>>>> remotes/origin/buyFunction
   namespace :api, format: 'json' do
     # 環境変数の保存
     resources :env, only: [:index]

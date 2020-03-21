@@ -22,8 +22,7 @@ class UsersController < ApplicationController
 
   def update
     @personal = PersonalUser.find_by(user_id: current_user.id)
-    @personal.update(address_params)
-    if @personal.save
+    if @personal.update(address_params)
      redirect_back(fallback_location: root_url)
      flash[:notice] = '住所情報を更新しました'
     else
