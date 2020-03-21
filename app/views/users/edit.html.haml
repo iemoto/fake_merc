@@ -6,7 +6,7 @@
     %section.l-identification-block
       %h2.l-identification-head
         本人情報の登録
-      = form_with model: @personal, url: '/mypage/identification', class: 'l-identification-form', local: true do |f|
+      = form_with model: @personal, url: mypage_identification_path, class: 'l-identification-form', local: true do |f|
         %div
           %p
             お客さまの本人情報をご登録ください。
