@@ -5,4 +5,6 @@ class Item < ApplicationRecord
             :category_id, :item_condition_id, :shipping_method_id, \
             :shipping_fee_id, :ship_date_id, presence: true
   validates :exhibition, :during_transaction, :soldout, inclusion: { in: [true, false] }
+  # belongs_to :sell_item
+  has_many :images, dependent: :destroy
 end

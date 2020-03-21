@@ -22,3 +22,4 @@
   - else @item.exhibition === false
     = f.hidden_field :exhibition, value:'1'
     = f.submit '商品を再開する'
+= button_to '削除', sell_item_delete_path(@item.id), method: :delete
