@@ -1,6 +1,6 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
-  after_action :redirect_save_item, only: [:create, :update]
+  after_action :redirect_save_item, only: [:create]
   def new
     @item = Item.new
     @item.images.new
@@ -35,10 +35,16 @@ class SellItemsController < ApplicationController
   def edit
     @mainCategory = Category.where(ancestry: '1')
     @image = @item.images.where(item_id: @item.id)
+    @brand = Brand.find_by(id: @item.brand_id)
+    @item.merge(brand_name: @brand[:brand_name])
   end
 
   def update
-    @brand = Brand.create(brand_params)
+    @brand = Brand.find_by(brand_name: brand_params[:brand_name])
+    if @brand.blank?
+      @brand = Brand.create(brand_params)
+    end
+    @mainCategory = Category.where(ancestry: '1')
     allItem_params = item_params.merge(brand_id: @brand.id)
     if @item.update(allItem_params)
       redirect_to mypage_items_show_path(@item.id)

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :item do
-    name { 'MyString' }
-    description { 'MyString' }
-    money 1
+    name { 'testitem' }
+    description { 'testitem_description' }
+    money 1000
     soldout false
     prefecture_address_id 1
     category_id 1
