@@ -65,7 +65,7 @@ Rails.application.routes.draw do
   namespace :api, format: 'json' do
     # 環境変数の保存
     resources :env, only: [:index]
-　  # categoryセレクトボックスの処理
+    # categoryセレクトボックスの処理
     resources :categories, only: [:index]
   end
 end
