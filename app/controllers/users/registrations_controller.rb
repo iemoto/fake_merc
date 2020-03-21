@@ -20,7 +20,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end
-
+    
+    # binding.pry
     @user = User.new(user_params)
     if @user.save
       personal_params = personal_user_params.merge(user_id: @user.id)
@@ -71,11 +72,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def user_params
-    params.permit(:nick_name, :email, :password)
+    params.require(:user).permit(:nick_name,:email,:password)
   end
 
   def personal_user_params
-    params.permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day)
+    params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :birth_year, :birth_month, :birth_day)
   end
 
   def configure_permitted_parameters

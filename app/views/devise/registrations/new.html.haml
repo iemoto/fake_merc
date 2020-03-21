@@ -63,21 +63,21 @@
             .email-error フォーマットが不適切です
 
 
-          .p-member-form
-            - if @sns_id.present?
-              = hidden_field_tag :sns_auth, true
-            - else
-            .p-member-form__label
-              パスワード
-              %span.required 必須
-              = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "password"
-            .password-error1 英字と数字両方を含むパスワードを設定してください
-            .password-error2 7文字以上128文字以下で入力してください
-            %p.note ※英字と数字の両方を含めて設定してください
-            .password-check
-              %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
-              %label_tag.label パスワードを表示する
-              .passshow
+          - if @sns_id.present?
+            = hidden_field_tag :sns_auth, true
+          - else
+            .p-member-form
+              .p-member-form__label
+                パスワード
+                %span.required 必須
+                = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "password"
+              .password-error1 英字と数字両方を含むパスワードを設定してください
+              .password-error2 7文字以上128文字以下で入力してください
+              %p.note ※英字と数字の両方を含めて設定してください
+              .password-check
+                %input.passcheck{name: "passcheck", type: "checkbox", value: ""}
+                %label_tag.label パスワードを表示する
+                .passshow
 
           .p-member-form
             %p.person 本人確認
@@ -86,8 +86,8 @@
             .p-member-form__label
               お名前(全角)
               %span.required 必須
-            = f.text_field :first_name, autofocus: true, require: true, autocomplete: "first_name", placeholder: "例）山田", class: "p-member-form__half"
-            = f.text_field :last_name, autofocus: true, require: true, autocomplete: "last_name", placeholder: "例）彩", class: "p-member-form__half"
+            = f.text_field :first_name, autofocus: true, require: true, autocomplete: "first_name", placeholder: "例）山田", class: "p-member-form__half first_name"
+            = f.text_field :last_name, autofocus: true, require: true, autocomplete: "last_name", placeholder: "例）彩", class: "p-member-form__half last_name"
             .first_name-error 姓 を入力してください
             .last_name-error 名 を入力してください
 
@@ -95,8 +95,8 @@
             .p-member-form__label
               お名前カナ(全角)
               %span.required 必須
-            = f.text_field :first_name_kana, autofocus: true, require: true, autocomplete: "first_name_kana", placeholder: "例）ヤマダ", class: "p-member-form__half"
-            = f.text_field :last_name_kana, autofocus: true, require: true, autocomplete: "last_name_kana", placeholder: "例）アヤ", class: "p-member-form__half"
+            = f.text_field :first_name_kana, autofocus: true, require: true, autocomplete: "first_name_kana", placeholder: "例）ヤマダ", class: "p-member-form__half first_name_kana"
+            = f.text_field :last_name_kana, autofocus: true, require: true, autocomplete: "last_name_kana", placeholder: "例）アヤ", class: "p-member-form__half last_name_kana"
             .first_name_kana-error 姓カナ を入力してください
             .last_name_kana-error 名カナ を入力してください
 
@@ -106,13 +106,13 @@
               %span.required 必須
             .p-member-form__birthday
               .p-member-form__birthday--select
-                = f.select :birth_year, "--"
+                = f.select :birth_year, "--", {}, class: 'birth_year'
               %span 年
               .p-member-form__birthday--select
-                = f.select :birth_month, "--"
+                = f.select :birth_month, "--", {}, class: 'birth_month'
               %span 月
               .p-member-form__birthday--select
-                = f.select :birth_day, "--"
+                = f.select :birth_day, "--", {}, class: 'birth_day'
               %span 日
               .birthday-error 生年月日を入力してください
 
