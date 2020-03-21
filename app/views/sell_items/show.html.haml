@@ -61,6 +61,6 @@
               %br
               = @personal.first_name + ' ' + @personal.last_name
           .buy-btn
-            = button_to '購入する', "/buy/#{@item.id}", {class: 'sellBtn'}
+            = button_to '購入する', sell_item_buy_path(@item.id), {class: 'sellBtn'}
 
 = render './shared/simple-footer'
