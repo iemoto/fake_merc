@@ -10,9 +10,9 @@ class SellItemsController < ApplicationController
 
   def create
     @mainCategory = Category.where(ancestry: '1')
-    @brand = Brand.create(brand_params)
-    allItem_params = item_params.merge(brand_id: @brand.id)
-    @item = Item.new(allItem_params)
+    # @brand = Brand.create(brand_params)
+    # allItem_params = item_params.merge(brand_id: @brand.id)
+    @item = Item.new(item_params)
     respond_to do |format|
       if @item&.save and @item&.images&.first&.save
         @sellItem = SellItem.new(item_id: @item.id)
@@ -35,21 +35,14 @@ class SellItemsController < ApplicationController
   def edit
     @mainCategory = Category.where(ancestry: '1')
     @image = @item.images.where(item_id: @item.id)
-    @brand = Brand.find_by(id: @item.brand_id)
-    @item.merge(brand_name: @brand[:brand_name])
   end
 
   def update
-    @brand = Brand.find_by(brand_name: brand_params[:brand_name])
-    if @brand.blank?
-      @brand = Brand.create(brand_params)
-    end
     @mainCategory = Category.where(ancestry: '1')
-    allItem_params = item_params.merge(brand_id: @brand.id)
-    if @item.update(allItem_params)
+    if @item.update(item_params)
       redirect_to mypage_items_show_path(@item.id)
     else
-      render :edit 
+      redirect_to action: 'edit' 
     end
   end
 
@@ -58,7 +51,7 @@ class SellItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :money, :description, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
+    params.require(:item).permit(:name, :money, :description, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :brand_name, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
   end
 
   def set_item
@@ -69,7 +62,4 @@ class SellItemsController < ApplicationController
     @mainCategory = Category.where(ancestry: '1')
   end
 
-  def brand_params
-    params.require(:item).permit(:brand_name)
-  end
 end

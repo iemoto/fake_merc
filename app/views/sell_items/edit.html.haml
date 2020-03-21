@@ -1,5 +1,6 @@
 = render './shared/simple-header'
 = form_with(model: @item, url: sell_item_edit_path, local: true, class: 'sell-wrapper') do |f|
+  = binding.pry
   .sell-wrapper__Title
     商品の情報を入力
   .sellHeading
@@ -10,10 +11,13 @@
       最大10枚までアップロードできます
     .label-box__inner#image-box
       %label
-        = f.fields_for :images, @item&.images do |i|
-          .js-file_group{data: {id: "#{i.index}"}, class: 'input-default'}
-            .js-file.input-default
-              = i.file_field :image_url
+        = f.fields_for :images, @item.images do |i|
+          - if i.index
+            = image_tag(i.image_url.url) 
+          - else
+            .js-file_group{data: {id: "#{i.index}"}, class: 'input-default'}
+              .js-file.input-default
+                = i.file_field :image_url
         %p.boxFileSelect
           = fa_icon 'camera'
           %br

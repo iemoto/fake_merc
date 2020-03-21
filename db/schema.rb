@@ -55,11 +55,10 @@ ActiveRecord::Schema.define(version: 2020_03_07_053412) do
     t.integer "shipping_fee_id"
     t.integer "shipping_method_id"
     t.integer "ship_date_id"
-    t.bigint "brand_id"
+    t.string "brand_name"
     t.integer "size_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
   end
 
   create_table "personal_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,7 +114,6 @@ ActiveRecord::Schema.define(version: 2020_03_07_053412) do
   end
 
   add_foreign_key "images", "items"
-  add_foreign_key "items", "brands"
   add_foreign_key "sell_items", "items"
   add_foreign_key "sell_items", "users"
   add_foreign_key "sns_credentials", "users"
