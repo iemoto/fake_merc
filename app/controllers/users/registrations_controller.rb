@@ -17,8 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user][:password] = pass
       params[:user][:password_confirmation] = pass
     end
-    # super
-  # end
 
     @user = User.new(user_params)
     if @user.save
