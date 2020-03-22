@@ -1,7 +1,8 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/TAKUYA-KUSAKABE/fake_merc)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TAKUYA-KUSAKABE/fake_merc)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/TAKUYA-KUSAKABE/fake_merc)
 ![GitHub contributors](https://img.shields.io/github/contributors/TAKUYA-KUSAKABE/fake_merc)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/TAKUYA-KUSAKABE/fake_merc)
+
 
 # Fake Mercari
 ![fake](/materials/topPage.png)
