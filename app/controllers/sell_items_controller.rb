@@ -22,7 +22,7 @@ class SellItemsController < ApplicationController
           format.html { render :new, notice: 'ユーザー登録がされていません'}
           format.json { render json: @item.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to "/mypage/items/#{@item.id}"}
+        format.html { redirect_to root_path}
         format.json { render :show, status: :created, location: @item}
       else
         format.html { render :new, collection: @item }
@@ -49,15 +49,17 @@ class SellItemsController < ApplicationController
 
   def edit
     @mainCategory = Category.where(ancestry: '1')
-    @image = @item.images.where(item_id: @item.id)
   end
 
   def update
     @mainCategory = Category.where(ancestry: '1')
-    if @item.update(item_params)
-      redirect_to mypage_items_show_path(@item.id)
-    else
-      redirect_to action: 'edit' 
+    respond_to do |format|
+      if @item.update(item_params)
+          format.html { redirect_to mypage_items_show_path(@item.id) }
+          format.json { render :show, status: :created, location: @item}
+      else
+          format.html { redirect_to action:  :edit}
+      end
     end
   end
 
@@ -66,7 +68,7 @@ class SellItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :money, :description, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :brand_name, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url])
+    params.require(:item).permit(:name, :money, :description, :exhibition, :soldout, :during_transaction, :category_id, :size_id, :item_condition_id, :shipping_fee_id, :brand_name, :shipping_method_id, :prefecture_address_id, :ship_date_id, images_attributes: [:image_url, :_destroy, :id])
   end
 
   def set_item

@@ -14,10 +14,29 @@ $(function(){
     $('.isTmpArea').remove();
   });
 
+  $('.hidden-destroy').hide();
+  
+
   // 投稿予定画像の削除
   $(document).on('click', '.js-remove', function(){
     $(this).parent().remove();
   })
+
+  $('#image-box').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index');
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+
+    $(this).parent().remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+
+    // 画像入力欄が0個にならないようにしておく
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });
+
+
 
   // 画像のプレビュー表示
   const buildFileField = (index, url)=> { 
