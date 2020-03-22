@@ -6,8 +6,7 @@
         = Item.find(@item.id).name
       %clearfix.itemzone__main
         .main--photo
-          -# = @item.images.first.image_url.to_s,
-          =image_tag("https://1.bp.blogspot.com/-8-Wxkp3eMh8/Xdttj6AJ-JI/AAAAAAABWJk/9UJWWhu5BYcEYKpl-fJr8u2FdPJIfOxHACNcBGAsYHQ/s1600/medical_oushin_car_man.png", size:"300x300")
+          = image_tag @images.first.image_url.to_s, alt: '商品写真', height: '300px', width: '300px'
         %table.itemzone__main--table
           %tr
             %th
@@ -33,43 +32,36 @@
               カテゴリー
             %td
               = Category.find(@item.category_id).name
-              -# レディース
           %tr
             %th
               ブランド
             %td
               = Brand.find(@item.brand_id).brand_name
-              -# コーチ
           %tr
             %th
               商品状態
             %td
               = ItemCondition.find(@item.item_condition_id).name
-              -# やや傷あり
           %tr
             %th
               送料の負担
             %td
               = ShippingFee.find(@item.shipping_fee_id).name
-              -# 送料込み（出品者負担）
           %tr
             %th
               配送方法
             %td
               = ShippingMethod.find(@item.shipping_method_id).name
-              -# らくらくメルカリ便
           %tr
             %th
               配送元地域
             %td
               = PrefectureAddress.find(@item.prefecture_address_id).name
-              -# 神奈川県
           %tr
             %th
               発送日の目安
             %td
               = ShipDate.find(@item.ship_date_id).name
-              -# ２〜3日
       .itempricezone
         .itempricezone__price
           = "¥#{@item.money}"

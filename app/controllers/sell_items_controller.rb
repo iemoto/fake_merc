@@ -15,7 +15,7 @@ class SellItemsController < ApplicationController
     @brand = Brand.create(brand_params)
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
-    binding.pry
+    # binding.pry
     respond_to do |format|
       if @item.save
         @sellItem = SellItem.new(item_id: @item.id)
