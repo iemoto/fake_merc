@@ -26,9 +26,8 @@
           = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
       - if @item.persisted?
         .js-file_group{"data-index" => "#{@item.images.count}"}
-          = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url]", class: 'js-file'
-
-
+          = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url]", class: 'js-file '
+          
   %h4.sellHeading
     商品名
     = render 'mustLabel'
