@@ -48,7 +48,8 @@ Rails.application.routes.draw do
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
   get '/sell/edit/:id', to: 'sell_items#edit', as:'sell_item_edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
-  delete '/sell/edit/:id', to: 'sell_items#destroy'
+  delete '/sell/edit/:id', to: 'sell_items#destroy', as: 'sell_item_delete'
+
 
   # 商品の状態更新
   patch '/mypage/items/activate/:id', to: 'items#update'

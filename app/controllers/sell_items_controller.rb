@@ -1,5 +1,6 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :destroy, :update]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :sell_item, only: [:destroy]
   before_action :item_present?, only: [:show]
   after_action :redirect_save_item, only: [:create, :update]
 
@@ -25,7 +26,8 @@ class SellItemsController < ApplicationController
         format.html { redirect_to root_path}
         format.json { render :show, status: :created, location: @item}
       else
-        format.html { render :new, collection: @item }
+        format.html { redirect_to action: 'new' }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,6 +66,11 @@ class SellItemsController < ApplicationController
   end
 
   def destroy
+    if @sell_item.destroy and @item.destroy
+      flash[:notice] = '商品を削除しました'
+    else
+      flash[:notice] = '商品情報の削除に失敗しました'
+    end
   end
 
   private
@@ -87,4 +94,11 @@ class SellItemsController < ApplicationController
     @mainCategory = Category.where(ancestry: '1')
   end
 
+  def brand_params
+    params.require(:item).permit(:brand_name)
+  end
+
+  def sell_item
+    @sell_item = SellItem.find(params[:id])
+  end
 end
