@@ -6,7 +6,7 @@
         = Item.find(@item.id).name
       %clearfix.itemzone__main
         .main--photo
-          = image_tag @images.first.image_url.to_s, alt: '商品写真', height: '300px', width: '300px'
+          = image_tag @item.images.first.image_url.to_s unless @item.images.blank?
         %table.itemzone__main--table
           %tr
             %th

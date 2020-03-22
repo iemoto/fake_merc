@@ -2,13 +2,14 @@ class MainsController < ApplicationController
   before_action :set_item ,only:[:show]
 
   def index
+    @items = Item.all
   end
 
   def show
-    sellitem_id = SellItem.find(@item.id)
-    @user = User.find(sellitem_id.user_id)
+    sellitem = SellItem.find_by(item_id: @item.id)
+    @user = User.find(sellitem.user_id)
 
-    @images = Image.where("item_id = #{@item.id}")
+    # @images = Image.where("item_id = #{@item.id}")
 
   end
 end

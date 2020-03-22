@@ -9,7 +9,7 @@ $(function(){
       $('.nickname-error').show();
       $('.nick_name').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.nickname-error').hide();
       $('.nick_name').css({'border':'1px solid #ccc'});
     }
@@ -28,7 +28,7 @@ $(function(){
       $('.email-error').show();
       $('.email').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.email-error').hide();
       $('.email').css({'border':'1px solid #ccc'});
     }
@@ -49,7 +49,7 @@ $(function(){
       $('.password-error1').show();
       $('.password').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.password-error1').hide();
       $('.password').css({'border':'1px solid #ccc'});
     }
@@ -80,7 +80,7 @@ $(function(){
       $('.first_name-error').show();
       $('.first_name').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.first_name-error').hide();
       $('.first_name').css({'border':'1px solid #ccc'});
     }
@@ -97,7 +97,7 @@ $(function(){
       $('.last_name-error').show();
       $('.last_name').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.last_name-error').hide();
       $('.last_name').css({'border':'1px solid #ccc'});
     }
@@ -116,7 +116,7 @@ $(function(){
       $('.first_name_kana-error').show();
       $('.first_name_kana').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.first_name_kana-error').hide();
       $('.first_name_kana').css({'border':'1px solid #ccc'});
     }
@@ -133,7 +133,7 @@ $(function(){
       $('.last_name_kana-error').show();
       $('.last_name_kana').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.last_name_kana-error').hide();
       $('.last_name_kana').css({'border':'1px solid #ccc'});
     }
@@ -188,7 +188,7 @@ $(function() {
   });
 
   // 日(変更)：選択された年・月に合わせて、適した日の値を選択肢にセットする
-  $('.birth_year,.birth_month').change(function() {
+  $('.birth_year,#birth_month').change(function() {
       selected_year = $('.birth_year').val();
       selected_month = $('.birth_month').val();
 
@@ -239,7 +239,7 @@ $(function(){
       $('.birthday-error').show();
       $('select').css({'border':'1px solid #ea352d'});
     }
-    else if(!error){
+    else{
       $('.birthday-error').hide();
       $('select').css({'border':'1px solid #ccc'});
     }
