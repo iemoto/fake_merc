@@ -20,8 +20,8 @@ class SellItemsController < ApplicationController
           format.html { render :new, notice: 'ユーザー登録がされていません'}
           format.json { render json: @item.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to "/mypage/items/#{@item.id}"}
-        format.json { render :show, status: :created, location: @item}
+        format.html { redirect_to "/mypage/items/#{@item.id}", notice: '商品を出品しました' }
+        format.json { render :show, status: :created, location: @item }
       else
         format.html { redirect_to action: 'new' }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -40,6 +40,12 @@ class SellItemsController < ApplicationController
   end
 
   def destroy
+    @sell_item = SellItem.find(params[:id])
+    if @sell_item.destroy and @item.destroy
+      flash[:notice] = '商品を削除しました'
+    else
+      flash[:notice] = '商品情報の削除に失敗しました'
+    end
   end
 
   private

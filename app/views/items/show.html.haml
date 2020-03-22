@@ -15,6 +15,9 @@
 %br
   = link_to '編集', "/sell/edit/#{@item.id}", method: :get
 
+%br
+  = button_to '削除', sell_item_delete_path(params[:id]),  method: :delete
+
 = form_with(model: @item, url: "/mypage/items/activate/#{@item.id}", local: true)do |f|
   - if @item.exhibition === true
     = f.hidden_field :exhibition, value:'0'
