@@ -17,5 +17,22 @@ class UsersController < ApplicationController
   def edit
     add_breadcrumb 'マイページ', mypage_path
     add_breadcrumb '本人情報の登録'
+    @personal = PersonalUser.find_by(user_id: current_user.id)
+  end
+
+  def update
+    @personal = PersonalUser.find_by(user_id: current_user.id)
+    if @personal.update(address_params)
+     redirect_back(fallback_location: root_url)
+     flash[:notice] = '住所情報を更新しました'
+    else
+     redirect_back(fallback_location: root_url)
+     flash[:notice] = '住所情報の更新に失敗しました'
+    end
+  end
+
+  private
+  def address_params
+    params.require(:personal_user).permit(:post_number, :street_address, :prefecture_address_id, :municipality_address, :building_name_adress, :building_name_address)
   end
 end

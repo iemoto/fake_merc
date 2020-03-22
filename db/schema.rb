@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_053412) do
+ActiveRecord::Schema.define(version: 2020_03_20_102618) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand_name"
@@ -92,6 +92,16 @@ ActiveRecord::Schema.define(version: 2020_03_07_053412) do
     t.index ["user_id"], name: "index_sell_items_on_user_id"
   end
 
+  create_table "sell_moneys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "sell_item_id", null: false
+    t.integer "sell_money", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sell_item_id"], name: "index_sell_moneys_on_sell_item_id"
+    t.index ["user_id"], name: "index_sell_moneys_on_user_id"
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -118,5 +128,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_053412) do
   add_foreign_key "items", "brands"
   add_foreign_key "sell_items", "items"
   add_foreign_key "sell_items", "users"
+  add_foreign_key "sell_moneys", "sell_items"
+  add_foreign_key "sell_moneys", "users"
   add_foreign_key "sns_credentials", "users"
 end
