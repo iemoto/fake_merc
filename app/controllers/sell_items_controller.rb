@@ -2,7 +2,8 @@ class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
   before_action :sell_item, only: [:destroy]
   before_action :item_present?, only: [:show]
-  after_action :redirect_save_item, only: [:create, :update]
+  before_action :redirect_save_item, only: [:new, :create, :edit, :update]
+  after_action :redirect_save_item, only: [ :create, :update]
 
   def new
     @item = Item.new
@@ -12,9 +13,6 @@ class SellItemsController < ApplicationController
   end
 
   def create
-    @mainCategory = Category.where(ancestry: '1')
-    # @brand = Brand.create(brand_params)
-    # allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(item_params)
     respond_to do |format|
       if @item&.save and @item&.images&.first&.save
@@ -50,11 +48,9 @@ class SellItemsController < ApplicationController
   end
 
   def edit
-    @mainCategory = Category.where(ancestry: '1')
   end
 
   def update
-    @mainCategory = Category.where(ancestry: '1')
     respond_to do |format|
       if @item.update(item_params)
           format.html { redirect_to mypage_items_show_path(@item.id) }
