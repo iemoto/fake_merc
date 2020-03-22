@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   root "mains#index"
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -29,10 +31,11 @@ Rails.application.routes.draw do
   get '/mypage/profile', to: 'profiles#edit'
   patch '/mypage/profile', to: 'profiles#update'
 
-  # 決済機能実装時にコントローラー等を作成
+  # 決済機能実装時にコントローラー等を作成 cards本物
   get '/mypage/card', to: 'cards#index'
   get '/mypage/card/create', to: 'cards#new'
-  put '/mypage/card/create', to: 'cards#create'
+  post '/mypage/card/create', to: 'cards#pay' , as:'mypage_pay_create'
+  delete '/mypage/card/delete', to: 'cards#destroy' ,as:'delete_card_index'
 
   # 発送元・お届け先住所画面
   # 登録画面が不明のため、適当に/registを付けています
@@ -56,4 +59,13 @@ Rails.application.routes.draw do
   get '/mypage/listings/listing', to: 'items#index'
   get '/mypage/items/:id', to: 'items#show'
 
+  # 商品購入
+  post '/buy/:id', to: 'transactions#buy', as: 'sell_item_buy'
+  
+  namespace :api, format: 'json' do
+    # 環境変数の保存
+    resources :env, only: [:index]
+    # categoryセレクトボックスの処理
+    resources :categories, only: [:index]
+  end
 end
