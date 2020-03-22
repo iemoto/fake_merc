@@ -6,7 +6,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/TAKUYA-KUSAKABE/fake_merc?style=social)
 
 
-<h1 align-items='center'>Fake Mercari</h1>
+<h1 align='center'>Fake Mercari</h1>
 
 ![fake](/materials/topPage.png)
 
