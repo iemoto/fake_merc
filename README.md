@@ -1,12 +1,19 @@
-# README
+![GitHub contributors](https://img.shields.io/github/contributors/TAKUYA-KUSAKABE/fake_merc)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/TAKUYA-KUSAKABE/fake_merc)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/TAKUYA-KUSAKABE/fake_merc)
+![GitHub top language](https://img.shields.io/github/languages/top/TAKUYA-KUSAKABE/fake_merc)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TAKUYA-KUSAKABE/fake_merc)
+![GitHub watchers](https://img.shields.io/github/watchers/TAKUYA-KUSAKABE/fake_merc?style=social)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+<h1 text-align='center'>Fake Mercari</h1>
+
+![fake](/materials/topPage.png)
+
+# ER図
+![ER](/materials/ER.png)
 
 # DB設計
-
 ## Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -246,24 +253,3 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :buy_item
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
