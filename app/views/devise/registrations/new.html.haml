@@ -26,7 +26,6 @@
 -# ↑↑↑本来は不要ですが、コメント化したものは念のため残しております。最終的には調整する。
 
 = form_with model: resource, url: user_registration_path, id: 'form', local: true do |f|
-
   .mem-bread-header
     = link_to root_path, class: "mem-bread-header__link" do
       = image_tag asset_path('fakelogo.svg'), class: "mem-bread-header__link--logo", alt: "mercari", size:"134x36"
