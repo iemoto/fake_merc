@@ -1,5 +1,6 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :destroy, :update]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :sell_item, only: [:destroy]
   before_action :item_present?, only: [:show]
   after_action :redirect_save_item, only: [:create, :update]
 
@@ -16,16 +17,18 @@ class SellItemsController < ApplicationController
     allItem_params = item_params.merge(brand_id: @brand.id)
     @item = Item.new(allItem_params)
     respond_to do |format|
-      if @item.save
-        @sellItem = SellItem.new(item_id: @item.id, user_id: current_user.id)
+
+      if @item&.save and @item&.images&.first&.save
+        @sellItem = SellItem.new(item_id: @item.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
           format.json { render json: @item.errors, status: :unprocessable_entity }
         end
-        format.html { redirect_to "/mypage/items/#{@item.id}"}
-        format.json { render :show, status: :created, location: @item}
+        format.html { redirect_to "/mypage/items/#{@item.id}", notice: '商品を出品しました' }
+        format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new, collection: @item }
+        format.html { redirect_to action: 'new' }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -51,10 +54,14 @@ class SellItemsController < ApplicationController
   end
 
   def edit
-    @images = Image.find_by("item_id = #{@item.id}")
   end
 
   def destroy
+    if @sell_item.destroy and @item.destroy
+      flash[:notice] = '商品を削除しました'
+    else
+      flash[:notice] = '商品情報の削除に失敗しました'
+    end
   end
 
   private
@@ -80,5 +87,9 @@ class SellItemsController < ApplicationController
 
   def brand_params
     params.require(:item).permit(:brand_name)
+  end
+
+  def sell_item
+    @sell_item = SellItem.find(params[:id])
   end
 end
