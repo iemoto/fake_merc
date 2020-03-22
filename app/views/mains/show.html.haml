@@ -71,6 +71,8 @@
           送料込み
       .buybtn
         =link_to "購入画面に進む",sell_item_show_path(1)
+      .deletebtn
+        = link_to '削除'
       .iteminfo
         .iteminfo__inner
           = @item.description

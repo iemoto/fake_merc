@@ -10,6 +10,7 @@ class MainsController < ApplicationController
     @user = User.find(sellitem.user_id)
   end
   
+  
   private
   def set_item
     @item = Item.find(params[:id])
