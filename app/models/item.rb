@@ -4,9 +4,6 @@ class Item < ApplicationRecord
   validates :name, :description, :money, :prefecture_address_id, \
             :category_id, :item_condition_id, :shipping_method_id, \
             :shipping_fee_id, :ship_date_id, presence: true
-  # validates :prefecture_address_id, :category_id, :item_condition_id,
-  #           :shipping_method_id, :shipping_fee_id, :ship_date_id, dependent: :destroy
   validates :exhibition, :during_transaction, :soldout, inclusion: { in: [true, false] }
-  # belongs_to :sell_item
   has_many :images, dependent: :destroy
 end
