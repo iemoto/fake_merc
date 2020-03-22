@@ -10,7 +10,7 @@
       最大10枚までアップロードできます
     .label-box__inner#image-box
 
-      #previews
+      #previews.u-just-start
         - if @item.persisted?
           - @item.images.each_with_index do |image, i|
             .js-file_group{"data-index" => "#{i + 1}"}
@@ -27,7 +27,6 @@
       - if @item.persisted?
         .js-file_group{"data-index" => "#{@item.images.count}"}
           = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url]", class: 'js-file'
-          .js-remove delete
 
 
   %h4.sellHeading
