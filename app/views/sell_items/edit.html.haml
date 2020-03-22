@@ -18,7 +18,7 @@
                 = image_tag image.image_url.url, data: { index: i + 1}, width: "120", height: '120'
               .js-remove delete
       = f.fields_for :images do |image|
-        .js-file_group{"data-index" => "#{image.index}"}
+        .js-file_group.u-display-none{"data-index" => "#{image.index}"}
           = image.file_field :image_url, class: 'js-file'
           %br/
           %span.js-remove delete
