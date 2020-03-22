@@ -22,11 +22,6 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 
-
-  # config.omniauth :facebook,ENV['2810219352378544'],ENV['94d3fbf5c987a9f54e5f998a1dacfcef'], token_params: { parse: :json }
   config.omniauth :facebook,ENV['FACEBOOK_CLIENT_ID'],ENV['FACEBOOK_CLIENT_SECRET'], token_params: { parse: :json }
-  # config.omniauth :google_oauth2,ENV['GOOGLE_CLIENT_ID'],ENV['GOOGLE_CLIENT_SECRET'], token_params: { parse: :json }
-
-  # config.scoped_views = true
-
+  config.omniauth :google_oauth2,ENV['GOOGLE_CLIENT_ID'],ENV['GOOGLE_CLIENT_SECRET'], token_params: { parse: :json }
 end
