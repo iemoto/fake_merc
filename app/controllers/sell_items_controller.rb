@@ -1,5 +1,6 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
+  before_action :sell_item, only: [:destroy]
   after_action :redirect_save_item, only: [:create, :update]
   def new
     @item = Item.new
@@ -36,11 +37,9 @@ class SellItemsController < ApplicationController
   end
 
   def edit
-    # @images = Image.find_by("item_id = #{@item.id}")
   end
 
   def destroy
-    @sell_item = SellItem.find(params[:id])
     if @sell_item.destroy and @item.destroy
       flash[:notice] = '商品を削除しました'
     else
@@ -63,5 +62,9 @@ class SellItemsController < ApplicationController
 
   def brand_params
     params.require(:item).permit(:brand_name)
+  end
+
+  def sell_item
+    @sell_item = SellItem.find(params[:id])
   end
 end
