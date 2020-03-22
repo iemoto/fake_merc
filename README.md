@@ -2,11 +2,8 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/TAKUYA-KUSAKABE/fake_merc)
 ![GitHub contributors](https://img.shields.io/github/contributors/TAKUYA-KUSAKABE/fake_merc)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/TAKUYA-KUSAKABE/fake_merc)
-![GitHub watchers](https://img.shields.io/github/watchers/TAKUYA-KUSAKABE/fake_merc?style=social)
 
-
-<h1>Fake Mercari</h1>
-
+# Fake Mercari
 ![fake](/materials/topPage.png)
 
 # ER図
