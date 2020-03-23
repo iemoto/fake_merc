@@ -232,7 +232,7 @@ $(function(){
   //バリデーション 生年月日
   $('select').on('blur',function(){
     let error;
-    let value = $('#birth_day').val();
+    let value = $('.birth_day').val();
     if(value == "0"){
       error = true;}
     if(error){

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-  get 'card/show'
   root "mains#index"
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
@@ -50,14 +48,15 @@ Rails.application.routes.draw do
   get '/transaction/buy/:id', to: 'sell_items#show',  as:'sell_item_show'
   get '/sell/edit/:id', to: 'sell_items#edit', as:'sell_item_edit'
   patch '/sell/edit/:id', to: 'sell_items#update'
-  delete '/sell/edit/:id', to: 'sell_items#destroy'
+  delete '/sell/edit/:id', to: 'sell_items#destroy', as: 'sell_item_delete'
+
 
   # 商品の状態更新
   patch '/mypage/items/activate/:id', to: 'items#update'
 
   # 商品編集・削除を選択できるページ(show)
   get '/mypage/listings/listing', to: 'items#index'
-  get '/mypage/items/:id', to: 'items#show'
+  get '/mypage/items/:id', to: 'items#show', as:'mypage_items_show'
 
   # 商品購入
   post '/buy/:id', to: 'transactions#buy', as: 'sell_item_buy'
