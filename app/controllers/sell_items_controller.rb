@@ -1,6 +1,7 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
   before_action :sell_item, only: [:destroy]
+  before_action :set_money, only: [:destroy]
   before_action :item_present?, only: [:show]
   before_action :redirect_save_item, only: [:new, :create, :edit, :update]
   after_action :redirect_save_item, only: [ :create, :update]
@@ -17,7 +18,7 @@ class SellItemsController < ApplicationController
     respond_to do |format|
 
       if @item&.save and @item&.images&.first&.save
-        @sellItem = SellItem.new(item_id: @item.id)
+        @sellItem = SellItem.new(item_id: @item.id, user_id: current_user.id)
         unless @sellItem.save
           format.html { render :new, notice: 'ユーザー登録がされていません'}
           format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -54,7 +55,7 @@ class SellItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-          format.html { redirect_to mypage_items_show_path(@item.id) }
+          format.html { redirect_to main_show_path(@item.id) }
           format.json { render :show, status: :created, location: @item}
       else
           format.html { redirect_to action:  :edit}
@@ -63,7 +64,7 @@ class SellItemsController < ApplicationController
   end
 
   def destroy
-    if @sell_item.destroy and @item.destroy
+    if  @sell_money&.destroy and SellItem.find_by(item_id: @item.id).destroy and @item.destroy 
       flash[:notice] = '商品を削除しました'
     else
       flash[:notice] = '商品情報の削除に失敗しました'
@@ -97,5 +98,9 @@ class SellItemsController < ApplicationController
 
   def sell_item
     @sell_item = SellItem.find(params[:id])
+  end
+
+  def set_money
+    @sell_money = SellMoney.find_by(sell_item_id: @sell_item.id)
   end
 end
