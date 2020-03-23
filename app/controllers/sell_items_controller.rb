@@ -63,7 +63,7 @@ class SellItemsController < ApplicationController
   end
 
   def destroy
-    if  @sell_item.destroy and @item.destroy 
+    if @sell_item.destroy and @item.destroy
       flash[:notice] = '商品を削除しました'
     else
       flash[:notice] = '商品情報の削除に失敗しました'
