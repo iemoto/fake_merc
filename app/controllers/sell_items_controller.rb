@@ -1,8 +1,7 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
   before_action :sell_item, only: [:destroy]
-  before_action :set_money, only: [:destroy]
-  before_action :item_present?, only: [:show]
+¥  before_action :item_present?, only: [:show]
   before_action :redirect_save_item, only: [:new, :create, :edit, :update]
   after_action :redirect_save_item, only: [ :create, :update]
 
@@ -64,7 +63,7 @@ class SellItemsController < ApplicationController
   end
 
   def destroy
-    if  @sell_money&.destroy and SellItem.find_by(item_id: @item.id).destroy and @item.destroy 
+    if  @sell_item.destroy and @item.destroy 
       flash[:notice] = '商品を削除しました'
     else
       flash[:notice] = '商品情報の削除に失敗しました'
@@ -98,9 +97,5 @@ class SellItemsController < ApplicationController
 
   def sell_item
     @sell_item = SellItem.find(params[:id])
-  end
-
-  def set_money
-    @sell_money = SellMoney.find_by(sell_item_id: @sell_item.id)
   end
 end
