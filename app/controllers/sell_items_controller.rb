@@ -1,7 +1,7 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
   before_action :sell_item, only: [:destroy]
-¥  before_action :item_present?, only: [:show]
+  before_action :item_present?, only: [:show]
   before_action :redirect_save_item, only: [:new, :create, :edit, :update]
   after_action :redirect_save_item, only: [ :create, :update]
 
