@@ -132,5 +132,4 @@ gem 'omniauth-rails_csrf_protection'
 
 # 支払い情報を登録
 gem 'payjp'
-
 gem 'breadcrumbs_on_rails'

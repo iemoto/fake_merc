@@ -1,15 +1,106 @@
-= form_with(model: @item, url: sell_item_edit_path, local: true)do |f|
-  .formItem-name
-    = f.label :商品名
-    = f.text_field :name
-  .formItem-money
-    = f.label :価格
-    = f.number_field :money
-    #image-box
-      = f.fields_for :images, @item&.images do |i|
-        .js-file_group{data: {id: "#{i.index}"}}
-          .js-file
-            = i.file_field :image_url
-          %span.js-remove
-            削除
-    =f.submit
+= render './shared/simple-header'
+= form_with(model: @item, url: sell_item_edit_path, local: true, class: 'sell-wrapper') do |f|
+  .sell-wrapper__Title
+    商品の情報を入力
+  .sellHeading
+    %h4.sellImage__title
+      出品画像
+      = render 'mustLabel'
+    %p.subscription
+      最大10枚までアップロードできます
+    .label-box__inner#image-box
+
+      #previews.u-just-start
+        - if @item.persisted?
+          - @item.images.each_with_index do |image, i|
+            .js-file_group{"data-index" => "#{i + 1}"}
+              %div
+                = image_tag image.image_url.url, data: { index: i + 1}, width: "120", height: '120'
+              .js-remove delete
+      = f.fields_for :images do |image|
+        .js-file_group.u-display-none{"data-index" => "#{image.index}"}
+          = image.file_field :image_url, class: 'js-file'
+          %br/
+          %span.js-remove delete
+        - if @item.persisted?
+          = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+      - if @item.persisted?
+        .js-file_group{"data-index" => "#{@item.images.count}"}
+          = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count}][image_url]", class: 'js-file '
+          
+  %h4.sellHeading
+    商品名
+    = render 'mustLabel'
+    .sellTitle
+      = f.text_field(:name, placeholder: '40文字まで')
+  %h4.sellDescription
+    商品の説明
+    = render 'mustLabel'
+    = f.text_area(:description, rows: 7, id: 'js-count', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n \n 例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。")
+    .textCount
+      0/1500
+
+  .sellHeading
+    .sellDetail
+      商品の詳細
+    %h4.sellCategory
+      カテゴリー
+      = render 'mustLabel'
+    = f.collection_select :category_id, @mainCategory, :id, :name, prompt: '選択してください'
+    %select#middleCategory
+    %select#subSubCategory
+    %h3#sizeCategory
+      %p
+        サイズ(任意)
+    = f.collection_select :size_id, Size.all, :id, :name, prompt: '選択してください'
+    %h4.sellBland
+      %p
+        ブランド(任意)
+    = f.text_field :brand_name, placeholder: '例) シャネル'
+    %h4.sellState
+      商品の状態
+      = render 'mustLabel'
+    = f.collection_select :item_condition_id, ItemCondition.all, :id, :name, prompt: '選択してください'
+  .sellHeading
+    .sellDetail
+      発送について
+    %h4.sellCost
+      配送料の負担
+      = render 'mustLabel'
+    = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, prompt: '選択してください'
+    %h3#deliverMethod
+      %p
+        配送の方法
+        = render 'mustLabel'
+    = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, prompt: '選択してください'
+    %h4.sellShip
+      発送元の地域
+      = render 'mustLabel'
+    = f.collection_select :prefecture_address_id, PrefectureAddress.all, :id, :name, prompt: '選択してください'
+    %h4.sellDate
+      発送までの日数
+      = render 'mustLabel'
+    = f.collection_select :ship_date_id, ShipDate.all, :id, :name, prompt: '選択してください'
+  .sellHeading
+    .sellDetail
+      価格(¥300 〜 9,999,999)
+    %h4.sellValue
+      .title
+        販売価格
+        = render 'mustLabel'
+      .inputCost
+        %p
+          ¥
+        = f.number_field(:money, in: 300..9999999, placeholder: '0')
+    %h4.sellTax
+      販売手数料 (10%)
+      #sellCommision
+    %h4.sellBenefit
+      販売利益
+      #sellBenefit
+    .sellSubmit
+      = f.submit '編集する', {onClick: 'submit();', class: 'sellBtn'}
+    .othersElement
+      = link_to('キャンセル', '/')
+
+= render './shared/simple-footer'
