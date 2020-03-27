@@ -23,7 +23,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       personal_params = personal_user_params.merge(user_id: @user.id)
       @personal_user = PersonalUser.new(personal_params)
       if @personal_user.save
-        # binding.pry
         flash[:notice]='会員登録出来ました！'
         redirect_to "/signup/registration/#{@user.id}"
         bypass_sign_in(@user)

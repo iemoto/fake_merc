@@ -1,5 +1,5 @@
 $(function(){
-  //バリデーション ニックネーム
+  //バリデーション ニックネーム null
   $('.nick_name').on('blur',function(){
     let error;
     let value = $('.nick_name').val();
@@ -16,13 +16,12 @@ $(function(){
   });
 });
 
-
 $(function(){
-  //バリデーション メールアドレス
+  //バリデーション メールアドレス s@s.s
   $('.email').on('blur',function(){
     let error;
     let value = $('.email').val();
-    if(value == ""){
+    if(!value.match(/.+@.+\..+/g)){
       error = true;}
     if(error){
       $('.email-error').show();
@@ -35,15 +34,12 @@ $(function(){
   });
 });
 
-
 $(function(){
-  //バリデーション パスワード
+  //バリデーション パスワード ７文字以上半角英数含む
   $('.password').on('blur',function(){
     let error;
     let value = $('.password').val();
-    if(value == ""){
-      error = true;}
-    else if(!value.match(/[0-9a-zA-Z]/)){
+    if(!value.match(/^(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,}$/i)){
       error = true;}
     if(error){
       $('.password-error1').show();
@@ -55,7 +51,6 @@ $(function(){
     }
   });
 });
-
 
 $(function(){
   //パスワード表示
@@ -70,11 +65,11 @@ $(function(){
 });
 
 $(function(){
-  //バリデーション 姓
+  //バリデーション 姓 全角ひらがな漢字
   $('.first_name').on('blur',function(){
     let error;
     let value = $('.first_name').val();
-    if(value == ""){
+    if(!value.match(/^[あ-けー-龥　]+$/)){
       error = true;}
     if(error){
       $('.first_name-error').show();
@@ -86,12 +81,13 @@ $(function(){
     }
   });
 });
+
 $(function(){
-  //バリデーション 名
+  //バリデーション 名 全角ひらがな漢字
   $('.last_name').on('blur',function(){
     let error;
     let value = $('.last_name').val();
-    if(value == ""){
+    if(!value.match(/^[あ-けー-龥　]+$/)){
       error = true;}
     if(error){
       $('.last_name-error').show();
@@ -104,13 +100,12 @@ $(function(){
   });
 });
 
-
 $(function(){
-  //バリデーション 姓カナ
+  //バリデーション 姓カナ 全角カタカナ
   $('.first_name_kana').on('blur',function(){
     let error;
     let value = $('.first_name_kana').val();
-    if(value == ""){
+    if(!value.match(/^[ァ-ンヴー]*$/)){
       error = true;}
     if(error){
       $('.first_name_kana-error').show();
@@ -122,12 +117,13 @@ $(function(){
     }
   });
 });
+
 $(function(){
-  //バリデーション 名カナ
+  //バリデーション 名カナ 全角カタカナ
   $('.last_name_kana').on('blur',function(){
     let error;
     let value = $('.last_name_kana').val();
-    if(value == ""){
+    if(!value.match(/^[ァ-ンヴー]*$/)){
       error = true;}
     if(error){
       $('.last_name_kana-error').show();
@@ -139,10 +135,6 @@ $(function(){
     }
   });
 });
-
-
-
-
 
 $(function() {
   // 現在の年月日を取得
@@ -223,10 +215,6 @@ $(function() {
       }
   });
 });
-
-
-
-
 
 $(function(){
   //バリデーション 生年月日
