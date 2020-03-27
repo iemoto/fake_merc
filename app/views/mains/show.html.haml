@@ -36,7 +36,7 @@
             %th
               ブランド
             %td
-              = Brand.find(@item.brand_id).brand_name
+              = @item&.brand_name
           %tr
             %th
               商品状態
@@ -70,9 +70,11 @@
         .itempricezone__fee
           送料込み
       .buybtn
-        =link_to "購入画面に進む",sell_item_show_path(1)
-      .deletebtn
-        = link_to '削除'
+        =link_to "購入画面に進む",sell_item_show_path(@item.id)
+      .editBtn
+        = link_to '編集', sell_item_edit_path(@item.id)
+      .deleteBtn
+        = link_to '削除', sell_item_delete_path(@item.id), method: :delete
       .iteminfo
         .iteminfo__inner
           = @item.description
