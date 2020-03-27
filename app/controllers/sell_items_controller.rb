@@ -15,7 +15,6 @@ class SellItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     respond_to do |format|
-
       if @item&.save and @item&.images&.first&.save
         @sellItem = SellItem.new(item_id: @item.id, user_id: current_user.id)
         unless @sellItem.save
@@ -64,8 +63,10 @@ class SellItemsController < ApplicationController
 
   def destroy
     if @sell_item.destroy and @item.destroy
+      redirect_to root_path
       flash[:notice] = '商品を削除しました'
     else
+      redirect_back(fallback_location: root_url)
       flash[:notice] = '商品情報の削除に失敗しました'
     end
   end
@@ -89,10 +90,6 @@ class SellItemsController < ApplicationController
 
   def redirect_save_item
     @mainCategory = Category.where(ancestry: '1')
-  end
-
-  def brand_params
-    params.require(:item).permit(:brand_name)
   end
 
   def sell_item
