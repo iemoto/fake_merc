@@ -8,13 +8,13 @@
     .p-buy-main__inner
       .p-buy-main__inner--box
         .item-image
-          = image_tag @item.images.first.image_url.to_s unless @item.images.blank?
+          = image_tag @item.images.first.image_url.to_s ,size: '100x100' unless @item.images.blank?
         .item-detail
           .item-detail__name
             = @item.name
           .item-detail__price
             .item-detail__price--ja
-              = @item.money
+              = '¥' + @item.money.to_s(:delimited)
             .item-detail__price--fee
               (税込) 送料込み
     .p-buy-content
@@ -24,7 +24,7 @@
             .price__display
               支払い金額
             .price__ja
-              = @item.money
+              = '¥' + @item.money.to_s(:delimited)
         %ul.accordion
           %li.accordion__parent
             %input.checkbox{type: "checkbox", id: "checkbox"}
