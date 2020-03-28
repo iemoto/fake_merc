@@ -69,10 +69,11 @@
           (税込)
         .itempricezone__fee
           送料込み
-      - if user_signed_in?
+      - if user_signed_in? && @sellitem[:user_id] != current_user.id
         = link_to "購入画面に進む",sell_item_show_path(@item.id),class: 'buybtn u-deco-none u-font-white'
       - else
-        = link_to "戻る",root_path
+        = link_to "戻る",root_path, class: 'buybtn u-deco-none u-font-white'
+
       - if @user&.id == current_user&.id
         = link_to '編集', sell_item_edit_path(@item.id),class: 'editBtn u-deco-none u-font-white'
         = link_to '削除', sell_item_delete_path(@item.id), method: :delete ,class: 'deleteBtn u-deco-none u-font-white'

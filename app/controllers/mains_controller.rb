@@ -6,8 +6,8 @@ class MainsController < ApplicationController
   end
 
   def show
-    sellitem = SellItem.find_by(item_id: @item.id)
-    @user = User.find(sellitem.user_id)
+    @sellitem = SellItem.find_by(item_id: @item.id)
+    @user = User.find(@sellitem.user_id)
   end
   
   
