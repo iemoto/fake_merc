@@ -4,7 +4,6 @@ class TransactionsController < ApplicationController
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       return redirect_to mypage_card_create_path
-      flash[:notice] = 'カードを登録してください'
     end
     @transact = SellMoney.create(user_id: current_user.id, sell_item_id: @item.id, sell_money: @item.money)
     if @transact.save
