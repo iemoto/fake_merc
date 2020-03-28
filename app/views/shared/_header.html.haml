@@ -92,3 +92,5 @@
               =link_to  "新規会員登録", signup_path
             .menu-lower__register--login
               =link_to "ログイン", user_session_path
+            .menu-lower__register--guestLogin
+              = link_to 'ゲストログイン', guest_login_index_path, method: :post
