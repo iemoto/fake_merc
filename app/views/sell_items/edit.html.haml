@@ -12,12 +12,12 @@
       #previews.u-just-start
         - if @item.persisted?
           - @item.images.each_with_index do |image, i|
-            .js-file_group{'data-index' : i}
+            .js-file_group{data: {index: i} }
               %div
                 = image_tag image.image_url.url, data: {index: i}, width: "120", height: '120'
               .js-remove delete
       = f.fields_for :images do |image|
-        .js-file_group.u-display-none{ 'data-index': image.index }
+        .js-file_group.u-display-none{ data: {index: image.index} }
           = image.file_field :image_url, class: 'js-file'
           %br/
           %span.js-remove delete
@@ -25,7 +25,7 @@
           = image.check_box :_destroy, data:{ index: image.index}, class: 'hidden-destroy'
       %label
         - if @item.persisted?
-          .js-file_group{'data-index': @item.images.count, class: 'input-default'}
+          .js-file_group{data:{index: @item.images.count}, class: 'input-default'}
             = file_field_tag :image_url, name: "item[images_attributes][#{@item.images.count -1}][image_url]", class: 'js-file '
           %p.boxFileSelect.isTmpArea
             = fa_icon 'camera'
