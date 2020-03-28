@@ -1,5 +1,11 @@
 //出品ボタン
-= link_to sell_path, class: 'Exhibition__btn' do
-  .Exhibition__btn--text
-    出品
-  = fa_icon 'camera'
+- if user_signed_in? 
+  = link_to sell_path, class: 'Exhibition__btn' do
+    .Exhibition__btn--text
+      出品
+    = fa_icon 'camera'
+- else
+  = link_to signup_path, class: 'Exhibition__btn' do
+    .Exhibition__btn--text
+      出品
+    = fa_icon 'camera'
