@@ -14,7 +14,7 @@
             = @item.name
           .item-detail__price
             .item-detail__price--ja
-              = @item.money
+              = '¥' + @item.money.to_s(:delimited)
             .item-detail__price--fee
               (税込) 送料込み
     .p-buy-content
