@@ -5,8 +5,11 @@
       .itemzone__name
         = Item.find(@item.id).name
       %clearfix.itemzone__main
-        .main--photo
+        .itemzone__main--photo
           = image_tag @item.images.first.image_url.to_s , size: '300x300' unless @item.images.blank?
+          .item-sold-out
+            .sold
+              SOLD
         %table.itemzone__main--table
           %tr
             %th
@@ -71,6 +74,8 @@
           送料込み
       - if user_signed_in? && @sellitem[:user_id] != current_user.id
         = link_to "購入画面に進む",sell_item_show_path(@item.id),class: 'buybtn u-deco-none u-font-white'
+        .soldbtn
+          売り切れました
       - else
         = link_to "戻る",root_path, class: 'buybtn u-deco-none u-font-white'
 
