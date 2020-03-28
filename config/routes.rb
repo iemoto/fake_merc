@@ -60,6 +60,9 @@ Rails.application.routes.draw do
 
   # 商品購入
   post '/buy/:id', to: 'transactions#buy', as: 'sell_item_buy'
+
+  # ゲストログイン
+  resources :guests, only: [:create], as: 'guest_login'
   
   namespace :api, format: 'json' do
     # 環境変数の保存
