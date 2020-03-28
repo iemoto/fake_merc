@@ -28,9 +28,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
         bypass_sign_in(@user)
       else
         render :new
+        # redirect_to '/signup/registration'
       end
     else
       render :new
+      # redirect_to '/signup/registration'
     end
 
     def callback

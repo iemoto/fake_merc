@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :sell_money
 
   validates :nick_name, presence: true
+  #半角英数字のみ
+  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
+
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
