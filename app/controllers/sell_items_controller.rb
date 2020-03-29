@@ -26,8 +26,8 @@ class SellItemsController < ApplicationController
   end
 
   def show
-    if @sell_item[:user_id] != current_user.id
-      redirect_back(fallback_location: main_show_path(@item.id))
+    if @sell_item[:user_id] == current_user.id
+      redirect_back(fallback_location: root_path)
     end
     @personal = PersonalUser.find_by(user_id: current_user.id)
     if @personal&.prefecture_address_id
