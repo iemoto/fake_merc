@@ -1,7 +1,10 @@
 class TransactionsController < ApplicationController
   def buy
     @item = Item.find(params[:id])
-    @card = Card.where(user_id: current_user.id).first
+    @card = Card.find_by(user_id: current_user.id)
+    if @card.blank?
+      return redirect_to mypage_card_create_path
+    end
     @transact = SellMoney.create(user_id: current_user.id, sell_item_id: @item.id, sell_money: @item.money)
     if @transact.save
       unless @item.soldout

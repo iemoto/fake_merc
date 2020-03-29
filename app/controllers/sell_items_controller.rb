@@ -1,6 +1,6 @@
 class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :update]
-  before_action :sell_item, only: [:destroy]
+  before_action :sell_item, only: [:show, :edit, :destroy]
   before_action :item_present?, only: [:show]
   before_action :redirect_save_item, only: [:new, :create, :edit, :update]
   after_action :redirect_save_item, only: [ :create, :update]
@@ -31,6 +31,9 @@ class SellItemsController < ApplicationController
   end
 
   def show
+    if @sell_item[:user_id] != current_user.id
+      redirect_back(fallback_location: main_show_path(@item.id))
+    end
     @personal = PersonalUser.find_by(user_id: current_user.id)
     if @personal&.prefecture_address_id
       @address = PrefectureAddress.find(@personal.prefecture_address_id)
@@ -48,6 +51,9 @@ class SellItemsController < ApplicationController
   end
 
   def edit
+    if @sell_item[:user_id] != current_user.id
+      redirect_back(fallback_location: main_show_path(@item.id))
+    end
   end
 
   def update
