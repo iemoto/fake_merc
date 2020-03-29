@@ -36,10 +36,10 @@
                 %li.l-list-category
                   .l-list-min
 
-                    -# - if @item&.soldout.present?
-                    .item-list-sold-out
-                      .list-sold
-                        SOLD
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
                         
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
@@ -65,10 +65,10 @@
                 %li.l-list-category
                   .l-list-min
 
-                    -# - if @item&.soldout.present?
-                    .item-list-sold-out
-                      .list-sold
-                        SOLD
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
 
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
@@ -92,6 +92,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
@@ -114,6 +120,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
@@ -154,6 +166,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
@@ -176,6 +194,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
@@ -198,6 +222,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
@@ -219,6 +249,12 @@
               - @items.each do |item|
                 %li.l-list-category
                   .l-list-min
+
+                    - if item&.soldout.present?
+                      .item-list-sold-out
+                        .list-sold
+                          SOLD
+
                     =link_to main_show_path(item.id) , class: 'l-list-a' do
                       %figure.l-list-figu.u-list-figu
                         %figcaption
