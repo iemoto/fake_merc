@@ -14,19 +14,14 @@ class SellItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    respond_to do |format|
-      if @item&.save and @item&.images&.first&.save
-        @sellItem = SellItem.new(item_id: @item.id, user_id: current_user.id)
-        unless @sellItem.save
-          format.html { render :new, notice: 'ユーザー登録がされていません'}
-          format.json { render json: @item.errors, status: :unprocessable_entity }
-        end
-        format.html { redirect_to root_path}
-        format.json { render :show, status: :created, location: @item}
-      else
-        format.html { redirect_to action: 'new' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    if @item.images.empty?
+      @item.images.new
+      render :new
+    elsif @item.save
+      @sellItem = SellItem.create(item_id: @item.id, user_id: current_user.id)
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
