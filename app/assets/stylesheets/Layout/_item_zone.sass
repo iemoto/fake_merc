@@ -153,6 +153,26 @@
                   visibility: visible
                   transition: all 0.5s ease 0s
                   opacity: 1
+                  position: relative
+                  .item-list-sold-out
+                    .list-sold
+                      top: 18px
+                      font-size: 20px
+                      position: absolute
+                      z-index: 2
+                      color: #fff
+                      transform: rotate(-45deg)
+                      letter-spacing: 2px
+                      font-weight: 600
+                  .item-list-sold-out::after 
+                    border-width: 80px 80px 0 0
+                    border-color: #ea352d transparent transparent transparent
+                    content: ''
+                    position: absolute
+                    top: 0
+                    border-style: solid
+                    z-index: 1
+
                   .l-list-a
                     width: 100%
                     cursor: pointer

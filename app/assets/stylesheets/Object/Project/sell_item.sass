@@ -26,6 +26,24 @@
     display: flex
     margin: 16px 0 0
     &--photo
+      position: relative
+      .item-sold-out
+        .sold
+          top: 24px
+          font-size: 28px
+          position: absolute
+          z-index: 2
+          color: #fff
+          transform: rotate(-45deg)
+          letter-spacing: 2px
+          font-weight: 600
+      .item-sold-out::after 
+        border-width: 120px 120px 0 0
+        border-color: #ea352d transparent transparent transparent
+        content: ''
+        position: absolute
+        top: 0
+        border-style: solid
     &--table
       max-width: 300px
       height: 420px
@@ -52,8 +70,8 @@
         background: #fafafa
         padding: 8px
       
-      
 
+  
 .itempricezone
   display: flex
   justify-content: center
@@ -77,6 +95,18 @@
   a
     text-decoration: none
     color: #fff
+
+.soldbtn
+  display: block
+  margin-top: 16px
+  background: $color--mercgray
+  font-size: 14px
+  line-height: 56px
+  text-align: center
+  font-weight: 600
+  color: #fff
+  cursor: not-allowed
+
 .editBtn
   display: block
   margin-top: 16px
