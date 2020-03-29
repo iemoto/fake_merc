@@ -6,6 +6,7 @@ class CardsController < ApplicationController
     add_breadcrumb 'マイページ', mypage_path
     add_breadcrumb '支払い方法', mypage_card_create_path
     add_breadcrumb 'クレジットカード情報入力'
+    session[:previous_page] = request.referer
     card = Card.where(user_id: current_user.id)
     redirect_to action: 'index' if card.exists?
     year = Time.now.year
@@ -29,7 +30,7 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.create(card: params['payjp-token'])
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: 'index'
+        redirect_to session[:previous_page]
       else
         redirect_to action: 'pay'
       end
