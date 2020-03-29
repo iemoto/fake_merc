@@ -6,8 +6,20 @@ $(function(){
   // 親カテゴリ選択時の挙動
   $('#item_category_id').on('change', apiMainCategory);
 
+  // 親カテゴリ再選択時に前のデータを削除
+  $('#item_category_id').on('change', function(){
+    $('#middleCategory').val('');
+    $('#middleCategory').children().remove();
+  })
+
   // 子カテゴリ選択時の挙動
   $(document).on('change', '#middleCategory', apiSubCategory);
+
+  // 子カテゴリ再選択時に前のデータを削除
+  $(document).on('change', '#middleCategory', function(){
+    $('#subSubCategory').val('');
+    $('#subSubCategory').children().remove();
+  })
 
   // 親カテゴリのAPI処理
   function apiMainCategory(){
@@ -20,6 +32,7 @@ $(function(){
     .fail(function(){
       console.log('Error')
     })
+
     // 子カテゴリの生成
     function subCategory(data){
       var selectData = document.getElementById("item_category_id").value
